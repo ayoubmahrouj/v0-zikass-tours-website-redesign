@@ -14,6 +14,7 @@ interface Destination {
   waKeyContact: string
 }
 
+// Ordered by popularity: 1-Agafay, 2-Ourika, then rest by demand
 const destinations: Destination[] = [
   {
     id: "agafay",
@@ -27,41 +28,6 @@ const destinations: Destination[] = [
     duration: "4-5h",
     waKeyReserve: "wa.agafay.reserve",
     waKeyContact: "wa.agafay.contact",
-  },
-  {
-    id: "essaouira",
-    images: [
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Essaouira%201-1o2U922jKgunuFd4xqcG1qp8v1SuFp.jpeg",
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Essaouira%202-f846BdGpGEiRJ2RpV1SafNl71Wvt0D.jpeg",
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Essaouira%203-q6GnDEH91L2FNismn6mpAD1vFjbF6h.jpeg",
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Essaouira%204-5OFUeGBUrv4Q5XlBHMjO17MU8X14Ff.jpeg",
-    ],
-    duration: "10-12h",
-    waKeyReserve: "wa.essaouira.reserve",
-    waKeyContact: "wa.essaouira.contact",
-  },
-  {
-    id: "ouarzazate",
-    images: [
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ouarzazate%201-PNTwunWyPnmq529bUtTaNUPpZyHNZW.jpeg",
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ouarzazate%202-7cKdN6QuRJJbo9ARYLd4GRmL0OUgCz.jpeg",
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ouarzazate%203-4esDgX3C74lXW80OKsebVvEsjsoJ9V.jpeg",
-    ],
-    duration: "12h",
-    waKeyReserve: "wa.ouarzazate.reserve",
-    waKeyContact: "wa.ouarzazate.contact",
-  },
-  {
-    id: "imlil",
-    images: [
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Haut%20Atlas%20et%20Imlil%201-wla7Ea7HsgpZMeArvcPHLS50Qdn9zW.jpeg",
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Haut%20Atlas%20et%20Imlil%202-weyetxMYFnOPZ320AZjP83mgjWasiR.jpeg",
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Haut%20Atlas%20et%20Imlil%203-REROscKav4bKRZ5zspWEQwu8eMkBS3.jpeg",
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Haut%20Atlas%20et%20Imlil%204-JrA8M2gLjsiJXhv6GRowUMEsLsxCJF.jpeg",
-    ],
-    duration: "8h",
-    waKeyReserve: "wa.imlil.reserve",
-    waKeyContact: "wa.imlil.contact",
   },
   {
     id: "ourika",
@@ -86,6 +52,41 @@ const destinations: Destination[] = [
     duration: "8-9h",
     waKeyReserve: "wa.ouzoud.reserve",
     waKeyContact: "wa.ouzoud.contact",
+  },
+  {
+    id: "essaouira",
+    images: [
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Essaouira%201-1o2U922jKgunuFd4xqcG1qp8v1SuFp.jpeg",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Essaouira%202-f846BdGpGEiRJ2RpV1SafNl71Wvt0D.jpeg",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Essaouira%203-q6GnDEH91L2FNismn6mpAD1vFjbF6h.jpeg",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Essaouira%204-5OFUeGBUrv4Q5XlBHMjO17MU8X14Ff.jpeg",
+    ],
+    duration: "10-12h",
+    waKeyReserve: "wa.essaouira.reserve",
+    waKeyContact: "wa.essaouira.contact",
+  },
+  {
+    id: "imlil",
+    images: [
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Haut%20Atlas%20et%20Imlil%201-wla7Ea7HsgpZMeArvcPHLS50Qdn9zW.jpeg",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Haut%20Atlas%20et%20Imlil%202-weyetxMYFnOPZ320AZjP83mgjWasiR.jpeg",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Haut%20Atlas%20et%20Imlil%203-REROscKav4bKRZ5zspWEQwu8eMkBS3.jpeg",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Haut%20Atlas%20et%20Imlil%204-JrA8M2gLjsiJXhv6GRowUMEsLsxCJF.jpeg",
+    ],
+    duration: "8h",
+    waKeyReserve: "wa.imlil.reserve",
+    waKeyContact: "wa.imlil.contact",
+  },
+  {
+    id: "ouarzazate",
+    images: [
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ouarzazate%201-PNTwunWyPnmq529bUtTaNUPpZyHNZW.jpeg",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ouarzazate%202-7cKdN6QuRJJbo9ARYLd4GRmL0OUgCz.jpeg",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ouarzazate%203-4esDgX3C74lXW80OKsebVvEsjsoJ9V.jpeg",
+    ],
+    duration: "12h",
+    waKeyReserve: "wa.ouarzazate.reserve",
+    waKeyContact: "wa.ouarzazate.contact",
   },
 ]
 
