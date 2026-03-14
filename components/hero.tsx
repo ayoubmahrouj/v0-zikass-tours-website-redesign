@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useLanguage, getWhatsAppUrl } from "@/lib/language-context"
@@ -8,13 +9,16 @@ export function Hero() {
   const { t } = useLanguage()
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?q=80&w=2067&auto=format&fit=crop')`,
-        }}
+    <header id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden" role="banner">
+      {/* Background Image with Next.js Image optimization */}
+      <Image
+        src="https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?q=80&w=2067&auto=format&fit=crop"
+        alt="Vue panoramique de Marrakech avec la Koutoubia - ZikassTours excursions et chauffeur privé"
+        fill
+        priority
+        quality={85}
+        className="object-cover object-center"
+        sizes="100vw"
       />
       
       {/* Gradient Overlay */}
