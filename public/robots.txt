@@ -1,0 +1,25 @@
+# ZikassTours - Chauffeur Prive & Excursions Marrakech
+# https://zikasstours.com
+
+User-agent: *
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Yandex
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+# Sitemap
+Sitemap: https://zikasstours.com/sitemap.xml
+
+# Host
+Host: https://zikasstours.com
