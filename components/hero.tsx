@@ -9,7 +9,7 @@ export function Hero() {
   const { t } = useLanguage()
 
   return (
-    <header id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden" role="banner">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden" aria-label="Accueil ZikassTours">
       {/* Background Image with Next.js Image optimization */}
       <Image
         src="https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?q=80&w=2067&auto=format&fit=crop"
@@ -19,6 +19,8 @@ export function Hero() {
         quality={85}
         className="object-cover object-center"
         sizes="100vw"
+        placeholder="blur"
+        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAUH/8QAIhAAAgEDAwUBAAAAAAAAAAAAAQIDBBEhAAUSBhMiQWFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAwT/xAAaEQACAgMAAAAAAAAAAAAAAAABAgARAyEx/9oADAMBAAIRAxEAPwC3W7lNSbhDDTxRyxNGXJkBGDkYxn0Bpt6l3KfrnXDM0UUcaxiMLGCMDBycj5pNJLXC3Q9M//Z"
       />
       
       {/* Gradient Overlay */}
@@ -109,7 +111,7 @@ export function Hero() {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce" aria-hidden="true">
           <ChevronDown className="w-8 h-8 text-secondary/70" />
         </div>
       </div>

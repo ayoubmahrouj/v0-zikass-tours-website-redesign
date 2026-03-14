@@ -115,6 +115,8 @@ function ImageGallery({ images, altBase }: { images: string[]; altBase: string }
             alt={`${altBase} - Image ${currentIndex + 1}`}
             fill
             className="object-cover transition-transform duration-500 group-hover:scale-105"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+            loading={currentIndex === 0 ? "eager" : "lazy"}
           />
           <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/10 transition-colors" />
           
@@ -161,6 +163,8 @@ function ImageGallery({ images, altBase }: { images: string[]; altBase: string }
                 alt={`${altBase} thumbnail ${idx + 1}`}
                 fill
                 className="object-cover"
+                sizes="80px"
+                loading="lazy"
               />
             </button>
           ))}
@@ -227,20 +231,27 @@ export function Destinations() {
   const { t } = useLanguage()
 
   return (
-    <section id="excursions" className="py-20 md:py-32 bg-background">
+    <section 
+      id="excursions" 
+      className="py-20 md:py-32 bg-background"
+      aria-labelledby="excursions-title"
+    >
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <header className="text-center mb-16">
           <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4 tracking-wide uppercase">
             {t("destinations.badge")}
           </span>
-          <h2 className="font-serif text-3xl md:text-5xl font-bold text-foreground mb-4 text-balance">
+          <h2 
+            id="excursions-title" 
+            className="font-serif text-3xl md:text-5xl font-bold text-foreground mb-4 text-balance"
+          >
             {t("destinations.title")}
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             {t("destinations.subtitle")}
           </p>
-        </div>
+        </header>
 
         {/* Destinations */}
         <div className="space-y-24">

@@ -17,20 +17,32 @@ export function Contact() {
   const { t } = useLanguage()
 
   return (
-    <section id="contact" className="py-20 md:py-32 bg-muted/30">
+    <section 
+      id="contact" 
+      className="py-20 md:py-32 bg-muted/30"
+      aria-labelledby="contact-title"
+      itemScope 
+      itemType="https://schema.org/LocalBusiness"
+    >
+      <meta itemProp="name" content="ZikassTours" />
+      <meta itemProp="telephone" content="+212661377597" />
+      <meta itemProp="email" content="zikasstours@gmail.com" />
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <header className="text-center mb-16">
           <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4 tracking-wide uppercase">
             {t("contact.title")}
           </span>
-          <h2 className="font-serif text-3xl md:text-5xl font-bold text-foreground mb-4 text-balance">
+          <h2 
+            id="contact-title"
+            className="font-serif text-3xl md:text-5xl font-bold text-foreground mb-4 text-balance"
+          >
             {t("contact.title")}
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             {t("contact.subtitle")}
           </p>
-        </div>
+        </header>
 
         <div className="max-w-4xl mx-auto">
           {/* Contact Cards */}

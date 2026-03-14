@@ -70,20 +70,27 @@ export function Tarifs() {
   ]
 
   return (
-    <section id="tarifs" className="py-20 md:py-32 bg-primary">
+    <section 
+      id="tarifs" 
+      className="py-20 md:py-32 bg-primary"
+      aria-labelledby="tarifs-title"
+    >
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <header className="text-center mb-16">
           <span className="inline-block px-4 py-1.5 bg-secondary/20 text-secondary rounded-full text-sm font-medium mb-4 tracking-wide uppercase">
             {t("tarifs.badge")}
           </span>
-          <h2 className="font-serif text-3xl md:text-5xl font-bold text-primary-foreground mb-4 text-balance">
+          <h2 
+            id="tarifs-title"
+            className="font-serif text-3xl md:text-5xl font-bold text-primary-foreground mb-4 text-balance"
+          >
             {t("tarifs.title")}
           </h2>
           <p className="text-primary-foreground/70 text-lg max-w-2xl mx-auto">
             {t("tarifs.subtitle")}
           </p>
-        </div>
+        </header>
 
         {/* Tarif Cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
