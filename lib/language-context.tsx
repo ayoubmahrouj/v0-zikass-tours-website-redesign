@@ -49,20 +49,51 @@ const translations: Record<Language, Record<string, string>> = {
     "destination.imlil.name": "Haut Atlas & Imlil",
     "destination.imlil.desc": "Partez pour une aventure inoubliable au cœur des montagnes du Haut Atlas avec notre excursion à Imlil au pied du mont Toubkal. Découvrez les villages berbères traditionnels, les paysages montagneux spectaculaires et la culture authentique de cette région préservée.",
     
+    // Destination: Ourika
+    "destination.ourika.name": "Vallée de l'Ourika",
+    "destination.ourika.desc": "Située à environ une heure de Marrakech, la vallée de l'Ourika est l'une des destinations les plus belles et les plus authentiques de la région. Cette excursion d'une journée vous permet de découvrir les paysages magnifiques de l'Atlas, les villages berbères traditionnels et la nature préservée. Les visiteurs peuvent profiter d'une promenade vers les cascades de Setti-Fatma, se détendre au bord de la rivière et goûter à la cuisine marocaine locale. Une escapade idéale pour vivre une expérience naturelle et culturelle inoubliable près de Marrakech.",
+    
+    // Destination: Ouzoud
+    "destination.ouzoud.name": "Cascades d'Ouzoud",
+    "destination.ouzoud.desc": "Les cascades d'Ouzoud sont les plus hautes chutes d'eau du Maroc, avec une hauteur de 110 mètres. Situées à environ 2h30 de Marrakech, elles offrent un spectacle naturel époustouflant. Vous pourrez observer les singes magots dans leur habitat naturel, faire une balade en barque au pied des cascades et profiter d'un déjeuner dans les restaurants traditionnels avec vue sur les chutes.",
+    
     // WhatsApp messages - Reserve
     "wa.agafay.reserve": "Bonjour, je souhaite réserver l'excursion Agafay depuis votre site.",
     "wa.essaouira.reserve": "Bonjour, je souhaite réserver l'excursion Essaouira depuis votre site.",
     "wa.ouarzazate.reserve": "Bonjour, je souhaite réserver l'excursion Ouarzazate & Aït Ben Haddou depuis votre site.",
     "wa.imlil.reserve": "Bonjour, je souhaite réserver l'excursion Haut Atlas & Imlil depuis votre site.",
+    "wa.ourika.reserve": "Bonjour, je souhaite réserver l'excursion Vallée de l'Ourika depuis votre site.",
+    "wa.ouzoud.reserve": "Bonjour, je souhaite réserver l'excursion Cascades d'Ouzoud depuis votre site.",
     
     // WhatsApp messages - Contact
     "wa.agafay.contact": "Bonjour, je souhaite avoir plus d'informations sur l'excursion Agafay.",
     "wa.essaouira.contact": "Bonjour, je souhaite avoir plus d'informations sur l'excursion Essaouira.",
     "wa.ouarzazate.contact": "Bonjour, je souhaite avoir plus d'informations sur l'excursion Ouarzazate & Aït Ben Haddou.",
     "wa.imlil.contact": "Bonjour, je souhaite avoir plus d'informations sur l'excursion Haut Atlas & Imlil.",
+    "wa.ourika.contact": "Bonjour, je souhaite avoir plus d'informations sur l'excursion Vallée de l'Ourika.",
+    "wa.ouzoud.contact": "Bonjour, je souhaite avoir plus d'informations sur l'excursion Cascades d'Ouzoud.",
+    
+    // WhatsApp messages - Tarifs
+    "wa.tarif.airport": "Bonjour, je souhaite réserver un transfert aéroport depuis votre site.",
+    "wa.tarif.regional": "Bonjour, je souhaite réserver un transfert régional depuis votre site.",
+    "wa.tarif.excursion": "Bonjour, je souhaite réserver une excursion depuis votre site.",
     
     // General WhatsApp
     "wa.general": "Bonjour, je souhaite obtenir des informations sur vos services depuis votre site.",
+    
+    // Tarifs section
+    "tarifs.badge": "Nos Tarifs",
+    "tarifs.title": "Nos Tarifs Détaillés",
+    "tarifs.subtitle": "Des offres transparentes adaptées à la taille de votre groupe",
+    "tarifs.from": "Dès",
+    "tarifs.service": "Service",
+    "tarifs.reserve": "Réserver",
+    "tarifs.airport.title": "Transferts Aéroport & Ville",
+    "tarifs.airport.medina": "Aéroport / Medina ou Gueliz",
+    "tarifs.airport.agafay_soiree": "Agafay Soirée",
+    "tarifs.regional.title": "Transferts Régionaux",
+    "tarifs.regional.3vallees": "3 Vallées",
+    "tarifs.excursions.title": "Excursions & Tours",
     
     // Contact
     "contact.title": "Contactez-nous",
@@ -123,20 +154,51 @@ const translations: Record<Language, Record<string, string>> = {
     "destination.imlil.name": "High Atlas & Imlil",
     "destination.imlil.desc": "Enjoy an unforgettable adventure in the High Atlas Mountains with our excursion to Imlil at the foot of Mount Toubkal. Discover traditional Berber villages, spectacular mountain landscapes and the authentic culture of this preserved region.",
     
+    // Destination: Ourika
+    "destination.ourika.name": "Ourika Valley",
+    "destination.ourika.desc": "Located about an hour from Marrakech, the Ourika Valley is one of the most beautiful and authentic destinations in the region. This day trip takes you through stunning Atlas landscapes, traditional Berber villages and unspoiled nature. Visitors can enjoy a walk to the Setti-Fatma waterfalls, relax by the river and taste local Moroccan cuisine. An ideal escape for an unforgettable natural and cultural experience near Marrakech.",
+    
+    // Destination: Ouzoud
+    "destination.ouzoud.name": "Ouzoud Waterfalls",
+    "destination.ouzoud.desc": "The Ouzoud waterfalls are the highest in Morocco, with a height of 110 meters. Located about 2.5 hours from Marrakech, they offer a breathtaking natural spectacle. You can observe Barbary macaques in their natural habitat, take a boat ride at the foot of the falls and enjoy lunch at traditional restaurants overlooking the cascades.",
+    
     // WhatsApp messages - Reserve
     "wa.agafay.reserve": "Hello, I would like to book the Agafay excursion from your website.",
     "wa.essaouira.reserve": "Hello, I would like to book the Essaouira excursion from your website.",
     "wa.ouarzazate.reserve": "Hello, I would like to book the Ouarzazate & Ait Ben Haddou excursion from your website.",
     "wa.imlil.reserve": "Hello, I would like to book the High Atlas & Imlil excursion from your website.",
+    "wa.ourika.reserve": "Hello, I would like to book the Ourika Valley excursion from your website.",
+    "wa.ouzoud.reserve": "Hello, I would like to book the Ouzoud Waterfalls excursion from your website.",
     
     // WhatsApp messages - Contact
     "wa.agafay.contact": "Hello, I would like more information about the Agafay excursion.",
     "wa.essaouira.contact": "Hello, I would like more information about the Essaouira excursion.",
     "wa.ouarzazate.contact": "Hello, I would like more information about the Ouarzazate & Ait Ben Haddou excursion.",
     "wa.imlil.contact": "Hello, I would like more information about the High Atlas & Imlil excursion.",
+    "wa.ourika.contact": "Hello, I would like more information about the Ourika Valley excursion.",
+    "wa.ouzoud.contact": "Hello, I would like more information about the Ouzoud Waterfalls excursion.",
+    
+    // WhatsApp messages - Tarifs
+    "wa.tarif.airport": "Hello, I would like to book an airport transfer from your website.",
+    "wa.tarif.regional": "Hello, I would like to book a regional transfer from your website.",
+    "wa.tarif.excursion": "Hello, I would like to book an excursion from your website.",
     
     // General WhatsApp
     "wa.general": "Hello, I would like to get information about your services from your website.",
+    
+    // Tarifs section
+    "tarifs.badge": "Our Prices",
+    "tarifs.title": "Detailed Pricing",
+    "tarifs.subtitle": "Transparent offers adapted to your group size",
+    "tarifs.from": "From",
+    "tarifs.service": "Service",
+    "tarifs.reserve": "Reserve",
+    "tarifs.airport.title": "Airport & City Transfers",
+    "tarifs.airport.medina": "Airport / Medina or Gueliz",
+    "tarifs.airport.agafay_soiree": "Agafay Evening",
+    "tarifs.regional.title": "Regional Transfers",
+    "tarifs.regional.3vallees": "3 Valleys",
+    "tarifs.excursions.title": "Excursions & Tours",
     
     // Contact
     "contact.title": "Contact Us",

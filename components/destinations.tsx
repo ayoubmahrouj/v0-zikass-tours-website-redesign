@@ -63,6 +63,30 @@ const destinations: Destination[] = [
     waKeyReserve: "wa.imlil.reserve",
     waKeyContact: "wa.imlil.contact",
   },
+  {
+    id: "ourika",
+    images: [
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ourika%201-nKn8FAwTcOOxozvIZIM3z5ft0ELoit.jpeg",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ourika%202-iwdeUj9NfNjsDVe1ZV6jkpLWrtZEQy.jpeg",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ourika%203-6EUF4VQgLJ2wTV2naeV3Xob64SrEGZ.jpeg",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ourika%204-8NgjOt8qhcirKDjW3rRLN2flzQj2Ix.jpeg",
+    ],
+    duration: "6-7h",
+    waKeyReserve: "wa.ourika.reserve",
+    waKeyContact: "wa.ourika.contact",
+  },
+  {
+    id: "ouzoud",
+    images: [
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ouzoud%201-xRi6pLtsw9wofIQ1jOU5ZNXvpcudgi.jpeg",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ouzoud%202-YxD3VGMdx69zPeW0pmwNlPLsp39xRv.jpeg",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ouzoud%203-gsHz9FQsnrOqhXRpnxGwAQ7X3qGOgx.jpeg",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ouzoud%204-rFurSUKGi3kdeBq09gbX8LOUfGXa0M.jpeg",
+    ],
+    duration: "8-9h",
+    waKeyReserve: "wa.ouzoud.reserve",
+    waKeyContact: "wa.ouzoud.contact",
+  },
 ]
 
 function ImageGallery({ images, altBase }: { images: string[]; altBase: string }) {
