@@ -7,7 +7,7 @@ import { useLanguage, getWhatsAppUrl } from "@/lib/language-context"
 
 export function Hero() {
   const { t } = useLanguage()
-
+  
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden" aria-label="Accueil ZikassTours">
       {/* Background Image with Next.js Image optimization */}
