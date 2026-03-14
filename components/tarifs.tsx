@@ -106,7 +106,7 @@ export function Tarifs() {
                   </div>
                   <div className="text-right">
                     <span className="text-xs text-primary-foreground/60 uppercase tracking-wide">{t("tarifs.from")}</span>
-                    <div className="text-2xl font-bold text-secondary">{category.fromPrice}<span className="text-base">EUR</span></div>
+                    <div className="text-2xl font-bold text-secondary">{category.fromPrice}<span className="text-lg ml-0.5">{"€"}</span></div>
                   </div>
                 </div>
                 <CardTitle className="font-serif text-xl text-primary-foreground">
@@ -129,7 +129,10 @@ export function Tarifs() {
                       className="flex justify-between py-2.5 border-b border-secondary/10 last:border-0"
                     >
                       <span className="text-primary-foreground/90 text-sm">{service.name}</span>
-                      <span className="font-semibold text-secondary">{service.price}EUR</span>
+                      <span className="font-semibold text-secondary">
+                        <span className="text-xs text-primary-foreground/50 mr-1">{t("tarifs.from")}</span>
+                        {service.price}{"€"}
+                      </span>
                     </div>
                   ))}
                 </div>
