@@ -20,73 +20,64 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.reserve": "Réserver sur WhatsApp",
     
     // Hero
-    "hero.title": "Chauffeur Privé & Excursions à Marrakech",
+    "hero.title": "Excursions & Aventures au Désert depuis Marrakech",
     "hero.subtitle": "Services de transport premium et excursions inoubliables au départ de Marrakech.",
-    "hero.cta.whatsapp": "Réserver sur WhatsApp",
+    "hero.cta.excursions": "Voir les Excursions",
+    "hero.cta.whatsapp": "Contacter sur WhatsApp",
     "hero.cta.call": "Appeler maintenant",
     
-    // Excursions
-    "excursions.title": "Excursions Populaires",
-    "excursions.subtitle": "Découvrez les merveilles du Maroc avec nos excursions privées",
-    "excursions.from": "À partir de",
-    "excursions.duration": "Durée",
-    "excursions.book": "Réserver",
+    // Destinations Section
+    "destinations.badge": "Nos Destinations",
+    "destinations.title": "Excursions Populaires",
+    "destinations.subtitle": "Découvrez les merveilles du Maroc avec nos excursions privées",
+    "destinations.reserve": "Réserver sur WhatsApp",
+    "destinations.contact": "Contacter sur WhatsApp",
     
-    // Excursion descriptions
-    "excursion.agafay.name": "Désert d'Agafay",
-    "excursion.agafay.desc": "Découvrez le désert de pierres aux portes de Marrakech avec ses paysages lunaires spectaculaires.",
-    "excursion.ourika.name": "Vallée de l'Ourika",
-    "excursion.ourika.desc": "Explorez les cascades et villages berbères traditionnels au cœur de l'Atlas.",
-    "excursion.imlil.name": "Imlil",
-    "excursion.imlil.desc": "Randonnée au pied du mont Toubkal dans des paysages montagneux à couper le souffle.",
-    "excursion.oukaimeden.name": "Oukaïmeden",
-    "excursion.oukaimeden.desc": "La station de ski la plus haute d'Afrique avec des vues panoramiques exceptionnelles.",
-    "excursion.ouzoud.name": "Cascades d'Ouzoud",
-    "excursion.ouzoud.desc": "Les plus belles cascades du Maroc, une merveille naturelle de 110 mètres de hauteur.",
-    "excursion.merzouga.name": "Désert de Merzouga",
-    "excursion.merzouga.desc": "Aventure dans les dunes dorées du Sahara avec nuit sous les étoiles.",
-    "excursion.zagora.name": "Zagora",
-    "excursion.zagora.desc": "Porte du désert, découvrez les premières dunes du Sahara marocain.",
-    "excursion.essaouira.name": "Essaouira",
-    "excursion.essaouira.desc": "Ville côtière fortifiée, connue pour son port, ses plages et son ambiance artistique.",
-    "excursion.palmeraie.name": "Palmeraie",
-    "excursion.palmeraie.desc": "Oasis verdoyante aux portes de Marrakech, parfaite pour une balade en chameau.",
+    // Destination: Agafay
+    "destination.agafay.name": "Désert d'Agafay",
+    "destination.agafay.desc": "Situé à quelques kilomètres de Marrakech, le désert d'Agafay est une destination idéale pour vivre une expérience unique au cœur d'un paysage naturel exceptionnel. Les visiteurs peuvent profiter de nombreuses activités telles que les balades à dos de chameau, le quad, ou encore des dîners traditionnels sous les étoiles. Ce lieu magique combine aventure, détente et découverte de la culture marocaine. Une expérience inoubliable pour tous ceux qui souhaitent explorer la beauté du désert près de Marrakech.",
     
-    // Tarifs
-    "tarifs.title": "Nos Tarifs",
-    "tarifs.subtitle": "Tarifs transparents pour tous vos trajets et excursions",
-    "tarifs.airport": "Transfert Aéroport",
-    "tarifs.regional": "Transferts Régionaux",
-    "tarifs.book": "Réserver",
+    // Destination: Essaouira
+    "destination.essaouira.name": "Essaouira",
+    "destination.essaouira.desc": "Située sur la côte Atlantique, Essaouira est une destination idéale pour découvrir l'histoire, la culture et la beauté maritime du Maroc. Les visiteurs peuvent flâner dans la médina classée au patrimoine mondial de l'UNESCO, visiter le port animé et profiter de la plage.",
+    
+    // Destination: Ouarzazate
+    "destination.ouarzazate.name": "Ouarzazate & Aït Ben Haddou",
+    "destination.ouarzazate.desc": "Partez à la découverte de la porte du désert avec notre excursion à Ouarzazate et la kasbah d'Aït Ben Haddou classée au patrimoine mondial de l'UNESCO. Ce site historique a servi de décor à de nombreux films célèbres et offre des paysages cinématographiques uniques.",
+    
+    // Destination: Imlil / High Atlas
+    "destination.imlil.name": "Haut Atlas & Imlil",
+    "destination.imlil.desc": "Partez pour une aventure inoubliable au cœur des montagnes du Haut Atlas avec notre excursion à Imlil au pied du mont Toubkal. Découvrez les villages berbères traditionnels, les paysages montagneux spectaculaires et la culture authentique de cette région préservée.",
+    
+    // WhatsApp messages - Reserve
+    "wa.agafay.reserve": "Bonjour, je souhaite réserver l'excursion Agafay depuis votre site.",
+    "wa.essaouira.reserve": "Bonjour, je souhaite réserver l'excursion Essaouira depuis votre site.",
+    "wa.ouarzazate.reserve": "Bonjour, je souhaite réserver l'excursion Ouarzazate & Aït Ben Haddou depuis votre site.",
+    "wa.imlil.reserve": "Bonjour, je souhaite réserver l'excursion Haut Atlas & Imlil depuis votre site.",
+    
+    // WhatsApp messages - Contact
+    "wa.agafay.contact": "Bonjour, je souhaite avoir plus d'informations sur l'excursion Agafay.",
+    "wa.essaouira.contact": "Bonjour, je souhaite avoir plus d'informations sur l'excursion Essaouira.",
+    "wa.ouarzazate.contact": "Bonjour, je souhaite avoir plus d'informations sur l'excursion Ouarzazate & Aït Ben Haddou.",
+    "wa.imlil.contact": "Bonjour, je souhaite avoir plus d'informations sur l'excursion Haut Atlas & Imlil.",
+    
+    // General WhatsApp
+    "wa.general": "Bonjour, je souhaite obtenir des informations sur vos services depuis votre site.",
     
     // Contact
     "contact.title": "Contactez-nous",
-    "contact.subtitle": "Nous sommes à votre disposition 24h/24, 7j/7",
-    "contact.form.name": "Votre nom",
-    "contact.form.email": "Votre email",
-    "contact.form.message": "Votre message",
-    "contact.form.submit": "Envoyer",
+    "contact.subtitle": "Nous sommes à votre disposition 24h/24, 7j/7 depuis Marrakech",
     "contact.location": "Marrakech, Maroc",
+    "contact.whatsapp": "WhatsApp",
+    "contact.phone": "Téléphone",
+    "contact.email": "Email",
     
     // Footer
     "footer.tagline": "Luxury Adventure",
     "footer.rights": "Tous droits réservés",
     "footer.quicklinks": "Liens rapides",
+    "footer.destinations": "Destinations",
     "footer.contact": "Contact",
-    
-    // WhatsApp messages
-    "wa.general": "Bonjour, je souhaite obtenir des informations sur vos services depuis votre site.",
-    "wa.agafay": "Bonjour, je souhaite réserver l'excursion Désert d'Agafay depuis votre site.",
-    "wa.ourika": "Bonjour, je souhaite réserver l'excursion Vallée de l'Ourika depuis votre site.",
-    "wa.imlil": "Bonjour, je souhaite réserver l'excursion Imlil depuis votre site.",
-    "wa.oukaimeden": "Bonjour, je souhaite réserver l'excursion Oukaïmeden depuis votre site.",
-    "wa.ouzoud": "Bonjour, je souhaite réserver l'excursion Cascades d'Ouzoud depuis votre site.",
-    "wa.merzouga": "Bonjour, je souhaite réserver l'excursion Désert de Merzouga depuis votre site.",
-    "wa.zagora": "Bonjour, je souhaite réserver l'excursion Zagora depuis votre site.",
-    "wa.essaouira": "Bonjour, je souhaite réserver l'excursion Essaouira depuis votre site.",
-    "wa.palmeraie": "Bonjour, je souhaite réserver l'excursion Palmeraie depuis votre site.",
-    "wa.airport": "Bonjour, je souhaite réserver un transfert aéroport depuis votre site.",
-    "wa.transfer": "Bonjour, je souhaite réserver un transfert depuis votre site.",
     
     // Trust badges
     "trust.experience": "10+ ans d'expérience",
@@ -103,73 +94,64 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.reserve": "Reserve on WhatsApp",
     
     // Hero
-    "hero.title": "Private Driver & Excursions in Marrakech",
+    "hero.title": "Excursions & Desert Adventures from Marrakech",
     "hero.subtitle": "Premium transport services and unforgettable excursions from Marrakech.",
-    "hero.cta.whatsapp": "Reserve on WhatsApp",
+    "hero.cta.excursions": "View Excursions",
+    "hero.cta.whatsapp": "Contact on WhatsApp",
     "hero.cta.call": "Call now",
     
-    // Excursions
-    "excursions.title": "Popular Excursions",
-    "excursions.subtitle": "Discover the wonders of Morocco with our private excursions",
-    "excursions.from": "From",
-    "excursions.duration": "Duration",
-    "excursions.book": "Book",
+    // Destinations Section
+    "destinations.badge": "Our Destinations",
+    "destinations.title": "Popular Excursions",
+    "destinations.subtitle": "Discover the wonders of Morocco with our private excursions",
+    "destinations.reserve": "Reserve on WhatsApp",
+    "destinations.contact": "Contact on WhatsApp",
     
-    // Excursion descriptions
-    "excursion.agafay.name": "Agafay Desert",
-    "excursion.agafay.desc": "Discover the stone desert at the gates of Marrakech with its spectacular lunar landscapes.",
-    "excursion.ourika.name": "Ourika Valley",
-    "excursion.ourika.desc": "Explore waterfalls and traditional Berber villages in the heart of the Atlas.",
-    "excursion.imlil.name": "Imlil",
-    "excursion.imlil.desc": "Hiking at the foot of Mount Toubkal in breathtaking mountain landscapes.",
-    "excursion.oukaimeden.name": "Oukaïmeden",
-    "excursion.oukaimeden.desc": "The highest ski resort in Africa with exceptional panoramic views.",
-    "excursion.ouzoud.name": "Ouzoud Waterfalls",
-    "excursion.ouzoud.desc": "The most beautiful waterfalls in Morocco, a natural wonder 110 meters high.",
-    "excursion.merzouga.name": "Merzouga Desert",
-    "excursion.merzouga.desc": "Adventure in the golden dunes of the Sahara with a night under the stars.",
-    "excursion.zagora.name": "Zagora",
-    "excursion.zagora.desc": "Gateway to the desert, discover the first dunes of the Moroccan Sahara.",
-    "excursion.essaouira.name": "Essaouira",
-    "excursion.essaouira.desc": "Fortified coastal town, known for its port, beaches and artistic atmosphere.",
-    "excursion.palmeraie.name": "Palmeraie",
-    "excursion.palmeraie.desc": "Green oasis at the gates of Marrakech, perfect for a camel ride.",
+    // Destination: Agafay
+    "destination.agafay.name": "Agafay Desert",
+    "destination.agafay.desc": "Located just a few kilometers from Marrakech, the Agafay desert is the perfect destination for a unique experience surrounded by stunning natural landscapes. Visitors can enjoy activities such as camel rides, quad biking, and traditional dinners under the stars. This magical place combines adventure, relaxation and Moroccan culture for an unforgettable desert experience near Marrakech.",
     
-    // Tarifs
-    "tarifs.title": "Our Prices",
-    "tarifs.subtitle": "Transparent prices for all your trips and excursions",
-    "tarifs.airport": "Airport Transfer",
-    "tarifs.regional": "Regional Transfers",
-    "tarifs.book": "Book",
+    // Destination: Essaouira
+    "destination.essaouira.name": "Essaouira",
+    "destination.essaouira.desc": "Located on the Atlantic coast, Essaouira is a perfect destination to discover Morocco's history, culture and seaside beauty. Visitors can explore the UNESCO-listed medina, visit the vibrant fishing port and enjoy the beach.",
+    
+    // Destination: Ouarzazate
+    "destination.ouarzazate.name": "Ouarzazate & Ait Ben Haddou",
+    "destination.ouarzazate.desc": "Discover the gateway to the desert with our Ouarzazate and Ait Ben Haddou excursion, a UNESCO World Heritage site famous for its historic kasbah and cinematic landscapes. This historic site has served as a backdrop for many famous films.",
+    
+    // Destination: Imlil / High Atlas
+    "destination.imlil.name": "High Atlas & Imlil",
+    "destination.imlil.desc": "Enjoy an unforgettable adventure in the High Atlas Mountains with our excursion to Imlil at the foot of Mount Toubkal. Discover traditional Berber villages, spectacular mountain landscapes and the authentic culture of this preserved region.",
+    
+    // WhatsApp messages - Reserve
+    "wa.agafay.reserve": "Hello, I would like to book the Agafay excursion from your website.",
+    "wa.essaouira.reserve": "Hello, I would like to book the Essaouira excursion from your website.",
+    "wa.ouarzazate.reserve": "Hello, I would like to book the Ouarzazate & Ait Ben Haddou excursion from your website.",
+    "wa.imlil.reserve": "Hello, I would like to book the High Atlas & Imlil excursion from your website.",
+    
+    // WhatsApp messages - Contact
+    "wa.agafay.contact": "Hello, I would like more information about the Agafay excursion.",
+    "wa.essaouira.contact": "Hello, I would like more information about the Essaouira excursion.",
+    "wa.ouarzazate.contact": "Hello, I would like more information about the Ouarzazate & Ait Ben Haddou excursion.",
+    "wa.imlil.contact": "Hello, I would like more information about the High Atlas & Imlil excursion.",
+    
+    // General WhatsApp
+    "wa.general": "Hello, I would like to get information about your services from your website.",
     
     // Contact
     "contact.title": "Contact Us",
-    "contact.subtitle": "We are at your service 24/7",
-    "contact.form.name": "Your name",
-    "contact.form.email": "Your email",
-    "contact.form.message": "Your message",
-    "contact.form.submit": "Send",
+    "contact.subtitle": "We are at your service 24/7 from Marrakech",
     "contact.location": "Marrakech, Morocco",
+    "contact.whatsapp": "WhatsApp",
+    "contact.phone": "Phone",
+    "contact.email": "Email",
     
     // Footer
     "footer.tagline": "Luxury Adventure",
     "footer.rights": "All rights reserved",
     "footer.quicklinks": "Quick Links",
+    "footer.destinations": "Destinations",
     "footer.contact": "Contact",
-    
-    // WhatsApp messages
-    "wa.general": "Hello, I would like to get information about your services from your website.",
-    "wa.agafay": "Hello, I would like to book the Agafay Desert excursion from your website.",
-    "wa.ourika": "Hello, I would like to book the Ourika Valley excursion from your website.",
-    "wa.imlil": "Hello, I would like to book the Imlil excursion from your website.",
-    "wa.oukaimeden": "Hello, I would like to book the Oukaïmeden excursion from your website.",
-    "wa.ouzoud": "Hello, I would like to book the Ouzoud Waterfalls excursion from your website.",
-    "wa.merzouga": "Hello, I would like to book the Merzouga Desert excursion from your website.",
-    "wa.zagora": "Hello, I would like to book the Zagora excursion from your website.",
-    "wa.essaouira": "Hello, I would like to book the Essaouira excursion from your website.",
-    "wa.palmeraie": "Hello, I would like to book the Palmeraie excursion from your website.",
-    "wa.airport": "Hello, I would like to book an airport transfer from your website.",
-    "wa.transfer": "Hello, I would like to book a transfer from your website.",
     
     // Trust badges
     "trust.experience": "10+ years of experience",

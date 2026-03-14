@@ -27,35 +27,35 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Quick Links */}
+          {/* Destinations */}
           <div>
             <h3 className="font-serif text-xl font-bold text-secondary mb-4">
-              {t("footer.quicklinks")}
+              {t("footer.destinations")}
             </h3>
             <nav className="flex flex-col gap-2">
               <Link
-                href="#home"
+                href="#excursions"
                 className="text-primary-foreground/70 hover:text-secondary transition-colors"
               >
-                {t("nav.home")}
+                Marrakech Excursions
               </Link>
               <Link
                 href="#excursions"
                 className="text-primary-foreground/70 hover:text-secondary transition-colors"
               >
-                {t("nav.excursions")}
+                Desert Tours
               </Link>
               <Link
-                href="#tarifs"
+                href="#excursions"
                 className="text-primary-foreground/70 hover:text-secondary transition-colors"
               >
-                {t("nav.tarifs")}
+                Atlas Mountains
               </Link>
               <Link
-                href="#contact"
+                href="#excursions"
                 className="text-primary-foreground/70 hover:text-secondary transition-colors"
               >
-                {t("nav.contact")}
+                Essaouira Day Trip
               </Link>
             </nav>
           </div>

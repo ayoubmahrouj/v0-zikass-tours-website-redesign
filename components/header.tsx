@@ -14,7 +14,6 @@ export function Header() {
   const navItems = [
     { href: "#home", label: t("nav.home") },
     { href: "#excursions", label: t("nav.excursions") },
-    { href: "#tarifs", label: t("nav.tarifs") },
     { href: "#contact", label: t("nav.contact") },
   ]
 

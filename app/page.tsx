@@ -3,8 +3,7 @@
 import { LanguageProvider } from "@/lib/language-context"
 import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
-import { Excursions } from "@/components/excursions"
-import { Tarifs } from "@/components/tarifs"
+import { Destinations } from "@/components/destinations"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 import { FloatingWhatsApp } from "@/components/floating-whatsapp"
@@ -12,12 +11,11 @@ import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 export default function HomePage() {
   return (
     <LanguageProvider>
-      <div className="min-h-screen">
+      <div className="min-h-screen bg-background">
         <Header />
         <main>
           <Hero />
-          <Excursions />
-          <Tarifs />
+          <Destinations />
           <Contact />
         </main>
         <Footer />
