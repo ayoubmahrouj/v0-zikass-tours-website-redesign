@@ -33,6 +33,7 @@ const translations: Record<Language, Record<string, string>> = {
     "destinations.subtitle": "Découvrez les merveilles du Maroc avec nos excursions privées",
     "destinations.reserve": "Réserver sur WhatsApp",
     "destinations.contact": "Contacter sur WhatsApp",
+    "destinations.readmore": "En savoir plus",
     
     // Destination: Agafay
     "destination.agafay.name": "Désert d'Agafay",
@@ -162,6 +163,7 @@ const translations: Record<Language, Record<string, string>> = {
     "destinations.subtitle": "Discover the wonders of Morocco with our private excursions",
     "destinations.reserve": "Reserve on WhatsApp",
     "destinations.contact": "Contact on WhatsApp",
+    "destinations.readmore": "Read more",
     
     // Destination: Agafay
     "destination.agafay.name": "Agafay Desert",
