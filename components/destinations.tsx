@@ -2,7 +2,8 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import { ChevronLeft, ChevronRight, X, Clock, MapPin } from "lucide-react"
+import Link from "next/link"
+import { ChevronLeft, ChevronRight, X, Clock, MapPin, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useLanguage, getWhatsAppUrl } from "@/lib/language-context"
 
@@ -12,6 +13,7 @@ interface Destination {
   duration: string
   waKeyReserve: string
   waKeyContact: string
+  blogUrl: string
 }
 
 // Ordered by popularity: 1-Agafay, 2-Ourika, then rest by demand
@@ -28,6 +30,7 @@ const destinations: Destination[] = [
     duration: "4-5h",
     waKeyReserve: "wa.agafay.reserve",
     waKeyContact: "wa.agafay.contact",
+    blogUrl: "/blog/agafay-desert-experience",
   },
   {
     id: "ourika",
@@ -40,6 +43,7 @@ const destinations: Destination[] = [
     duration: "6-7h",
     waKeyReserve: "wa.ourika.reserve",
     waKeyContact: "wa.ourika.contact",
+    blogUrl: "/blog/ourika-valley-day-trip",
   },
   {
     id: "ouzoud",
@@ -52,6 +56,7 @@ const destinations: Destination[] = [
     duration: "8-9h",
     waKeyReserve: "wa.ouzoud.reserve",
     waKeyContact: "wa.ouzoud.contact",
+    blogUrl: "/blog/ouzoud-waterfalls-guide",
   },
   {
     id: "essaouira",
@@ -64,6 +69,7 @@ const destinations: Destination[] = [
     duration: "10-12h",
     waKeyReserve: "wa.essaouira.reserve",
     waKeyContact: "wa.essaouira.contact",
+    blogUrl: "/blog/essaouira-coastal-escape",
   },
   {
     id: "imlil",
@@ -76,6 +82,7 @@ const destinations: Destination[] = [
     duration: "8h",
     waKeyReserve: "wa.imlil.reserve",
     waKeyContact: "wa.imlil.contact",
+    blogUrl: "/blog/atlas-mountains-imlil",
   },
   {
     id: "ouarzazate",
@@ -87,6 +94,7 @@ const destinations: Destination[] = [
     duration: "12h",
     waKeyReserve: "wa.ouarzazate.reserve",
     waKeyContact: "wa.ouarzazate.contact",
+    blogUrl: "/blog/ouarzazate-ait-ben-haddou",
   },
 ]
 
@@ -293,6 +301,15 @@ export function Destinations() {
                     {t(`destination.${destination.id}.desc`)}
                   </p>
                 </div>
+
+                {/* Read More Link */}
+                <Link 
+                  href={destination.blogUrl}
+                  className="inline-flex items-center gap-2 text-primary hover:text-secondary font-medium transition-colors group"
+                >
+                  {t("destinations.readmore")}
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
 
                 {/* WhatsApp Buttons */}
                 <div className="flex flex-col sm:flex-row gap-3">

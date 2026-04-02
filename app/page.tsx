@@ -4,6 +4,7 @@ import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
 import { Destinations } from "@/components/destinations"
 import { Tarifs } from "@/components/tarifs"
+import { Testimonials } from "@/components/testimonials"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 import { FloatingWhatsApp } from "@/components/floating-whatsapp"
@@ -29,6 +30,7 @@ export default function HomePage() {
           <Hero />
           <Destinations />
           <Tarifs />
+          <Testimonials />
           <Contact />
         </main>
         <Footer />

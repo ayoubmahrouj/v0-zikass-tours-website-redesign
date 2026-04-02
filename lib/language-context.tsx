@@ -16,6 +16,7 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.home": "Accueil",
     "nav.excursions": "Excursions",
     "nav.tarifs": "Tarifs",
+    "nav.blog": "Blog",
     "nav.contact": "Contact",
     "nav.reserve": "Réserver sur WhatsApp",
     
@@ -32,6 +33,7 @@ const translations: Record<Language, Record<string, string>> = {
     "destinations.subtitle": "Découvrez les merveilles du Maroc avec nos excursions privées",
     "destinations.reserve": "Réserver sur WhatsApp",
     "destinations.contact": "Contacter sur WhatsApp",
+    "destinations.readmore": "En savoir plus",
     
     // Destination: Agafay
     "destination.agafay.name": "Désert d'Agafay",
@@ -95,6 +97,29 @@ const translations: Record<Language, Record<string, string>> = {
     "tarifs.regional.3vallees": "3 Vallées",
     "tarifs.excursions.title": "Excursions & Tours",
     
+    // Testimonials
+    "testimonials.badge": "Avis Clients",
+    "testimonials.title": "Témoignages de nos Clients",
+    "testimonials.subtitle": "Ce que nos clients disent de nos services",
+    "testimonial.1.name": "Sophie Martin",
+    "testimonial.1.location": "Paris, France",
+    "testimonial.1.text": "Une expérience incroyable dans le désert d'Agafay ! Le chauffeur était très professionnel et ponctuel. Le dîner sous les étoiles était magique. Je recommande vivement ZikassTours !",
+    "testimonial.2.name": "Jean-Pierre Dubois",
+    "testimonial.2.location": "Lyon, France",
+    "testimonial.2.text": "Journée parfaite à Essaouira. Notre chauffeur connaissait tous les meilleurs endroits. Service impeccable du début à la fin. Merci ZikassTours !",
+    "testimonial.3.name": "Marie Lefèvre",
+    "testimonial.3.location": "Bruxelles, Belgique",
+    "testimonial.3.text": "La vallée de l'Ourika est magnifique ! Les cascades, les villages berbères, tout était parfait. Le déjeuner au bord de la rivière était un moment inoubliable.",
+    "testimonial.4.name": "Thomas Schmidt",
+    "testimonial.4.location": "Berlin, Allemagne",
+    "testimonial.4.text": "Les cascades d'Ouzoud sont spectaculaires ! Nous avons adoré la balade en barque et les singes. Le guide était très sympathique et informatif.",
+    "testimonial.5.name": "Isabella Rossi",
+    "testimonial.5.location": "Milan, Italie",
+    "testimonial.5.text": "Ouarzazate et Aït Ben Haddou m'ont transportée dans un autre monde. Les paysages sont à couper le souffle. Une excursion que je n'oublierai jamais !",
+    "testimonial.6.name": "David Wilson",
+    "testimonial.6.location": "Londres, UK",
+    "testimonial.6.text": "La randonnée à Imlil était fantastique ! Les montagnes de l'Atlas sont impressionnantes. Le thé à la menthe dans le village berbère était un moment de pur bonheur.",
+    
     // Contact
     "contact.title": "Contactez-nous",
     "contact.subtitle": "Nous sommes à votre disposition 24h/24, 7j/7 depuis Marrakech",
@@ -121,6 +146,7 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.home": "Home",
     "nav.excursions": "Excursions",
     "nav.tarifs": "Prices",
+    "nav.blog": "Blog",
     "nav.contact": "Contact",
     "nav.reserve": "Reserve on WhatsApp",
     
@@ -137,6 +163,7 @@ const translations: Record<Language, Record<string, string>> = {
     "destinations.subtitle": "Discover the wonders of Morocco with our private excursions",
     "destinations.reserve": "Reserve on WhatsApp",
     "destinations.contact": "Contact on WhatsApp",
+    "destinations.readmore": "Read more",
     
     // Destination: Agafay
     "destination.agafay.name": "Agafay Desert",
@@ -199,6 +226,29 @@ const translations: Record<Language, Record<string, string>> = {
     "tarifs.regional.title": "Regional Transfers",
     "tarifs.regional.3vallees": "3 Valleys",
     "tarifs.excursions.title": "Excursions & Tours",
+    
+    // Testimonials
+    "testimonials.badge": "Client Reviews",
+    "testimonials.title": "What Our Clients Say",
+    "testimonials.subtitle": "Discover what our clients think about our services",
+    "testimonial.1.name": "Sophie Martin",
+    "testimonial.1.location": "Paris, France",
+    "testimonial.1.text": "An incredible experience in the Agafay desert! The driver was very professional and punctual. Dinner under the stars was magical. I highly recommend ZikassTours!",
+    "testimonial.2.name": "Jean-Pierre Dubois",
+    "testimonial.2.location": "Lyon, France",
+    "testimonial.2.text": "Perfect day in Essaouira. Our driver knew all the best spots. Impeccable service from start to finish. Thank you ZikassTours!",
+    "testimonial.3.name": "Marie Lefevre",
+    "testimonial.3.location": "Brussels, Belgium",
+    "testimonial.3.text": "The Ourika Valley is stunning! The waterfalls, Berber villages, everything was perfect. Lunch by the river was an unforgettable moment.",
+    "testimonial.4.name": "Thomas Schmidt",
+    "testimonial.4.location": "Berlin, Germany",
+    "testimonial.4.text": "Ouzoud Falls are spectacular! We loved the boat ride and the monkeys. The guide was very friendly and informative.",
+    "testimonial.5.name": "Isabella Rossi",
+    "testimonial.5.location": "Milan, Italy",
+    "testimonial.5.text": "Ouarzazate and Ait Ben Haddou transported me to another world. The landscapes are breathtaking. An excursion I will never forget!",
+    "testimonial.6.name": "David Wilson",
+    "testimonial.6.location": "London, UK",
+    "testimonial.6.text": "The hike in Imlil was fantastic! The Atlas Mountains are impressive. The mint tea in the Berber village was a moment of pure happiness.",
     
     // Contact
     "contact.title": "Contact Us",

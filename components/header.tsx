@@ -15,6 +15,7 @@ export function Header() {
     { href: "#home", label: t("nav.home") },
     { href: "#excursions", label: t("nav.excursions") },
     { href: "#tarifs", label: t("nav.tarifs") },
+    { href: "/blog", label: t("nav.blog") },
     { href: "#contact", label: t("nav.contact") },
   ]
 
