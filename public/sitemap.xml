@@ -1,64 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Homepage -->
   <url>
     <loc>https://zikasstours.com</loc>
-    <lastmod>2026-03-14</lastmod>
+    <lastmod>2026-04-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://zikasstours.com"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zikasstours.com?lang=en"/>
   </url>
+  
+  <!-- Main Sections -->
   <url>
     <loc>https://zikasstours.com/#excursions</loc>
-    <lastmod>2026-03-14</lastmod>
+    <lastmod>2026-04-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://zikasstours.com/#tarifs</loc>
-    <lastmod>2026-03-14</lastmod>
+    <lastmod>2026-04-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zikasstours.com/#contact</loc>
-    <lastmod>2026-03-14</lastmod>
+    <lastmod>2026-04-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <!-- Destinations -->
+  
+  <!-- Blog Main Page -->
   <url>
-    <loc>https://zikasstours.com/excursion-agafay-desert-marrakech</loc>
-    <lastmod>2026-03-14</lastmod>
+    <loc>https://zikasstours.com/blog</loc>
+    <lastmod>2026-04-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+  
+  <!-- Blog: Agafay Desert Experience -->
   <url>
-    <loc>https://zikasstours.com/excursion-ourika-valley-marrakech</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://zikasstours.com/blog/agafay-desert-experience</loc>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
+  
+  <!-- Blog: Ourika Valley Day Trip -->
   <url>
-    <loc>https://zikasstours.com/excursion-cascades-ouzoud-marrakech</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://zikasstours.com/blog/ourika-valley-day-trip</loc>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
+  
+  <!-- Blog: Ouzoud Waterfalls Guide -->
   <url>
-    <loc>https://zikasstours.com/excursion-essaouira-day-trip-marrakech</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://zikasstours.com/blog/ouzoud-waterfalls-guide</loc>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
+  
+  <!-- Blog: Essaouira Coastal Escape -->
   <url>
-    <loc>https://zikasstours.com/excursion-atlas-imlil-marrakech</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://zikasstours.com/blog/essaouira-coastal-escape</loc>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
+  
+  <!-- Blog: Atlas Mountains Imlil -->
   <url>
-    <loc>https://zikasstours.com/excursion-ouarzazate-ait-benhaddou-marrakech</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://zikasstours.com/blog/atlas-mountains-imlil</loc>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  
+  <!-- Blog: Ouarzazate Ait Ben Haddou -->
+  <url>
+    <loc>https://zikasstours.com/blog/ouarzazate-ait-ben-haddou</loc>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
 </urlset>
