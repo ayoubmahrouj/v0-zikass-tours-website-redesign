@@ -22,7 +22,7 @@ const translations: Record<Language, Record<string, string>> = {
     
     // Hero
     "hero.title": "Excursions & Aventures au Désert depuis Marrakech",
-    "hero.subtitle": "Services de transport premium et excursions inoubliables au départ de Marrakech.",
+    "hero.subtitle": "Chauffeur privé et excursions depuis Marrakech : Agafay, Ourika, Imlil, Essaouira, Ouzoud. Prise en charge à votre hôtel, prix par voiture, annulation gratuite jusqu'à 24h.",
     "hero.cta.excursions": "Voir les Excursions",
     "hero.cta.whatsapp": "Contacter sur WhatsApp",
     "hero.cta.call": "Appeler maintenant",
@@ -152,7 +152,7 @@ const translations: Record<Language, Record<string, string>> = {
     
     // Hero
     "hero.title": "Excursions & Desert Adventures from Marrakech",
-    "hero.subtitle": "Premium transport services and unforgettable excursions from Marrakech.",
+    "hero.subtitle": "Private driver & day trips from Marrakech: Agafay, Ourika, Imlil, Essaouira, Ouzoud. Hotel pickup, price per car, free cancellation up to 24h.",
     "hero.cta.excursions": "View Excursions",
     "hero.cta.whatsapp": "Contact on WhatsApp",
     "hero.cta.call": "Call now",
