@@ -8,15 +8,15 @@ import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { LanguageProvider } from "@/lib/language-context"
 
 export const metadata: Metadata = {
-  title: "Atlas Mountains & Imlil Hiking Guide | ZikassTours",
-  description: "Trek through Morocco's stunning Atlas Mountains and visit the traditional Berber village of Imlil. Experience breathtaking views, authentic culture and mountain hospitality. Perfect adventure for European & American tourists.",
+  title: { absolute: "Imlil Atlas Mountains: Village, Altitude, Trekking & Day Trip | ZikassTours" },
+  description: "Imlil village in the Atlas Mountains (1,740 m), 1h30 from Marrakech: altitude, Bureau des Guides, trekking routes, Toubkal and how to get there. Private day trip from 80€ per car.",
   keywords: [
     "Atlas Mountains hiking", "Imlil Morocco", "Toubkal trek", "Berber village tour",
     "Morocco trekking", "High Atlas", "Marrakech hiking", "Morocco adventure",
     "Atlas Mountains day trip", "Imlil excursion", "mountain tour Morocco"
   ],
   openGraph: {
-    title: "Atlas Mountains & Imlil - Hiking in Morocco's Highest Peaks",
+    title: "Imlil Atlas Mountains: Village, Altitude, Trekking & Day Trip",
     description: "Trek through stunning Atlas Mountains and visit traditional Berber villages.",
     type: "article",
     locale: "en_US",
@@ -29,6 +29,84 @@ const images = [
   "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Haut%20Atlas%20et%20Imlil%202-weyetxMYFnOPZ320AZjP83mgjWasiR.jpeg",
   "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Haut%20Atlas%20et%20Imlil%203-REROscKav4bKRZ5zspWEQwu8eMkBS3.jpeg",
   "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Haut%20Atlas%20et%20Imlil%204-JrA8M2gLjsiJXhv6GRowUMEsLsxCJF.jpeg",
+]
+
+const imlilFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the altitude of Imlil?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Imlil village is at about 1,740 m above sea level, at the foot of Mount Toubkal (4,167 m), the highest peak in North Africa."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How far is Imlil from Marrakech?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "About 65 km, around 1h30 by car via Tahannaout and Asni."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a guide in Imlil?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not for easy walks around the village. To climb Toubkal you need a licensed mountain guide, which you can hire at the Bureau des Guides in Imlil."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I visit Imlil in one day from Marrakech?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. A private day trip with ZikassTours starts from 80€ per car (1-7 people), with pickup at your hotel or riad."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there snow in Imlil?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Snow is possible from December to March, and the peaks around Imlil often stay white until spring. Bring warm clothes in winter."
+      }
+    }
+  ]
+}
+
+const imlilFacts = [
+  ["Altitude", "About 1,740 m"],
+  ["Distance from Marrakech", "65 km, about 1h30 by car"],
+  ["Highest peak nearby", "Mount Toubkal, 4,167 m"],
+  ["Best months", "March to June, September to November"],
+  ["Languages", "Tachelhit (Amazigh), Arabic, French"],
+]
+
+const imlilFaqList: [string, string][] = [
+  [
+    "What is the altitude of Imlil?",
+    "Imlil village is at about 1,740 m above sea level, at the foot of Mount Toubkal (4,167 m), the highest peak in North Africa."
+  ],
+  [
+    "How far is Imlil from Marrakech?",
+    "About 65 km, around 1h30 by car via Tahannaout and Asni."
+  ],
+  [
+    "Do I need a guide in Imlil?",
+    "Not for easy walks around the village. To climb Toubkal you need a licensed mountain guide, which you can hire at the Bureau des Guides in Imlil."
+  ],
+  [
+    "Can I visit Imlil in one day from Marrakech?",
+    "Yes. A private day trip with ZikassTours starts from 80€ per car (1-7 people), with pickup at your hotel or riad."
+  ],
+  [
+    "Is there snow in Imlil?",
+    "Snow is possible from December to March, and the peaks around Imlil often stay white until spring. Bring warm clothes in winter."
+  ]
 ]
 
 export default function ImlilBlogPage() {
@@ -47,7 +125,7 @@ export default function ImlilBlogPage() {
                 </Link>
                 <span className="inline-block px-3 py-1 bg-secondary text-secondary-foreground text-sm font-semibold rounded-full mb-4">Adventure</span>
                 <h1 className="font-serif text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 max-w-4xl">
-                  Atlas Mountains & Imlil: Hiking in Morocco&apos;s Highest Peaks
+                  Imlil & the Atlas Mountains: Village, Trekking and Toubkal Guide
                 </h1>
                 <div className="flex flex-wrap items-center gap-4 text-white/80">
                   <span className="flex items-center gap-1"><Clock className="w-4 h-4" /> 8 hours</span>
@@ -114,7 +192,66 @@ export default function ImlilBlogPage() {
                   </p>
                 </div>
 
-                <div className="mt-12 p-8 bg-primary rounded-2xl text-center">
+                {/* Imlil key facts */}
+              <section className="mt-12">
+                <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-4">Imlil Village at a Glance</h2>
+                <div className="overflow-hidden rounded-xl border border-border">
+                  {imlilFacts.map(([k, v]) => (
+                    <div key={k} className="flex justify-between gap-4 px-5 py-3 border-b border-border last:border-0 odd:bg-muted/40">
+                      <span className="font-medium">{k}</span>
+                      <span className="text-muted-foreground text-right">{v}</span>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              <section className="mt-12 prose prose-lg max-w-none">
+                <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground">Bureau des Guides d&apos;Imlil</h2>
+                <p>
+                  In the center of the village you will find the <strong>Bureau des Guides</strong>, the office of the local certified mountain guides. This is where you can hire a guide for a walk, a day hike or a Toubkal trek. A licensed guide is required to climb Toubkal, and for any long hike it is the safest choice: guides know the paths, the weather and the villages.
+                </p>
+
+                <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mt-8">Imlil Trekking: Best Hikes</h2>
+                <ul>
+                  <li><strong>Easy (2-3 hours):</strong> walk from Imlil to the Berber village of Aroumd, with views of the valley and the Toubkal massif.</li>
+                  <li><strong>Half day:</strong> climb to the Tizi n&apos;Mzik pass for a wide view over the High Atlas.</li>
+                  <li><strong>Full day:</strong> loop through several Berber villages, with lunch and mint tea in a local house.</li>
+                  <li><strong>2 days:</strong> Mount Toubkal summit (4,167 m), sleeping at the mountain refuge, with a licensed guide.</li>
+                </ul>
+
+                <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mt-8">How to Get to Imlil from Marrakech</h2>
+                <p>
+                  The easiest way is a <strong>private car with driver</strong>: about 1h30 on a scenic road via Tahannaout and Asni, with stops at viewpoints on the way. Shared grand taxis also run to Asni and then to Imlil, but they leave only when full and you must return by yourself.
+                </p>
+              </section>
+
+              {/* FAQ */}
+              <section className="mt-12">
+                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(imlilFaq) }} />
+                <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-4">Imlil FAQ</h2>
+                <div className="space-y-3">
+                  {imlilFaqList.map(([q, a]) => (
+                    <details key={q} className="group rounded-xl border border-border p-5 open:bg-muted/40">
+                      <summary className="cursor-pointer font-semibold list-none flex justify-between gap-4">
+                        {q}
+                        <span className="text-secondary group-open:rotate-45 transition-transform text-xl leading-none">+</span>
+                      </summary>
+                      <p className="mt-3 text-muted-foreground">{a}</p>
+                    </details>
+                  ))}
+                </div>
+              </section>
+
+              {/* Tour page link */}
+              <Link href="/excursions/imlil-atlas-mountains-day-trip-from-marrakech" className="mt-10 flex items-center justify-between gap-4 p-6 rounded-2xl border-2 border-secondary hover:bg-secondary/10 transition-colors">
+                <span>
+                  <span className="block text-sm text-muted-foreground">Private car with driver · from 80€ per car (1-7 people)</span>
+                  <span className="block font-serif text-xl font-bold text-foreground">Imlil & Atlas Mountains Day Trip from Marrakech</span>
+                </span>
+                <span className="text-secondary font-semibold whitespace-nowrap">See prices &rarr;</span>
+              </Link>
+
+              <div className="mt-12 p-8 bg-primary rounded-2xl text-center">
                   <h3 className="font-serif text-2xl md:text-3xl font-bold text-primary-foreground mb-4">
                     Ready for Your Mountain Adventure?
                   </h3>
