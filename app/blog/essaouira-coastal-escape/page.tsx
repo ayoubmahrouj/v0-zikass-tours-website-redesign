@@ -120,7 +120,7 @@ export default function EssaouiraBlogPage() {
                     Book your private Essaouira day trip today and experience Morocco&apos;s most charming coastal city.
                   </p>
                   <a
-                    href="https://wa.me/212661377597?text=Hello%2C%20I%20would%20like%20to%20book%20the%20Essaouira%20day%20trip"
+                    href="https://wa.me/212669994837?text=Hello%2C%20I%20would%20like%20to%20book%20the%20Essaouira%20day%20trip"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center px-6 py-3 bg-secondary text-secondary-foreground font-semibold rounded-full hover:bg-secondary/90 transition-colors"
