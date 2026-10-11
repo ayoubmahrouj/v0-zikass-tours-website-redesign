@@ -8,6 +8,7 @@ import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { LeadTracker } from "@/components/lead-tracker"
+import { TrustBar, HowItWorks, PriceNote, BookingForm, FAQ } from "@/components/conversion"
 import { SITE_URL } from "@/lib/tours"
 
 // SSR - This page is rendered on the server for better SEO
@@ -40,8 +41,13 @@ export default function HomePage() {
         <Header />
         <main role="main">
           <Hero />
+          <TrustBar />
           <Destinations />
+          <HowItWorks />
           <Tarifs />
+          <PriceNote />
+          <BookingForm />
+          <FAQ />
           <Contact />
         </main>
         <Footer />
