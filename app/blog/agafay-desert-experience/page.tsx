@@ -138,7 +138,16 @@ export default function AgafayBlogPage() {
                   </p>
                 </div>
 
-                {/* CTA Box */}
+                {/* Tour page link */}
+              <Link href="/excursions/agafay-desert-tour-from-marrakech" className="mt-10 flex items-center justify-between gap-4 p-6 rounded-2xl border-2 border-secondary hover:bg-secondary/10 transition-colors">
+                <span>
+                  <span className="block text-sm text-muted-foreground">Prices, what's included & booking</span>
+                  <span className="block font-serif text-xl font-bold text-foreground">Agafay Desert Tour - private car</span>
+                </span>
+                <span className="text-secondary font-semibold whitespace-nowrap">See the tour &rarr;</span>
+              </Link>
+
+              {/* CTA Box */}
                 <div className="mt-12 p-8 bg-primary rounded-2xl text-center">
                   <h3 className="font-serif text-2xl md:text-3xl font-bold text-primary-foreground mb-4">
                     Ready for Your Desert Adventure?
@@ -148,7 +157,7 @@ export default function AgafayBlogPage() {
                   </p>
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                     <a
-                      href="https://wa.me/212661377597?text=Hello%2C%20I%20would%20like%20to%20book%20the%20Agafay%20Desert%20experience"
+                      href="https://wa.me/212669994837?text=Hello%2C%20I%20would%20like%20to%20book%20the%20Agafay%20Desert%20experience"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center px-6 py-3 bg-secondary text-secondary-foreground font-semibold rounded-full hover:bg-secondary/90 transition-colors"
@@ -158,7 +167,7 @@ export default function AgafayBlogPage() {
                       </svg>
                       Book on WhatsApp
                     </a>
-                    <span className="text-primary-foreground/60">or call +212 661 377 597</span>
+                    <span className="text-primary-foreground/60">or call +212 669 994 837</span>
                   </div>
                 </div>
               </div>
