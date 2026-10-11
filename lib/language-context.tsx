@@ -1,6 +1,6 @@
 "use client"
 
-import { createContext, useContext, useState, ReactNode } from "react"
+import { createContext, useContext, useEffect, useState, ReactNode } from "react"
 
 type Language = "fr" | "en"
 
@@ -137,7 +137,7 @@ const translations: Record<Language, Record<string, string>> = {
     
     // Trust badges
     "trust.experience": "10+ ans d'expérience",
-    "trust.clients": "5000+ clients satisfaits",
+    "trust.clients": "personnes par voiture privée",
     "trust.available": "Disponible 24/7",
     "trust.safe": "Véhicules récents & sécurisés",
   },
@@ -267,7 +267,7 @@ const translations: Record<Language, Record<string, string>> = {
     
     // Trust badges
     "trust.experience": "10+ years of experience",
-    "trust.clients": "5000+ satisfied clients",
+    "trust.clients": "people per private car",
     "trust.available": "Available 24/7",
     "trust.safe": "Modern & safe vehicles",
   }
@@ -276,7 +276,14 @@ const translations: Record<Language, Record<string, string>> = {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>("fr")
+  const [language, setLanguage] = useState<Language>("en")
+
+  // English by default (most visitors); switch to French for French-language browsers
+  useEffect(() => {
+    if (typeof navigator !== "undefined" && navigator.language?.toLowerCase().startsWith("fr")) {
+      setLanguage("fr")
+    }
+  }, [])
   
   const t = (key: string): string => {
     return translations[language][key] || key
