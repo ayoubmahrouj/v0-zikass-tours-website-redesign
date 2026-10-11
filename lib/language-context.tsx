@@ -275,15 +275,29 @@ const translations: Record<Language, Record<string, string>> = {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>("en")
+export function LanguageProvider({ children, initialLanguage }: { children: ReactNode; initialLanguage?: Language }) {
+  const [language, setLanguageState] = useState<Language>(initialLanguage ?? "en")
 
-  // English by default (most visitors); switch to French for French-language browsers
+  const setLanguage = (lang: Language) => {
+    try { sessionStorage.setItem("zt-lang", lang) } catch {}
+    setLanguageState(lang)
+  }
+
+  // Pages under /fr pass initialLanguage="fr" (server-rendered in French for Google).
+  // Elsewhere: keep the visitor's choice, else French for French-language browsers.
   useEffect(() => {
-    if (typeof navigator !== "undefined" && navigator.language?.toLowerCase().startsWith("fr")) {
-      setLanguage("fr")
+    if (initialLanguage) return
+    let saved: string | null = null
+    try { saved = sessionStorage.getItem("zt-lang") } catch {}
+    if (saved === "fr" || saved === "en") {
+      setLanguageState(saved)
+      return
     }
-  }, [])
+    if (typeof navigator !== "undefined" && navigator.language?.toLowerCase().startsWith("fr")) {
+      setLanguageState("fr")
+    }
+  }, [initialLanguage])
+
   
   const t = (key: string): string => {
     return translations[language][key] || key
