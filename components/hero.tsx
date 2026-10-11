@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { useLanguage, getWhatsAppUrl } from "@/lib/language-context"
 
 export function Hero() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
   
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden" aria-label="Accueil ZikassTours">
@@ -40,7 +40,7 @@ export function Hero() {
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary/20 backdrop-blur-sm rounded-full border border-secondary/30 mb-8">
             <span className="w-2 h-2 bg-secondary rounded-full animate-pulse" />
             <span className="text-secondary text-sm font-medium tracking-wide uppercase">
-              Luxury Adventure
+              {language === "fr" ? "Excursions privées · Paiement sur place" : "Private tours · Pay on arrival"}
             </span>
           </div>
 
