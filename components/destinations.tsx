@@ -6,6 +6,7 @@ import Link from "next/link"
 import { ChevronLeft, ChevronRight, X, Clock, MapPin, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useLanguage, getWhatsAppUrl } from "@/lib/language-context"
+import { tours } from "@/lib/tours"
 
 interface Destination {
   id: string
@@ -237,7 +238,10 @@ function WhatsAppIcon({ className }: { className?: string }) {
 }
 
 export function Destinations() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
+  const locale = language === "fr" ? "fr" : "en"
+  // "Read more" goes to the tour page (price, details, booking)
+  const tourUrl = (id: string, fallback: string) => tours.find((x) => x.id === id)?.path[locale] ?? fallback
 
   return (
     <section 
@@ -304,7 +308,7 @@ export function Destinations() {
 
                 {/* Read More Link */}
                 <Link 
-                  href={destination.blogUrl}
+                  href={tourUrl(destination.id, destination.blogUrl)}
                   className="inline-flex items-center gap-2 text-primary hover:text-secondary font-medium transition-colors group"
                 >
                   {t("destinations.readmore")}

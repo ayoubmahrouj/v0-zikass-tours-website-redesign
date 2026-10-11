@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { usePathname, useRouter } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
 import { Menu, X, Phone } from "lucide-react"
@@ -10,13 +11,31 @@ import { useLanguage, getWhatsAppUrl, WHATSAPP_NUMBER } from "@/lib/language-con
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { language, setLanguage, t } = useLanguage()
+  const pathname = usePathname() || "/"
+  const router = useRouter()
+  const isFrPath = pathname === "/fr" || pathname.startsWith("/fr/")
+  const onHome = pathname === "/" || pathname === "/fr"
+  // Section links work from any page (blog, tour pages...)
+  const base = onHome ? "" : isFrPath ? "/fr" : "/"
+
+  // Switch language and go to the matching page (uses hreflang links when present)
+  const switchLang = (lang: "fr" | "en") => {
+    setLanguage(lang)
+    if (pathname === "/" && lang === "fr") return router.push("/fr")
+    if (pathname === "/fr" && lang === "en") return router.push("/")
+    const alt = document.querySelector(`link[rel="alternate"][hreflang="${lang}"]`)?.getAttribute("href")
+    if (alt) {
+      const target = new URL(alt, window.location.origin).pathname
+      if (target !== pathname) router.push(target)
+    }
+  }
 
   const navItems = [
-    { href: "#home", label: t("nav.home") },
-    { href: "#excursions", label: t("nav.excursions") },
-    { href: "#tarifs", label: t("nav.tarifs") },
+    { href: `${base}#home`, label: t("nav.home") },
+    { href: `${base}#excursions`, label: t("nav.excursions") },
+    { href: `${base}#tarifs`, label: t("nav.tarifs") },
     { href: "/blog", label: t("nav.blog") },
-    { href: "#contact", label: t("nav.contact") },
+    { href: `${base}#contact`, label: t("nav.contact") },
   ]
 
   return (
@@ -53,7 +72,7 @@ export function Header() {
             {/* Language Switcher */}
             <div className="flex items-center gap-1 bg-primary-foreground/10 rounded-full p-1">
               <button
-                onClick={() => setLanguage("fr")}
+                onClick={() => switchLang("fr")}
                 className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${
                   language === "fr"
                     ? "bg-secondary text-secondary-foreground"
@@ -63,7 +82,7 @@ export function Header() {
                 🇫🇷 FR
               </button>
               <button
-                onClick={() => setLanguage("en")}
+                onClick={() => switchLang("en")}
                 className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${
                   language === "en"
                     ? "bg-secondary text-secondary-foreground"
@@ -114,7 +133,7 @@ export function Header() {
             {/* Language Switcher Mobile */}
             <div className="flex justify-center gap-2 mb-6">
               <button
-                onClick={() => setLanguage("fr")}
+                onClick={() => switchLang("fr")}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                   language === "fr"
                     ? "bg-secondary text-secondary-foreground"
@@ -124,7 +143,7 @@ export function Header() {
                 🇫🇷 Français
               </button>
               <button
-                onClick={() => setLanguage("en")}
+                onClick={() => switchLang("en")}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                   language === "en"
                     ? "bg-secondary text-secondary-foreground"

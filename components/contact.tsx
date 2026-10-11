@@ -25,8 +25,8 @@ export function Contact() {
       itemType="https://schema.org/LocalBusiness"
     >
       <meta itemProp="name" content="ZikassTours" />
-      <meta itemProp="telephone" content="+212661377597" />
-      <meta itemProp="email" content="zikasstours@gmail.com" />
+      <meta itemProp="telephone" content="+212669994837" />
+      <meta itemProp="email" content="zakaria.zikasstours@gmail.com" />
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <header className="text-center mb-16">

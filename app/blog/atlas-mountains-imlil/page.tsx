@@ -122,7 +122,7 @@ export default function ImlilBlogPage() {
                     Book your private Atlas Mountains excursion today and discover Morocco&apos;s stunning highlands.
                   </p>
                   <a
-                    href="https://wa.me/212661377597?text=Hello%2C%20I%20would%20like%20to%20book%20the%20Atlas%20Mountains%20and%20Imlil%20excursion"
+                    href="https://wa.me/212669994837?text=Hello%2C%20I%20would%20like%20to%20book%20the%20Atlas%20Mountains%20and%20Imlil%20excursion"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center px-6 py-3 bg-secondary text-secondary-foreground font-semibold rounded-full hover:bg-secondary/90 transition-colors"

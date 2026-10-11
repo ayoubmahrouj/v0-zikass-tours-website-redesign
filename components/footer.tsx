@@ -4,10 +4,12 @@ import Image from "next/image"
 import Link from "next/link"
 import { Instagram, Mail, Phone } from "lucide-react"
 import { useLanguage, WHATSAPP_NUMBER, EMAIL, INSTAGRAM } from "@/lib/language-context"
+import { tours } from "@/lib/tours"
 
 export function Footer() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
   const currentYear = new Date().getFullYear()
+  const locale = language === "fr" ? "fr" : "en"
 
   return (
     <footer className="bg-primary pt-16 pb-8">
@@ -33,29 +35,17 @@ export function Footer() {
               {t("footer.destinations")}
             </h3>
             <nav className="flex flex-col gap-2">
-              <Link
-                href="#excursions"
-                className="text-primary-foreground/70 hover:text-secondary transition-colors"
-              >
-                Marrakech Excursions
-              </Link>
-              <Link
-                href="#excursions"
-                className="text-primary-foreground/70 hover:text-secondary transition-colors"
-              >
-                Desert Tours
-              </Link>
-              <Link
-                href="#excursions"
-                className="text-primary-foreground/70 hover:text-secondary transition-colors"
-              >
-                Atlas Mountains
-              </Link>
-              <Link
-                href="#excursions"
-                className="text-primary-foreground/70 hover:text-secondary transition-colors"
-              >
-                Essaouira Day Trip
+              {tours.map((tour) => (
+                <Link
+                  key={tour.id}
+                  href={tour.path[locale]}
+                  className="text-primary-foreground/70 hover:text-secondary transition-colors"
+                >
+                  {tour.name[locale]}
+                </Link>
+              ))}
+              <Link href="/blog" className="text-primary-foreground/70 hover:text-secondary transition-colors">
+                Blog
               </Link>
             </nav>
           </div>
@@ -99,20 +89,17 @@ export function Footer() {
             <p className="text-primary-foreground/50 text-sm">
               © {currentYear} ZikassTours. {t("footer.rights")}.
             </p>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 text-sm">
+              <Link href="/" hrefLang="en" className="text-primary-foreground/60 hover:text-secondary">English</Link>
+              <Link href="/fr" hrefLang="fr" className="text-primary-foreground/60 hover:text-secondary">Français</Link>
               <a
                 href={INSTAGRAM}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Instagram"
                 className="p-2 bg-secondary/10 rounded-full hover:bg-secondary/20 transition-colors"
               >
                 <Instagram className="w-5 h-5 text-secondary" />
-              </a>
-              <a
-                href={`mailto:${EMAIL}`}
-                className="p-2 bg-secondary/10 rounded-full hover:bg-secondary/20 transition-colors"
-              >
-                <Mail className="w-5 h-5 text-secondary" />
               </a>
             </div>
           </div>

@@ -121,7 +121,7 @@ export default function OuarzazateBlogPage() {
                     Book your private Ouarzazate & Ait Ben Haddou excursion today. An unforgettable 12-hour journey through Morocco&apos;s most dramatic landscapes.
                   </p>
                   <a
-                    href="https://wa.me/212661377597?text=Hello%2C%20I%20would%20like%20to%20book%20the%20Ouarzazate%20and%20Ait%20Ben%20Haddou%20excursion"
+                    href="https://wa.me/212669994837?text=Hello%2C%20I%20would%20like%20to%20book%20the%20Ouarzazate%20and%20Ait%20Ben%20Haddou%20excursion"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center px-6 py-3 bg-secondary text-secondary-foreground font-semibold rounded-full hover:bg-secondary/90 transition-colors"
