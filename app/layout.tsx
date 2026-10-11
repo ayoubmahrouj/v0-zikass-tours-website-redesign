@@ -1,36 +1,34 @@
 import type { Metadata, Viewport } from 'next'
+import Script from 'next/script'
 import { Playfair_Display, Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { SITE_URL, WA_NUMBER, CONTACT_EMAIL } from '@/lib/tours'
 import './globals.css'
 
-const playfair = Playfair_Display({ 
+const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: '--font-serif',
   display: 'swap'
 });
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ["latin"],
   variable: '--font-sans',
   display: 'swap'
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://zikasstours.com'
+// Optional tracking: add these in Vercel > Settings > Environment Variables
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID // e.g. G-XXXXXXXXXX
+const PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID // e.g. 1234567890
+const GSC_CODE = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: 'ZikassTours - Chauffeur Privé & Excursions à Marrakech | Luxury Adventure',
+    default: 'ZikassTours - Private Driver & Day Trips from Marrakech',
     template: '%s | ZikassTours'
   },
-  description: 'Services de transport premium et excursions inoubliables au départ de Marrakech. Chauffeur privé, tours du désert, excursions à Essaouira, Vallée de l\'Ourika, Agafay, Cascades d\'Ouzoud, Ouarzazate et plus. Réservez sur WhatsApp.',
-  keywords: [
-    'Marrakech', 'chauffeur privé Marrakech', 'excursions Marrakech', 'tours désert Maroc',
-    'Agafay desert', 'Essaouira day trip', 'Ourika Valley', 'Cascades Ouzoud',
-    'Ouarzazate Ait Ben Haddou', 'Atlas Mountains Imlil', 'private driver Morocco',
-    'luxury travel Marrakech', 'airport transfer Marrakech', 'Marrakech tours',
-    'excursion Marrakech', 'transport privé Maroc', 'voyage luxe Marrakech'
-  ],
+  description: 'Private driver, airport transfers and day trips from Marrakech: Agafay Desert, Ourika Valley, Ouzoud, Essaouira, Imlil, Ouarzazate. Private car for 1-7 people. Book on WhatsApp.',
   authors: [{ name: 'ZikassTours' }],
   creator: 'ZikassTours',
   publisher: 'ZikassTours',
@@ -39,36 +37,21 @@ export const metadata: Metadata = {
     address: true,
     telephone: true,
   },
-  alternates: {
-    canonical: siteUrl,
-    languages: {
-      'fr-FR': siteUrl,
-      'en-US': `${siteUrl}?lang=en`,
-    },
-  },
   openGraph: {
-    title: 'ZikassTours - Chauffeur Privé & Excursions de Luxe à Marrakech',
-    description: 'Découvrez le Maroc avec style. Excursions premium au départ de Marrakech: Agafay, Essaouira, Ourika, Ouzoud, Ouarzazate. Chauffeur privé disponible 24/7.',
     type: 'website',
-    locale: 'fr_FR',
-    alternateLocale: ['en_US', 'ar_MA'],
     siteName: 'ZikassTours',
-    url: siteUrl,
     images: [
       {
         url: '/images/logo.jpeg',
         width: 1200,
         height: 630,
-        alt: 'ZikassTours - Luxury Adventure Marrakech',
+        alt: 'ZikassTours - Private Driver & Excursions in Marrakech',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ZikassTours - Chauffeur Privé & Excursions à Marrakech',
-    description: 'Services de transport premium et excursions inoubliables au départ de Marrakech.',
     images: ['/images/logo.jpeg'],
-    creator: '@zikasstours',
   },
   robots: {
     index: true,
@@ -81,65 +64,45 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: 'your-google-verification-code',
-  },
+  ...(GSC_CODE ? { verification: { google: GSC_CODE } } : {}),
   category: 'travel',
   icons: {
-    icon: [
-      { url: '/images/logo.jpeg', sizes: '32x32', type: 'image/jpeg' },
-      { url: '/images/logo.jpeg', sizes: '16x16', type: 'image/jpeg' },
-    ],
-    apple: [
-      { url: '/images/logo.jpeg', sizes: '180x180', type: 'image/jpeg' },
-    ],
-    other: [
-      { rel: 'mask-icon', url: '/images/logo.jpeg' },
-    ],
+    icon: [{ url: '/images/logo.jpeg', type: 'image/jpeg' }],
+    apple: [{ url: '/images/logo.jpeg', sizes: '180x180', type: 'image/jpeg' }],
   },
   manifest: '/manifest.json',
 }
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#0a5c36' },
-    { media: '(prefers-color-scheme: dark)', color: '#0a5c36' },
-  ],
+  themeColor: '#0a5c36',
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
   userScalable: true,
 }
 
-// JSON-LD Structured Data for SEO
+// Organization data shown to Google on every page
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
     {
       '@type': 'TravelAgency',
-      '@id': 'https://zikasstours.com/#organization',
+      '@id': `${SITE_URL}/#organization`,
       name: 'ZikassTours',
       alternateName: 'Zikass Tours Marrakech',
-      description: 'Services de transport premium et excursions de luxe au départ de Marrakech',
-      url: 'https://zikasstours.com',
-      logo: {
-        '@type': 'ImageObject',
-        url: 'https://zikasstours.com/images/logo.jpeg',
-      },
-      image: 'https://zikasstours.com/images/logo.jpeg',
-      telephone: '+212661377597',
-      email: 'zikasstours@gmail.com',
+      description: 'Private driver, airport transfers and private day trips from Marrakech',
+      url: SITE_URL,
+      logo: { '@type': 'ImageObject', url: `${SITE_URL}/images/logo.jpeg` },
+      image: `${SITE_URL}/images/logo.jpeg`,
+      telephone: `+${WA_NUMBER}`,
+      email: CONTACT_EMAIL,
       address: {
         '@type': 'PostalAddress',
         addressLocality: 'Marrakech',
         addressRegion: 'Marrakech-Safi',
         addressCountry: 'MA',
       },
-      geo: {
-        '@type': 'GeoCoordinates',
-        latitude: 31.6295,
-        longitude: -7.9811,
-      },
+      geo: { '@type': 'GeoCoordinates', latitude: 31.6295, longitude: -7.9811 },
       areaServed: [
         { '@type': 'City', name: 'Marrakech' },
         { '@type': 'City', name: 'Essaouira' },
@@ -156,123 +119,15 @@ const jsonLd = {
         opens: '00:00',
         closes: '23:59',
       },
-      sameAs: [
-        'https://www.instagram.com/zikasstours',
-      ],
-      hasOfferCatalog: {
-        '@type': 'OfferCatalog',
-        name: 'Excursions et Transferts',
-        itemListElement: [
-          {
-            '@type': 'Offer',
-            itemOffered: {
-              '@type': 'TouristTrip',
-              name: 'Excursion Désert Agafay',
-              description: 'Découvrez le désert d\'Agafay avec balade en quad, dromadaire et dîner sous les étoiles',
-              touristType: 'Adventure travelers',
-            },
-          },
-          {
-            '@type': 'Offer',
-            itemOffered: {
-              '@type': 'TouristTrip',
-              name: 'Excursion Essaouira',
-              description: 'Journée à Essaouira, la perle de l\'Atlantique',
-              touristType: 'Culture travelers',
-            },
-          },
-          {
-            '@type': 'Offer',
-            itemOffered: {
-              '@type': 'TouristTrip',
-              name: 'Excursion Vallée de l\'Ourika',
-              description: 'Découvrez les villages berbères et les cascades de Setti-Fatma',
-              touristType: 'Nature lovers',
-            },
-          },
-          {
-            '@type': 'Offer',
-            itemOffered: {
-              '@type': 'TouristTrip',
-              name: 'Excursion Cascades d\'Ouzoud',
-              description: 'Les plus hautes cascades du Maroc avec singes magots',
-              touristType: 'Nature lovers',
-            },
-          },
-          {
-            '@type': 'Offer',
-            itemOffered: {
-              '@type': 'TouristTrip',
-              name: 'Excursion Ouarzazate & Ait Ben Haddou',
-              description: 'Kasbah classée UNESCO et studios de cinéma',
-              touristType: 'Culture travelers',
-            },
-          },
-          {
-            '@type': 'Offer',
-            itemOffered: {
-              '@type': 'TouristTrip',
-              name: 'Excursion Haut Atlas & Imlil',
-              description: 'Randonnée dans les montagnes de l\'Atlas et village berbère d\'Imlil',
-              touristType: 'Adventure travelers',
-            },
-          },
-        ],
-      },
+      sameAs: ['https://www.instagram.com/zikasstours'],
     },
     {
       '@type': 'WebSite',
-      '@id': 'https://zikasstours.com/#website',
-      url: 'https://zikasstours.com',
+      '@id': `${SITE_URL}/#website`,
+      url: SITE_URL,
       name: 'ZikassTours',
-      description: 'Chauffeur privé et excursions de luxe à Marrakech',
-      publisher: {
-        '@id': 'https://zikasstours.com/#organization',
-      },
-      inLanguage: ['fr-FR', 'en-US'],
-    },
-    {
-      '@type': 'WebPage',
-      '@id': 'https://zikasstours.com/#webpage',
-      url: 'https://zikasstours.com',
-      name: 'ZikassTours - Chauffeur Privé & Excursions à Marrakech',
-      isPartOf: {
-        '@id': 'https://zikasstours.com/#website',
-      },
-      about: {
-        '@id': 'https://zikasstours.com/#organization',
-      },
-      description: 'Services de transport premium et excursions inoubliables au départ de Marrakech',
-      inLanguage: 'fr-FR',
-    },
-    {
-      '@type': 'FAQPage',
-      mainEntity: [
-        {
-          '@type': 'Question',
-          name: 'Comment réserver une excursion avec ZikassTours?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Vous pouvez réserver directement via WhatsApp au +212661377597. Notre équipe est disponible 24/7 pour répondre à vos questions et confirmer votre réservation.',
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'Quelles sont les destinations disponibles depuis Marrakech?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Nous proposons des excursions vers Agafay, Essaouira, la Vallée de l\'Ourika, les Cascades d\'Ouzoud, Ouarzazate & Ait Ben Haddou, et le Haut Atlas avec Imlil.',
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'Les transferts aéroport sont-ils disponibles?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Oui, nous assurons les transferts depuis/vers l\'aéroport de Marrakech Menara vers la Médina, Gueliz et toutes les destinations de la région.',
-          },
-        },
-      ],
+      publisher: { '@id': `${SITE_URL}/#organization` },
+      inLanguage: ['en', 'fr'],
     },
   ],
 }
@@ -285,8 +140,6 @@ export default function RootLayout({
   return (
     <html lang="en" dir="ltr">
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com" />
         <script
           type="application/ld+json"
@@ -296,6 +149,19 @@ export default function RootLayout({
       <body className={`${playfair.variable} ${inter.variable} font-sans antialiased`}>
         {children}
         <Analytics />
+        {GA_ID && (
+          <>
+            <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
+            <Script id="ga4" strategy="afterInteractive">
+              {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;gtag('js',new Date());gtag('config','${GA_ID}');`}
+            </Script>
+          </>
+        )}
+        {PIXEL_ID && (
+          <Script id="meta-pixel" strategy="afterInteractive">
+            {`!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','${PIXEL_ID}');fbq('track','PageView');`}
+          </Script>
+        )}
       </body>
     </html>
   )
