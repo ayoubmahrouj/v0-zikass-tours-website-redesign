@@ -8,6 +8,7 @@ import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { LeadTracker } from "@/components/lead-tracker"
+import { TrustBar, HowItWorks, PriceNote, BookingForm, FAQ } from "@/components/conversion"
 import { SITE_URL } from "@/lib/tours"
 
 export const dynamic = "force-static"
@@ -38,8 +39,13 @@ export default function HomePageFr() {
         <Header />
         <main role="main">
           <Hero />
+          <TrustBar />
           <Destinations />
+          <HowItWorks />
           <Tarifs />
+          <PriceNote />
+          <BookingForm />
+          <FAQ />
           <Contact />
         </main>
         <Footer />
