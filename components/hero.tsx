@@ -96,7 +96,7 @@ export function Hero() {
               <div className="text-sm text-primary-foreground/70">{t("trust.experience")}</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-secondary">5000+</div>
+              <div className="text-2xl md:text-3xl font-bold text-secondary">1-7</div>
               <div className="text-sm text-primary-foreground/70">{t("trust.clients")}</div>
             </div>
             <div className="text-center">
