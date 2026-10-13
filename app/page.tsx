@@ -10,13 +10,13 @@ import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { LeadTracker } from "@/components/lead-tracker"
 import { TrustBar, HowItWorks, PriceNote, BookingForm, FAQ } from "@/components/conversion"
 import { SITE_URL } from "@/lib/tours"
+import { ReviewsSection } from "@/components/reviews-section"
 
 // SSR - This page is rendered on the server for better SEO
-export const dynamic = "force-static"
-export const revalidate = 3600 // Revalidate every hour
+export const revalidate = 600
 
 export const metadata: Metadata = {
-  title: { absolute: "ZikassTours - Private Driver & Day Trips from Marrakech" },
+  title: { absolute: "Private Driver Marrakech: Airport Transfers & Day Trips | ZikassTours" },
   description:
     "Private driver, airport transfers and day trips from Marrakech: Agafay Desert, Ourika Valley, Ouzoud, Essaouira, Imlil, Ouarzazate. Private car for 1-7 people. Book on WhatsApp.",
   alternates: {
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
     siteName: "ZikassTours",
-    images: [{ url: "/images/logo.jpeg", width: 1200, height: 630, alt: "ZikassTours Marrakech" }],
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "ZikassTours Marrakech" }],
   },
 }
 
@@ -44,6 +44,7 @@ export default function HomePage() {
           <TrustBar />
           <Destinations />
           <HowItWorks />
+          <ReviewsSection locale="en" />
           <Tarifs />
           <PriceNote />
           <BookingForm />
