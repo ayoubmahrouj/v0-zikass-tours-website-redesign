@@ -8,8 +8,9 @@ import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { LanguageProvider } from "@/lib/language-context"
 
 export const metadata: Metadata = {
-  title: "Ouzoud Waterfalls Guide - Morocco's Highest Waterfalls | ZikassTours",
-  description: "Visit the spectacular Ouzoud Waterfalls, Morocco's highest at 110 meters. See wild Barbary macaques, enjoy boat rides, and experience breathtaking natural beauty. Perfect day trip from Marrakech for European & American tourists.",
+  alternates: { canonical: "https://www.zikasstours.com/blog/ouzoud-waterfalls-guide" },
+  title: "Ouzoud Waterfalls Guide - Morocco's Highest Waterfalls",
+  description: "Visit the spectacular Ouzoud Waterfalls, Morocco's highest at 110 meters. See wild Barbary macaques, enjoy boat rides, and experience breathtaking natural beauty. A perfect day trip from Marrakech.",
   keywords: [
     "Ouzoud waterfalls", "Cascades d'Ouzoud", "Morocco waterfalls", "highest waterfall Morocco",
     "Marrakech day trip", "Ouzoud tour", "Barbary macaques Morocco", "Morocco nature",
@@ -81,7 +82,7 @@ export default function OuzoudBlogPage() {
                     The Cascades d&apos;Ouzoud are not just waterfalls - they&apos;re a complete natural experience. The name &quot;Ouzoud&quot; means &quot;olive trees&quot; in Berber, and the area is surrounded by lush olive groves and natural pools perfect for swimming.
                   </p>
                   <p>
-                    For <strong>European and American tourists</strong>, Ouzoud offers one of the best opportunities to witness Morocco&apos;s natural beauty away from the cities.
+                    For travelers, Ouzoud offers one of the best opportunities to witness Morocco&apos;s natural beauty away from the cities.
                   </p>
 
                   <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mt-8">Tour Highlights</h2>
