@@ -9,7 +9,7 @@ export function Hero() {
   const { t, language } = useLanguage()
   
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden" aria-label="Accueil ZikassTours">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden" aria-label="ZikassTours">
       {/* Background Image with Next.js Image optimization */}
       <Image
         src="https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?q=80&w=2067&auto=format&fit=crop"

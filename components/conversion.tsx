@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, type FormEvent } from "react"
-import { useLanguage, getWhatsAppUrl } from "@/lib/language-context"
+import { useLanguage, getWhatsAppUrl, EMAIL } from "@/lib/language-context"
 
 type L = "fr" | "en"
 
@@ -65,6 +65,8 @@ const TXT = {
       phone: "Your WhatsApp number",
       msg: "Message (optional)",
       send: "Send request on WhatsApp",
+      email: "No WhatsApp? Send the same request by email",
+      subject: "Booking request",
       hello: "Hello, I would like to book from your website:",
     },
     fr: {
@@ -79,6 +81,8 @@ const TXT = {
       phone: "Votre numéro WhatsApp",
       msg: "Message (optionnel)",
       send: "Envoyer la demande sur WhatsApp",
+      email: "Pas de WhatsApp ? Envoyez la demande par email",
+      subject: "Demande de réservation",
       hello: "Bonjour, je souhaite réserver depuis votre site :",
     },
   },
@@ -200,8 +204,7 @@ export function BookingForm({ defaultTrip }: { defaultTrip?: string }) {
   const set = (k: keyof typeof f) => (e: { target: { value: string } }) => setF({ ...f, [k]: e.target.value })
   const field = "w-full rounded-lg border border-input bg-background px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-secondary"
 
-  const submit = (e: FormEvent) => {
-    e.preventDefault()
+  const buildLines = () => {
     const lines = [
       d.hello,
       "",
@@ -213,6 +216,12 @@ export function BookingForm({ defaultTrip }: { defaultTrip?: string }) {
       d.phone + ": " + (f.phone || "-"),
     ]
     if (f.msg) lines.push("", f.msg)
+    return lines
+  }
+
+  const submit = (e: FormEvent) => {
+    e.preventDefault()
+    const lines = buildLines()
     try {
       const w = window as unknown as { gtag?: (...a: unknown[]) => void }
       w.gtag?.("event", "generate_lead", { method: "booking_form", trip: f.trip })
@@ -275,6 +284,12 @@ export function BookingForm({ defaultTrip }: { defaultTrip?: string }) {
             >
               {d.send}
             </button>
+            <a
+              href={`mailto:${EMAIL}?subject=${encodeURIComponent(d.subject)}&body=${encodeURIComponent(buildLines().join("\n"))}`}
+              className="sm:col-span-2 text-center text-sm text-primary underline underline-offset-4 hover:text-secondary"
+            >
+              {d.email}
+            </a>
           </form>
         </div>
       </div>
