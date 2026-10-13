@@ -1,3 +1,4 @@
+export const revalidate = 600
 import { TourPage, tourMetadata } from "@/components/tour-page"
 import { airportTransfer } from "@/lib/tours"
 
