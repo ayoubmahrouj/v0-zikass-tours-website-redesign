@@ -10,11 +10,12 @@ import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { LeadTracker } from "@/components/lead-tracker"
 import { TrustBar, HowItWorks, PriceNote, BookingForm, FAQ } from "@/components/conversion"
 import { SITE_URL } from "@/lib/tours"
+import { ReviewsSection } from "@/components/reviews-section"
 
-export const dynamic = "force-static"
+export const revalidate = 600
 
 export const metadata: Metadata = {
-  title: { absolute: "ZikassTours - Chauffeur Privé & Excursions depuis Marrakech" },
+  title: { absolute: "Chauffeur Privé Marrakech : Transferts Aéroport & Excursions | ZikassTours" },
   description:
     "Chauffeur privé, transferts aéroport et excursions depuis Marrakech : désert d'Agafay, vallée de l'Ourika, Ouzoud, Essaouira, Imlil, Ouarzazate. Voiture privée 1-7 personnes. Réservez sur WhatsApp.",
   alternates: {
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     type: "website",
     siteName: "ZikassTours",
-    images: [{ url: "/images/logo.jpeg", width: 1200, height: 630, alt: "ZikassTours Marrakech" }],
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "ZikassTours Marrakech" }],
   },
 }
 
@@ -42,6 +43,7 @@ export default function HomePageFr() {
           <TrustBar />
           <Destinations />
           <HowItWorks />
+          <ReviewsSection locale="fr" />
           <Tarifs />
           <PriceNote />
           <BookingForm />
