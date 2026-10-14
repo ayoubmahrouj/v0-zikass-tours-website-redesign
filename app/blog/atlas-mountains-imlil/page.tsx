@@ -10,7 +10,7 @@ import { LanguageProvider } from "@/lib/language-context"
 export const metadata: Metadata = {
   alternates: { canonical: "https://www.zikasstours.com/blog/atlas-mountains-imlil" },
   title: { absolute: "Imlil Atlas Mountains: Village, Altitude, Trekking & Day Trip | ZikassTours" },
-  description: "Imlil village in the Atlas Mountains (1,740 m), 1h30 from Marrakech: altitude, Bureau des Guides, trekking routes, Toubkal and how to get there. Private day trip from 80€ per car.",
+  description: "Imlil village in the Atlas Mountains (1,740 m), 1h30 from Marrakech: altitude, Bureau des Guides, trekking routes, Toubkal and how to get there. Private day trip from 90€ per car.",
   keywords: [
     "Atlas Mountains hiking", "Imlil Morocco", "Toubkal trek", "Berber village tour",
     "Morocco trekking", "High Atlas", "Marrakech hiking", "Morocco adventure",
@@ -65,7 +65,7 @@ const imlilFaq = {
       "name": "Can I visit Imlil in one day from Marrakech?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. A private day trip with ZikassTours starts from 80€ per car (1-7 people), with pickup at your hotel or riad."
+        "text": "Yes. A private day trip with ZikassTours starts from 90€ per car (1-7 people), with pickup at your hotel or riad."
       }
     },
     {
@@ -102,7 +102,7 @@ const imlilFaqList: [string, string][] = [
   ],
   [
     "Can I visit Imlil in one day from Marrakech?",
-    "Yes. A private day trip with ZikassTours starts from 80€ per car (1-7 people), with pickup at your hotel or riad."
+    "Yes. A private day trip with ZikassTours starts from 90€ per car (1-7 people), with pickup at your hotel or riad."
   ],
   [
     "Is there snow in Imlil?",
@@ -246,7 +246,7 @@ export default function ImlilBlogPage() {
               {/* Tour page link */}
               <Link href="/excursions/imlil-atlas-mountains-day-trip-from-marrakech" className="mt-10 flex items-center justify-between gap-4 p-6 rounded-2xl border-2 border-secondary hover:bg-secondary/10 transition-colors">
                 <span>
-                  <span className="block text-sm text-muted-foreground">Private car with driver · from 80€ per car (1-7 people)</span>
+                  <span className="block text-sm text-muted-foreground">Private car with driver · from 90€ per car (1-7 people)</span>
                   <span className="block font-serif text-xl font-bold text-foreground">Imlil & Atlas Mountains Day Trip from Marrakech</span>
                 </span>
                 <span className="text-secondary font-semibold whitespace-nowrap">See prices &rarr;</span>

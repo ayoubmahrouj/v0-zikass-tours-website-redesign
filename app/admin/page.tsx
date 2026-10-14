@@ -4,6 +4,7 @@ import { adminConfigured, isAdmin } from "@/lib/admin-auth"
 import { listReviews, reviewsEnabled, type Review, type ReviewStatus } from "@/lib/reviews"
 import { changeStatus, logout, remove } from "./actions"
 import { LoginForm } from "./login-form"
+import { BookingsView } from "./bookings"
 
 export const dynamic = "force-dynamic"
 export const metadata: Metadata = { title: "Admin", robots: { index: false, follow: false } }
@@ -63,7 +64,7 @@ function Card({ r }: { r: Review }) {
   )
 }
 
-export default async function AdminPage({ searchParams }: { searchParams: Promise<{ tab?: string }> }) {
+export default async function AdminPage({ searchParams }: { searchParams: Promise<{ tab?: string; view?: string }> }) {
   const shell = (children: React.ReactNode) => (
     <main className="min-h-screen bg-muted/40 px-4 py-8">
       <div className="max-w-3xl mx-auto">{children}</div>
@@ -90,7 +91,30 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
     )
   }
 
-  const tab = ((await searchParams).tab as ReviewStatus) || "pending"
+  const sp = await searchParams
+  const view = sp.view === "bookings" ? "bookings" : "reviews"
+  const tab = (sp.tab as ReviewStatus) || "pending"
+  const switcher = (
+    <nav className="flex gap-2 mb-6">
+      <Link href="/admin?view=bookings" className={`px-4 py-2 rounded-lg text-sm font-semibold border ${view === "bookings" ? "bg-secondary text-secondary-foreground" : "bg-card"}`}>Réservations</Link>
+      <Link href="/admin" className={`px-4 py-2 rounded-lg text-sm font-semibold border ${view === "reviews" ? "bg-secondary text-secondary-foreground" : "bg-card"}`}>Avis</Link>
+    </nav>
+  )
+  if (view === "bookings") {
+    return shell(
+      <>
+        <header className="flex items-center justify-between mb-6">
+          <h1 className="text-2xl font-bold">Réservations</h1>
+          <div className="flex items-center gap-3 text-sm">
+            <Link href="/" className="underline">Voir le site</Link>
+            <form action={logout}><button className="underline">Déconnexion</button></form>
+          </div>
+        </header>
+        {switcher}
+        <BookingsView tab={sp.tab || "new"} />
+      </>,
+    )
+  }
   const all = await listReviews()
   const counts = Object.fromEntries(TABS.map((t) => [t.key, all.filter((r) => r.status === t.key).length]))
   const items = all.filter((r) => r.status === tab)
@@ -104,6 +128,7 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
           <form action={logout}><button className="underline">Déconnexion</button></form>
         </div>
       </header>
+      {switcher}
       <nav className="flex gap-2 mb-6">
         {TABS.map((t) => (
           <Link

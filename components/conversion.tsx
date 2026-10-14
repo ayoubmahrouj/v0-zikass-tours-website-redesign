@@ -201,6 +201,7 @@ export function BookingForm({ defaultTrip }: { defaultTrip?: string }) {
   const l = useLang()
   const d = TXT.form[l]
   const [f, setF] = useState({ trip: defaultTrip ?? "", date: "", people: "2", hotel: "", name: "", phone: "", msg: "" })
+  const [hp, setHp] = useState("")
   const set = (k: keyof typeof f) => (e: { target: { value: string } }) => setF({ ...f, [k]: e.target.value })
   const field = "w-full rounded-lg border border-input bg-background px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-secondary"
 
@@ -225,6 +226,12 @@ export function BookingForm({ defaultTrip }: { defaultTrip?: string }) {
     try {
       const w = window as unknown as { gtag?: (...a: unknown[]) => void }
       w.gtag?.("event", "generate_lead", { method: "booking_form", trip: f.trip })
+    } catch {}
+    try {
+      navigator.sendBeacon(
+        "/api/bookings",
+        new Blob([JSON.stringify({ ...f, source: "form", website: hp, page: location.pathname, locale: l })], { type: "text/plain" }),
+      )
     } catch {}
     window.open(getWhatsAppUrl(lines.join("\n")), "_blank", "noopener,noreferrer")
   }
@@ -278,6 +285,7 @@ export function BookingForm({ defaultTrip }: { defaultTrip?: string }) {
               {d.msg}
               <textarea rows={3} value={f.msg} onChange={set("msg")} className={field + " mt-1"} />
             </label>
+            <input name="website" value={hp} onChange={(e) => setHp(e.target.value)} tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
             <button
               type="submit"
               className="sm:col-span-2 mt-2 rounded-lg bg-green-600 hover:bg-green-700 text-white font-semibold py-4 text-lg transition-colors"

@@ -128,12 +128,12 @@ export const tours: Tour[] = [
     path: { en: "/excursions/ourika-valley-day-trip-from-marrakech", fr: "/fr/excursions/excursion-vallee-ourika-marrakech" },
     name: { en: "Ourika Valley Day Trip", fr: "Excursion Vallée de l'Ourika" },
     metaTitle: {
-      en: "Ourika Valley Day Trip from Marrakech - Private Car from 60€",
-      fr: "Excursion Vallée de l'Ourika depuis Marrakech - Privé dès 60€",
+      en: "Ourika Valley Day Trip from Marrakech - Private Car from 70€",
+      fr: "Excursion Vallée de l'Ourika depuis Marrakech - Privé dès 70€",
     },
     metaDesc: {
-      en: "Private Ourika Valley day trip from Marrakech: Berber villages, Setti Fatma waterfalls and lunch by the river. Private car with driver for 1-7 people from 60€. Book on WhatsApp.",
-      fr: "Excursion privée dans la vallée de l'Ourika : villages berbères, cascades de Setti Fatma et déjeuner au bord de la rivière. Voiture privée 1-7 pers. dès 60€. Réservez sur WhatsApp.",
+      en: "Private Ourika Valley day trip from Marrakech: Berber villages, Setti Fatma waterfalls and lunch by the river. Private car with driver for 1-7 people from 70€. Book on WhatsApp.",
+      fr: "Excursion privée dans la vallée de l'Ourika : villages berbères, cascades de Setti Fatma et déjeuner au bord de la rivière. Voiture privée 1-7 pers. dès 70€. Réservez sur WhatsApp.",
     },
     h1: { en: "Ourika Valley Day Trip from Marrakech", fr: "Excursion dans la Vallée de l'Ourika depuis Marrakech" },
     intro: {
@@ -154,7 +154,7 @@ export const tours: Tour[] = [
     },
     duration: { en: "6-7 hours", fr: "6-7 heures" },
     distance: { en: "1 hour from Marrakech", fr: "1 h de Marrakech" },
-    price: 60,
+    price: 70,
     images: [
       B + "Ourika%201-nKn8FAwTcOOxozvIZIM3z5ft0ELoit.jpeg",
       B + "Ourika%202-iwdeUj9NfNjsDVe1ZV6jkpLWrtZEQy.jpeg",
@@ -189,12 +189,12 @@ export const tours: Tour[] = [
     path: { en: "/excursions/ouzoud-waterfalls-day-trip-from-marrakech", fr: "/fr/excursions/excursion-cascades-ouzoud-marrakech" },
     name: { en: "Ouzoud Waterfalls Day Trip", fr: "Excursion Cascades d'Ouzoud" },
     metaTitle: {
-      en: "Ouzoud Waterfalls Day Trip from Marrakech - Private from 90€",
-      fr: "Excursion Cascades d'Ouzoud depuis Marrakech - Privé dès 90€",
+      en: "Ouzoud Waterfalls Day Trip from Marrakech - Private from 120€",
+      fr: "Excursion Cascades d'Ouzoud depuis Marrakech - Privé dès 120€",
     },
     metaDesc: {
-      en: "Private day trip to Ouzoud Waterfalls from Marrakech: the highest falls in Morocco, Barbary monkeys and boat ride. Private car with driver for 1-7 people from 90€. Book on WhatsApp.",
-      fr: "Excursion privée aux cascades d'Ouzoud : les plus hautes chutes du Maroc, singes magots et balade en barque. Voiture privée avec chauffeur 1-7 pers. dès 90€. Réservez sur WhatsApp.",
+      en: "Private day trip to Ouzoud Waterfalls from Marrakech: the highest falls in Morocco, Barbary monkeys and boat ride. Private car with driver for 1-7 people from 120€. Book on WhatsApp.",
+      fr: "Excursion privée aux cascades d'Ouzoud : les plus hautes chutes du Maroc, singes magots et balade en barque. Voiture privée avec chauffeur 1-7 pers. dès 120€. Réservez sur WhatsApp.",
     },
     h1: { en: "Ouzoud Waterfalls Day Trip from Marrakech", fr: "Excursion aux Cascades d'Ouzoud depuis Marrakech" },
     intro: {
@@ -215,7 +215,7 @@ export const tours: Tour[] = [
     },
     duration: { en: "8-9 hours", fr: "8-9 heures" },
     distance: { en: "2h30-3h from Marrakech", fr: "2h30-3h de Marrakech" },
-    price: 90,
+    price: 120,
     images: [
       B + "Ouzoud%201-xRi6pLtsw9wofIQ1jOU5ZNXvpcudgi.jpeg",
       B + "Ouzoud%202-YxD3VGMdx69zPeW0pmwNlPLsp39xRv.jpeg",
@@ -311,12 +311,12 @@ export const tours: Tour[] = [
     path: { en: "/excursions/imlil-atlas-mountains-day-trip-from-marrakech", fr: "/fr/excursions/excursion-imlil-haut-atlas-marrakech" },
     name: { en: "Imlil & Atlas Mountains Day Trip", fr: "Excursion Imlil & Haut Atlas" },
     metaTitle: {
-      en: "Imlil & Atlas Mountains Day Trip from Marrakech - From 80€",
-      fr: "Excursion Imlil & Haut Atlas depuis Marrakech - Privé dès 80€",
+      en: "Imlil & Atlas Mountains Day Trip from Marrakech - From 90€",
+      fr: "Excursion Imlil & Haut Atlas depuis Marrakech - Privé dès 90€",
     },
     metaDesc: {
-      en: "Private day trip to Imlil and the High Atlas from Marrakech: Berber villages, mountain walks and views of Toubkal. Private car with driver for 1-7 people from 80€. Book on WhatsApp.",
-      fr: "Excursion privée à Imlil et dans le Haut Atlas : villages berbères, randonnée et vue sur le Toubkal. Voiture privée avec chauffeur 1-7 pers. dès 80€. Réservez sur WhatsApp.",
+      en: "Private day trip to Imlil and the High Atlas from Marrakech: Berber villages, mountain walks and views of Toubkal. Private car with driver for 1-7 people from 90€. Book on WhatsApp.",
+      fr: "Excursion privée à Imlil et dans le Haut Atlas : villages berbères, randonnée et vue sur le Toubkal. Voiture privée avec chauffeur 1-7 pers. dès 90€. Réservez sur WhatsApp.",
     },
     h1: { en: "Imlil & Atlas Mountains Day Trip from Marrakech", fr: "Excursion à Imlil et dans le Haut Atlas depuis Marrakech" },
     intro: {
@@ -337,7 +337,7 @@ export const tours: Tour[] = [
     },
     duration: { en: "8 hours", fr: "8 heures" },
     distance: { en: "1h30 from Marrakech", fr: "1h30 de Marrakech" },
-    price: 80,
+    price: 90,
     images: [
       B + "Haut%20Atlas%20et%20Imlil%201-wla7Ea7HsgpZMeArvcPHLS50Qdn9zW.jpeg",
       B + "Haut%20Atlas%20et%20Imlil%202-weyetxMYFnOPZ320AZjP83mgjWasiR.jpeg",

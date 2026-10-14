@@ -3,6 +3,7 @@ import Script from 'next/script'
 import { Playfair_Display, Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { SITE_URL, WA_NUMBER, CONTACT_EMAIL } from '@/lib/tours'
+import { ClickTracker } from '@/components/click-tracker'
 import './globals.css'
 
 const playfair = Playfair_Display({
@@ -151,6 +152,7 @@ export default function RootLayout({
       </head>
       <body className={`${playfair.variable} ${inter.variable} font-sans antialiased`}>
         {children}
+        <ClickTracker />
         <Analytics />
         {GA_ID && (
           <>
