@@ -34,6 +34,7 @@ export function Header() {
     { href: `${base}#home`, label: t("nav.home") },
     { href: `${base}#excursions`, label: t("nav.excursions") },
     { href: `${base}#tarifs`, label: t("nav.tarifs") },
+    { href: `${base}#reviews`, label: t("nav.reviews") },
     { href: "/blog", label: t("nav.blog") },
     { href: `${base}#contact`, label: t("nav.contact") },
   ]
@@ -55,7 +56,7 @@ export function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-6">
             {navItems.map((item) => (
               <Link
                 key={item.href}

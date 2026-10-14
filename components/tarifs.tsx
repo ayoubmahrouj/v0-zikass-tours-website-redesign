@@ -25,6 +25,7 @@ interface TarifCategory {
 export function Tarifs() {
   const { t } = useLanguage()
 
+  // Each service appears in one category only. Day trips = driver waits and brings you back.
   const tarifCategories: TarifCategory[] = [
     {
       id: "airport",
@@ -32,9 +33,7 @@ export function Tarifs() {
       icon: <Plane className="w-6 h-6" />,
       services: [
         { name: t("tarifs.airport.medina"), price: "10" },
-        { name: "Oukaimden", price: "90" },
-        { name: "Agafay Transfer", price: "50" },
-        { name: t("tarifs.airport.agafay_soiree"), price: "70" },
+        { name: t("tarifs.airport.agafay"), price: "50" },
       ],
       fromPrice: "10",
       waKey: "wa.tarif.airport",
@@ -44,14 +43,13 @@ export function Tarifs() {
       titleKey: "tarifs.regional.title",
       icon: <Car className="w-6 h-6" />,
       services: [
-        { name: "Marrakech - Casablanca", price: "150" },
-        { name: t("tarifs.regional.3vallees"), price: "110" },
-        { name: "Essaouira", price: "130" },
-        { name: "Ouarzazate", price: "130" },
-        { name: "Agadir", price: "150" },
-        { name: "Rabat", price: "190" },
+        { name: "Marrakech → Essaouira", price: "130" },
+        { name: "Marrakech → Ouarzazate", price: "130" },
+        { name: "Marrakech → Casablanca", price: "150" },
+        { name: "Marrakech → Agadir", price: "150" },
+        { name: "Marrakech → Rabat", price: "190" },
       ],
-      fromPrice: "110",
+      fromPrice: "130",
       waKey: "wa.tarif.regional",
     },
     {
@@ -60,9 +58,13 @@ export function Tarifs() {
       icon: <Mountain className="w-6 h-6" />,
       services: [
         { name: "Ourika", price: "60" },
+        { name: t("tarifs.excursions.agafay"), price: "70" },
+        { name: t("tarifs.excursions.imlil"), price: "80" },
         { name: "Ouzoud", price: "90" },
-        { name: "Agafay", price: "70" },
-        { name: "Imlil / Haut Atlas", price: "80" },
+        { name: "Oukaimeden", price: "90" },
+        { name: t("tarifs.excursions.3vallees"), price: "110" },
+        { name: t("tarifs.excursions.essaouira"), price: "130" },
+        { name: t("tarifs.excursions.ouarzazate"), price: "130" },
       ],
       fromPrice: "60",
       waKey: "wa.tarif.excursion",
@@ -126,10 +128,10 @@ export function Tarifs() {
                   {category.services.map((service, idx) => (
                     <div 
                       key={idx} 
-                      className="flex justify-between py-2.5 border-b border-secondary/10 last:border-0"
+                      className="flex justify-between gap-3 py-2.5 border-b border-secondary/10 last:border-0"
                     >
                       <span className="text-primary-foreground/90 text-sm">{service.name}</span>
-                      <span className="font-semibold text-secondary">
+                      <span className="font-semibold text-secondary whitespace-nowrap">
                         <span className="text-xs text-primary-foreground/50 mr-1">{t("tarifs.from")}</span>
                         {service.price}{"€"}
                       </span>

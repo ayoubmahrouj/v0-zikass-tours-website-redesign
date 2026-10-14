@@ -17,12 +17,13 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.excursions": "Excursions",
     "nav.tarifs": "Tarifs",
     "nav.blog": "Blog",
+    "nav.reviews": "Avis",
     "nav.contact": "Contact",
     "nav.reserve": "Réserver sur WhatsApp",
     
     // Hero
-    "hero.title": "Excursions & Aventures au Désert depuis Marrakech",
-    "hero.subtitle": "Chauffeur privé et excursions depuis Marrakech : Agafay, Ourika, Imlil, Essaouira, Ouzoud. Prise en charge à votre hôtel, prix par voiture, annulation gratuite jusqu'à 24h.",
+    "hero.title": "Chauffeur Privé & Excursions depuis Marrakech",
+    "hero.subtitle": "Transferts aéroport et excursions privées : Agafay, Ourika, Imlil, Essaouira, Ouzoud. Prise en charge à votre hôtel, prix par voiture, annulation gratuite jusqu'à 24h.",
     "hero.cta.excursions": "Voir les Excursions",
     "hero.cta.whatsapp": "Contacter sur WhatsApp",
     "hero.cta.call": "Appeler maintenant",
@@ -90,35 +91,19 @@ const translations: Record<Language, Record<string, string>> = {
     "tarifs.from": "À partir de",
     "tarifs.service": "Service",
     "tarifs.reserve": "Réserver",
-    "tarifs.airport.title": "Transferts Aéroport & Ville",
+    "tarifs.airport.title": "Aéroport & Transferts",
     "tarifs.airport.medina": "Aéroport / Medina ou Gueliz",
     "tarifs.airport.agafay_soiree": "Agafay Soirée",
+    "tarifs.excursions.imlil": "Imlil / Haut Atlas",
+    "tarifs.airport.agafay": "Transfert Agafay (aller)",
+    "tarifs.excursions.agafay": "Agafay (coucher de soleil)",
+    "tarifs.excursions.3vallees": "3 Vallées de l'Atlas",
+    "tarifs.excursions.essaouira": "Essaouira (journée)",
+    "tarifs.excursions.ouarzazate": "Ouarzazate & Aït Ben Haddou",
     "tarifs.regional.title": "Transferts Régionaux",
     "tarifs.regional.3vallees": "3 Vallées",
     "tarifs.excursions.title": "Excursions & Tours",
     
-    // Testimonials
-    "testimonials.badge": "Avis Clients",
-    "testimonials.title": "Témoignages de nos Clients",
-    "testimonials.subtitle": "Ce que nos clients disent de nos services",
-    "testimonial.1.name": "Sophie Martin",
-    "testimonial.1.location": "Paris, France",
-    "testimonial.1.text": "Une expérience incroyable dans le désert d'Agafay ! Le chauffeur était très professionnel et ponctuel. Le dîner sous les étoiles était magique. Je recommande vivement ZikassTours !",
-    "testimonial.2.name": "Jean-Pierre Dubois",
-    "testimonial.2.location": "Lyon, France",
-    "testimonial.2.text": "Journée parfaite à Essaouira. Notre chauffeur connaissait tous les meilleurs endroits. Service impeccable du début à la fin. Merci ZikassTours !",
-    "testimonial.3.name": "Marie Lefèvre",
-    "testimonial.3.location": "Bruxelles, Belgique",
-    "testimonial.3.text": "La vallée de l'Ourika est magnifique ! Les cascades, les villages berbères, tout était parfait. Le déjeuner au bord de la rivière était un moment inoubliable.",
-    "testimonial.4.name": "Thomas Schmidt",
-    "testimonial.4.location": "Berlin, Allemagne",
-    "testimonial.4.text": "Les cascades d'Ouzoud sont spectaculaires ! Nous avons adoré la balade en barque et les singes. Le guide était très sympathique et informatif.",
-    "testimonial.5.name": "Isabella Rossi",
-    "testimonial.5.location": "Milan, Italie",
-    "testimonial.5.text": "Ouarzazate et Aït Ben Haddou m'ont transportée dans un autre monde. Les paysages sont à couper le souffle. Une excursion que je n'oublierai jamais !",
-    "testimonial.6.name": "David Wilson",
-    "testimonial.6.location": "Londres, UK",
-    "testimonial.6.text": "La randonnée à Imlil était fantastique ! Les montagnes de l'Atlas sont impressionnantes. Le thé à la menthe dans le village berbère était un moment de pur bonheur.",
     
     // Contact
     "contact.title": "Contactez-nous",
@@ -129,17 +114,17 @@ const translations: Record<Language, Record<string, string>> = {
     "contact.email": "Email",
     
     // Footer
-    "footer.tagline": "Luxury Adventure",
+    "footer.tagline": "Chauffeur privé, transferts aéroport et excursions privées depuis Marrakech. Prise en charge à votre hôtel ou riad, paiement sur place.",
     "footer.rights": "Tous droits réservés",
     "footer.quicklinks": "Liens rapides",
     "footer.destinations": "Destinations",
     "footer.contact": "Contact",
     
     // Trust badges
-    "trust.experience": "10+ ans d'expérience",
+    "trust.experience": "ans d'expérience",
     "trust.clients": "personnes par voiture privée",
-    "trust.available": "Disponible 24/7",
-    "trust.safe": "Véhicules récents & sécurisés",
+    "trust.available": "Assistance WhatsApp",
+    "trust.safe": "Privé : jamais de groupe partagé",
   },
   en: {
     // Navigation
@@ -147,12 +132,13 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.excursions": "Excursions",
     "nav.tarifs": "Prices",
     "nav.blog": "Blog",
+    "nav.reviews": "Reviews",
     "nav.contact": "Contact",
     "nav.reserve": "Reserve on WhatsApp",
     
     // Hero
-    "hero.title": "Excursions & Desert Adventures from Marrakech",
-    "hero.subtitle": "Private driver & day trips from Marrakech: Agafay, Ourika, Imlil, Essaouira, Ouzoud. Hotel pickup, price per car, free cancellation up to 24h.",
+    "hero.title": "Private Driver & Day Trips from Marrakech",
+    "hero.subtitle": "Airport transfers and private day trips: Agafay, Ourika, Imlil, Essaouira, Ouzoud. Hotel pickup, price per car, free cancellation up to 24h.",
     "hero.cta.excursions": "View Excursions",
     "hero.cta.whatsapp": "Contact on WhatsApp",
     "hero.cta.call": "Call now",
@@ -220,35 +206,19 @@ const translations: Record<Language, Record<string, string>> = {
     "tarifs.from": "Starting from",
     "tarifs.service": "Service",
     "tarifs.reserve": "Reserve",
-    "tarifs.airport.title": "Airport & City Transfers",
+    "tarifs.airport.title": "Airport & Transfers",
     "tarifs.airport.medina": "Airport / Medina or Gueliz",
     "tarifs.airport.agafay_soiree": "Agafay Evening",
+    "tarifs.excursions.imlil": "Imlil / High Atlas",
+    "tarifs.airport.agafay": "Agafay transfer (one way)",
+    "tarifs.excursions.agafay": "Agafay (sunset)",
+    "tarifs.excursions.3vallees": "Atlas 3 Valleys",
+    "tarifs.excursions.essaouira": "Essaouira (day trip)",
+    "tarifs.excursions.ouarzazate": "Ouarzazate & Ait Ben Haddou",
     "tarifs.regional.title": "Regional Transfers",
     "tarifs.regional.3vallees": "3 Valleys",
     "tarifs.excursions.title": "Excursions & Tours",
     
-    // Testimonials
-    "testimonials.badge": "Client Reviews",
-    "testimonials.title": "What Our Clients Say",
-    "testimonials.subtitle": "Discover what our clients think about our services",
-    "testimonial.1.name": "Sophie Martin",
-    "testimonial.1.location": "Paris, France",
-    "testimonial.1.text": "An incredible experience in the Agafay desert! The driver was very professional and punctual. Dinner under the stars was magical. I highly recommend ZikassTours!",
-    "testimonial.2.name": "Jean-Pierre Dubois",
-    "testimonial.2.location": "Lyon, France",
-    "testimonial.2.text": "Perfect day in Essaouira. Our driver knew all the best spots. Impeccable service from start to finish. Thank you ZikassTours!",
-    "testimonial.3.name": "Marie Lefevre",
-    "testimonial.3.location": "Brussels, Belgium",
-    "testimonial.3.text": "The Ourika Valley is stunning! The waterfalls, Berber villages, everything was perfect. Lunch by the river was an unforgettable moment.",
-    "testimonial.4.name": "Thomas Schmidt",
-    "testimonial.4.location": "Berlin, Germany",
-    "testimonial.4.text": "Ouzoud Falls are spectacular! We loved the boat ride and the monkeys. The guide was very friendly and informative.",
-    "testimonial.5.name": "Isabella Rossi",
-    "testimonial.5.location": "Milan, Italy",
-    "testimonial.5.text": "Ouarzazate and Ait Ben Haddou transported me to another world. The landscapes are breathtaking. An excursion I will never forget!",
-    "testimonial.6.name": "David Wilson",
-    "testimonial.6.location": "London, UK",
-    "testimonial.6.text": "The hike in Imlil was fantastic! The Atlas Mountains are impressive. The mint tea in the Berber village was a moment of pure happiness.",
     
     // Contact
     "contact.title": "Contact Us",
@@ -259,17 +229,17 @@ const translations: Record<Language, Record<string, string>> = {
     "contact.email": "Email",
     
     // Footer
-    "footer.tagline": "Luxury Adventure",
+    "footer.tagline": "Private driver, airport transfers and private day trips from Marrakech. Pickup at your hotel or riad, pay on arrival.",
     "footer.rights": "All rights reserved",
     "footer.quicklinks": "Quick Links",
     "footer.destinations": "Destinations",
     "footer.contact": "Contact",
     
     // Trust badges
-    "trust.experience": "10+ years of experience",
+    "trust.experience": "years of experience",
     "trust.clients": "people per private car",
-    "trust.available": "Available 24/7",
-    "trust.safe": "Modern & safe vehicles",
+    "trust.available": "WhatsApp support",
+    "trust.safe": "Private: never a shared group",
   }
 }
 
@@ -319,7 +289,7 @@ export function useLanguage() {
 }
 
 export const WHATSAPP_NUMBER = "+212669994837"
-export const EMAIL = "zakaria.zikasstours@gmail.com"
+export { CONTACT_EMAIL as EMAIL } from "@/lib/tours"
 export const INSTAGRAM = "https://www.instagram.com/zikasstours"
 
 export function getWhatsAppUrl(message: string): string {

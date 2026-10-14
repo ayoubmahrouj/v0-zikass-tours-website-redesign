@@ -8,18 +8,19 @@ import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { LanguageProvider } from "@/lib/language-context"
 
 export const metadata: Metadata = {
-  title: "Travel Blog - Best Day Trips & Excursions from Marrakech | ZikassTours",
-  description: "Discover the best day trips from Marrakech: Agafay Desert, Essaouira, Ourika Valley, Ouzoud Waterfalls, Atlas Mountains & Ouarzazate. Expert travel guides for European & American tourists visiting Morocco.",
+  alternates: { canonical: "https://www.zikasstours.com/blog" },
+  title: "Travel Blog - Best Day Trips & Excursions from Marrakech",
+  description: "Discover the best day trips from Marrakech: Agafay Desert, Essaouira, Ourika Valley, Ouzoud Waterfalls, Atlas Mountains & Ouarzazate. Practical travel guides written by local drivers in Marrakech.",
   keywords: [
     "Marrakech day trips", "Morocco excursions", "Agafay desert tour", "Essaouira day trip",
     "Ourika Valley excursion", "Ouzoud waterfalls Morocco", "Atlas Mountains hiking",
     "Ouarzazate tour", "Ait Ben Haddou", "Morocco travel guide", "best tours from Marrakech",
-    "Morocco vacation", "European tourists Morocco", "American tourists Morocco",
+    "Morocco vacation",
     "things to do in Marrakech", "Morocco travel blog"
   ],
   openGraph: {
     title: "Travel Blog - Best Day Trips from Marrakech | ZikassTours",
-    description: "Expert guides for the best excursions from Marrakech. Perfect for European & American tourists.",
+    description: "Expert guides for the best excursions from Marrakech. Written by local drivers in Marrakech.",
     type: "website",
     locale: "en_US",
     alternateLocale: "fr_FR",
@@ -111,7 +112,7 @@ export default function BlogPage() {
                 Best Day Trips from Marrakech
               </h1>
               <p className="text-primary-foreground/80 text-lg md:text-xl max-w-3xl mx-auto">
-                Expert travel guides for European and American tourists. Discover Morocco&apos;s most stunning destinations with our premium private driver service.
+                Practical guides written by local drivers in Marrakech. Discover Morocco&apos;s most stunning destinations with our premium private driver service.
               </p>
             </div>
           </section>

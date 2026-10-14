@@ -8,8 +8,9 @@ import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { LanguageProvider } from "@/lib/language-context"
 
 export const metadata: Metadata = {
-  title: "Agafay Desert Experience - Best Desert Tour Near Marrakech | ZikassTours",
-  description: "Discover the Agafay Desert, just 45 minutes from Marrakech. Experience quad biking, camel rides, and magical dinner under the stars. Perfect desert escape for European & American tourists. Book your private tour today!",
+  alternates: { canonical: "https://www.zikasstours.com/blog/agafay-desert-experience" },
+  title: "Agafay Desert Experience - Best Desert Tour Near Marrakech",
+  description: "Discover the Agafay Desert, just 45 minutes from Marrakech. Experience quad biking, camel rides, and magical dinner under the stars. A perfect half-day desert escape. Book your private tour today!",
   keywords: [
     "Agafay desert", "Agafay desert tour", "desert near Marrakech", "Marrakech desert experience",
     "quad biking Marrakech", "camel ride Morocco", "dinner under stars Morocco",
@@ -103,7 +104,7 @@ export default function AgafayBlogPage() {
                     Unlike the sandy dunes of the Sahara, Agafay is a <strong>stone desert</strong> with dramatic lunar landscapes that have been featured in numerous Hollywood films. The terrain is dotted with rocky hills, dried riverbeds, and stunning views of the snow-capped Atlas Mountains in the distance.
                   </p>
                   <p>
-                    For <strong>European and American tourists</strong> with limited time in Morocco, Agafay offers the perfect compromise: an authentic desert experience that fits easily into a half-day or evening excursion from Marrakech.
+                    For travelers with limited time in Morocco, Agafay offers the perfect compromise: an authentic desert experience that fits easily into a half-day or evening excursion from Marrakech.
                   </p>
 
                   <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mt-8">What&apos;s Included in Our Agafay Tour</h2>

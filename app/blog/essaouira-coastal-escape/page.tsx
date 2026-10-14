@@ -8,8 +8,9 @@ import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { LanguageProvider } from "@/lib/language-context"
 
 export const metadata: Metadata = {
-  title: "Essaouira Day Trip - Coastal Escape from Marrakech | ZikassTours",
-  description: "Explore the charming coastal city of Essaouira, a UNESCO World Heritage site. Discover the historic medina, fishing port, beautiful beaches and fresh seafood. Perfect day trip from Marrakech for European & American tourists.",
+  alternates: { canonical: "https://www.zikasstours.com/blog/essaouira-coastal-escape" },
+  title: "Essaouira Day Trip - Coastal Escape from Marrakech",
+  description: "Explore the charming coastal city of Essaouira, a UNESCO World Heritage site. Discover the historic medina, fishing port, beautiful beaches and fresh seafood. A perfect day trip from Marrakech.",
   keywords: [
     "Essaouira day trip", "Essaouira from Marrakech", "Morocco coast", "Essaouira tour",
     "UNESCO Morocco", "Mogador", "Morocco beaches", "Essaouira medina",
@@ -81,7 +82,7 @@ export default function EssaouiraBlogPage() {
                     Essaouira is unlike anywhere else in Morocco. The <strong>cool Atlantic breeze</strong> provides welcome relief from the heat, while the whitewashed buildings and blue boats create an Instagram-perfect setting at every turn.
                   </p>
                   <p>
-                    For <strong>European and American tourists</strong>, Essaouira offers a more relaxed pace, world-class windsurfing, fresh seafood, and a vibrant arts scene that has attracted musicians and artists for decades.
+                    For travelers, Essaouira offers a more relaxed pace, world-class windsurfing, fresh seafood, and a vibrant arts scene that has attracted musicians and artists for decades.
                   </p>
 
                   <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mt-8">Tour Highlights</h2>

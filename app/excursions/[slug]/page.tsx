@@ -1,3 +1,4 @@
+export const revalidate = 600
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { TourPage, tourMetadata } from "@/components/tour-page"

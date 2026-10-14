@@ -8,6 +8,7 @@ import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { LanguageProvider } from "@/lib/language-context"
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://www.zikasstours.com/blog/atlas-mountains-imlil" },
   title: { absolute: "Imlil Atlas Mountains: Village, Altitude, Trekking & Day Trip | ZikassTours" },
   description: "Imlil village in the Atlas Mountains (1,740 m), 1h30 from Marrakech: altitude, Bureau des Guides, trekking routes, Toubkal and how to get there. Private day trip from 80€ per car.",
   keywords: [
@@ -159,7 +160,7 @@ export default function ImlilBlogPage() {
                     The High Atlas is home to <strong>Jebel Toubkal</strong>, North Africa&apos;s highest peak at 4,167 meters. While conquering Toubkal requires a multi-day trek, our day trip offers accessible hikes with breathtaking views of these legendary mountains.
                   </p>
                   <p>
-                    For <strong>European and American tourists</strong> seeking adventure beyond the medinas, the Atlas Mountains provide an unforgettable contrast - cool mountain air, terraced valleys, and warm Berber hospitality.
+                    For travelers seeking adventure beyond the medinas, the Atlas Mountains provide an unforgettable contrast - cool mountain air, terraced valleys, and warm Berber hospitality.
                   </p>
 
                   <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mt-8">Tour Highlights</h2>

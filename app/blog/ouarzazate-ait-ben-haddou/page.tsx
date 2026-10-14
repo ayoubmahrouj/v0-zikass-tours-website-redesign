@@ -8,8 +8,9 @@ import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { LanguageProvider } from "@/lib/language-context"
 
 export const metadata: Metadata = {
-  title: "Ouarzazate & Ait Ben Haddou Tour - Gateway to the Sahara | ZikassTours",
-  description: "Visit the UNESCO World Heritage Kasbah of Ait Ben Haddou and explore Ouarzazate, Morocco's Hollywood. See where Game of Thrones, Gladiator and more were filmed. Epic day trip for European & American tourists.",
+  alternates: { canonical: "https://www.zikasstours.com/blog/ouarzazate-ait-ben-haddou" },
+  title: "Ouarzazate & Ait Ben Haddou Tour - Gateway to the Sahara",
+  description: "Visit the UNESCO World Heritage Kasbah of Ait Ben Haddou and explore Ouarzazate, Morocco's Hollywood. See where Game of Thrones, Gladiator and more were filmed. An epic day trip from Marrakech.",
   keywords: [
     "Ait Ben Haddou", "Ouarzazate tour", "UNESCO Morocco", "Game of Thrones Morocco",
     "Gladiator filming location", "Morocco film studios", "Kasbah Morocco",
@@ -80,7 +81,7 @@ export default function OuarzazateBlogPage() {
                     <strong>Ait Ben Haddou</strong> is a stunning example of traditional earthen architecture. This fortified village (ksar) has been inhabited for centuries and represents the finest example of Moroccan kasbahs. Its dramatic appearance has made it a favorite location for filmmakers from around the world.
                   </p>
                   <p>
-                    For <strong>European and American tourists</strong>, especially film enthusiasts, walking through Ait Ben Haddou is like stepping onto a movie set - because it literally is one!
+                    For travelers, especially film enthusiasts, walking through Ait Ben Haddou is like stepping onto a movie set - because it literally is one!
                   </p>
 
                   <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mt-8">Famous Films Shot Here</h2>

@@ -8,8 +8,9 @@ import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { LanguageProvider } from "@/lib/language-context"
 
 export const metadata: Metadata = {
-  title: "Ourika Valley Day Trip - Waterfalls & Berber Villages | ZikassTours",
-  description: "Explore the stunning Ourika Valley, just 1 hour from Marrakech. Visit Setti-Fatma waterfalls, authentic Berber villages, and enjoy traditional Moroccan lunch by the river. Perfect day trip for European & American tourists.",
+  alternates: { canonical: "https://www.zikasstours.com/blog/ourika-valley-day-trip" },
+  title: "Ourika Valley Day Trip - Waterfalls & Berber Villages",
+  description: "Explore the stunning Ourika Valley, just 1 hour from Marrakech. Visit Setti-Fatma waterfalls, authentic Berber villages, and enjoy traditional Moroccan lunch by the river. A perfect day trip from Marrakech.",
   keywords: [
     "Ourika Valley", "Ourika Valley tour", "Setti Fatma waterfalls", "Marrakech day trip",
     "Berber villages Morocco", "Atlas Mountains tour", "Morocco nature trip",
@@ -102,7 +103,7 @@ export default function OurikaBlogPage() {
                     The Ourika Valley is the <strong>perfect day trip</strong> for travelers who want to experience Morocco&apos;s natural beauty without venturing too far from Marrakech. The valley follows the Ourika River through terraced hillsides, traditional mud-brick villages, and eventually leads to the famous <strong>Setti-Fatma waterfalls</strong>.
                   </p>
                   <p>
-                    For <strong>European and American tourists</strong>, this excursion offers an authentic glimpse into Berber culture and daily life in the Atlas Mountains, all within easy reach of Marrakech.
+                    For travelers, this excursion offers an authentic glimpse into Berber culture and daily life in the Atlas Mountains, all within easy reach of Marrakech.
                   </p>
 
                   <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mt-8">Highlights of Our Ourika Tour</h2>

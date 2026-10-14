@@ -25,7 +25,7 @@ const GSC_CODE = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'ZikassTours - Private Driver & Day Trips from Marrakech',
+    default: 'ZikassTours - Private Driver, Airport Transfers & Day Trips from Marrakech',
     template: '%s | ZikassTours'
   },
   description: 'Private driver, airport transfers and day trips from Marrakech: Agafay Desert, Ourika Valley, Ouzoud, Essaouira, Imlil, Ouarzazate. Private car for 1-7 people. Book on WhatsApp.',
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     siteName: 'ZikassTours',
     images: [
       {
-        url: '/images/logo.jpeg',
+        url: '/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'ZikassTours - Private Driver & Excursions in Marrakech',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['/images/logo.jpeg'],
+    images: ['/og-image.jpg'],
   },
   robots: {
     index: true,
@@ -67,8 +67,11 @@ export const metadata: Metadata = {
   ...(GSC_CODE ? { verification: { google: GSC_CODE } } : {}),
   category: 'travel',
   icons: {
-    icon: [{ url: '/images/logo.jpeg', type: 'image/jpeg' }],
-    apple: [{ url: '/images/logo.jpeg', sizes: '180x180', type: 'image/jpeg' }],
+    icon: [
+      { url: '/icon-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
+    ],
+    apple: [{ url: '/apple-icon.png', sizes: '180x180', type: 'image/png' }],
   },
   manifest: '/manifest.json',
 }
@@ -93,7 +96,7 @@ const jsonLd = {
       description: 'Private driver, airport transfers and private day trips from Marrakech',
       url: SITE_URL,
       logo: { '@type': 'ImageObject', url: `${SITE_URL}/images/logo.jpeg` },
-      image: `${SITE_URL}/images/logo.jpeg`,
+      image: `${SITE_URL}/og-image.jpg`,
       telephone: `+${WA_NUMBER}`,
       email: CONTACT_EMAIL,
       address: {

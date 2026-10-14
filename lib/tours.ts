@@ -2,7 +2,9 @@
 export const SITE_URL = "https://www.zikasstours.com"
 export const WA_NUMBER = "212669994837"
 export const PHONE_DISPLAY = "+212 669 994 837"
-export const CONTACT_EMAIL = "zakaria.zikasstours@gmail.com"
+export const CONTACT_EMAIL = "info@zikasstours.com"
+// Tourist transport licence number (agrément). Leave empty until you have it: it is shown in the footer when set.
+export const LICENSE_NUMBER = ""
 
 export type Locale = "en" | "fr"
 type L = Record<Locale, string>
