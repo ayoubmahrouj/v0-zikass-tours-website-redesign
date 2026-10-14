@@ -37,6 +37,7 @@ export async function POST(req: Request) {
     hotel: clean(body.hotel, 120) || null,
     message: clean(body.msg, 1000) || null,
     page: clean(body.page, 200) || null,
+    ref: clean(body.ref, 40).toLowerCase().replace(/[^a-z0-9_-]/g, "") || null,
     locale: body.locale === "fr" ? "fr" : "en",
   }
   if (source === "form" && !b.name) return NextResponse.json({ error: "Name required" }, { status: 400 })
@@ -58,6 +59,7 @@ export async function POST(req: Request) {
         `Date: ${b.trip_date || "-"}`,
         `Personnes: ${b.people || "-"}`,
         `Hotel: ${b.hotel || "-"}`,
+        b.ref ? `Partenaire: ${b.ref}` : "",
         b.message ? `Msg: ${b.message}` : "",
         "Admin: zikasstours.com/admin?view=bookings",
       ].filter(Boolean).join("\n"),
