@@ -19,3 +19,7 @@ create table if not exists public.zt_bookings (
 );
 create index if not exists zt_bookings_created_idx on public.zt_bookings (created_at desc);
 alter table public.zt_bookings enable row level security;
+
+-- Partner tracking (zikasstours.com/?ref=riad-name)
+alter table public.zt_bookings add column if not exists ref text;
+create index if not exists zt_bookings_ref_idx on public.zt_bookings (ref);

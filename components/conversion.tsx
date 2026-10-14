@@ -1,6 +1,7 @@
 "use client"
 
-import { useState, type FormEvent } from "react"
+import { useEffect, useState, type FormEvent } from "react"
+import { getRef } from "@/lib/ref"
 import { useLanguage, getWhatsAppUrl, EMAIL } from "@/lib/language-context"
 
 type L = "fr" | "en"
@@ -202,6 +203,17 @@ export function BookingForm({ defaultTrip }: { defaultTrip?: string }) {
   const d = TXT.form[l]
   const [f, setF] = useState({ trip: defaultTrip ?? "", date: "", people: "2", hotel: "", name: "", phone: "", msg: "" })
   const [hp, setHp] = useState("")
+  const [quote, setQuote] = useState("")
+  useEffect(() => {
+    const on = (e: Event) => {
+      const d = (e as CustomEvent<{ trip: string; people: string; quote: string }>).detail
+      setF((p) => ({ ...p, trip: d.trip, people: d.people }))
+      setQuote(d.quote)
+    }
+    window.addEventListener("zt-prefill", on)
+    return () => window.removeEventListener("zt-prefill", on)
+  }, [])
+  const tripOptions = f.trip && !TRIPS[l].includes(f.trip) ? [...TRIPS[l], f.trip] : TRIPS[l]
   const set = (k: keyof typeof f) => (e: { target: { value: string } }) => setF({ ...f, [k]: e.target.value })
   const field = "w-full rounded-lg border border-input bg-background px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-secondary"
 
@@ -216,6 +228,7 @@ export function BookingForm({ defaultTrip }: { defaultTrip?: string }) {
       d.name + ": " + (f.name || "-"),
       d.phone + ": " + (f.phone || "-"),
     ]
+    if (quote) lines.push("", (l === "fr" ? "Prix estimé : " : "Estimated price: ") + quote)
     if (f.msg) lines.push("", f.msg)
     return lines
   }
@@ -230,7 +243,7 @@ export function BookingForm({ defaultTrip }: { defaultTrip?: string }) {
     try {
       navigator.sendBeacon(
         "/api/bookings",
-        new Blob([JSON.stringify({ ...f, source: "form", website: hp, page: location.pathname, locale: l })], { type: "text/plain" }),
+        new Blob([JSON.stringify({ ...f, msg: [quote ? "Quote " + quote : "", f.msg].filter(Boolean).join(" | "), ref: getRef(), source: "form", website: hp, page: location.pathname, locale: l })], { type: "text/plain" }),
       )
     } catch {}
     window.open(getWhatsAppUrl(lines.join("\n")), "_blank", "noopener,noreferrer")
@@ -252,7 +265,7 @@ export function BookingForm({ defaultTrip }: { defaultTrip?: string }) {
               {d.trip}
               <select required value={f.trip} onChange={set("trip")} className={field + " mt-1"}>
                 <option value="">—</option>
-                {TRIPS[l].map((x) => (
+                {tripOptions.map((x) => (
                   <option key={x} value={x}>{x}</option>
                 ))}
               </select>

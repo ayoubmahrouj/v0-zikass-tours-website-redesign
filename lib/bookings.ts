@@ -23,6 +23,7 @@ export interface Booking {
   price: number | null
   commission_pct: number
   note: string | null
+  ref?: string | null
 }
 
 const URL_ = process.env.SUPABASE_URL?.replace(/\/$/, "")
@@ -41,7 +42,16 @@ async function rest(path: string, init: RequestInit = {}) {
 export const bookingsEnabled = reviewsEnabled
 
 export async function insertBooking(b: Partial<Omit<Booking, "id" | "created_at" | "status" | "price" | "commission_pct" | "note">>) {
-  await rest("zt_bookings", { method: "POST", headers: { Prefer: "return=minimal" }, body: JSON.stringify(b) })
+  const post = (body: object) => rest("zt_bookings", { method: "POST", headers: { Prefer: "return=minimal" }, body: JSON.stringify(body) })
+  try {
+    await post(b)
+  } catch (e) {
+    // "ref" column not created yet (see supabase/bookings.sql): save without it so no booking is lost
+    if (!b.ref) throw e
+    const { ref: _ref, ...rest_ } = b
+    void _ref
+    await post({ ...rest_, message: [b.message, `[ref: ${b.ref}]`].filter(Boolean).join(" ") })
+  }
 }
 
 export async function listBookings(): Promise<Booking[]> {
