@@ -136,6 +136,14 @@ const TRIPS: Record<L, string[]> = {
   ],
 }
 
+const TRIP_INDEX: Record<string, number> = { agafay: 0, ourika: 1, ouzoud: 2, essaouira: 3, imlil: 4, ouarzazate: 5, airport: 6 }
+
+/** Exact option label of the booking form select for a tour id (so the trip is pre-selected). */
+export function tripOptionFor(id: string, l: L): string {
+  const i = TRIP_INDEX[id]
+  return i === undefined ? "" : TRIPS[l][i]
+}
+
 function useLang(): L {
   const { language } = useLanguage()
   return language === "fr" ? "fr" : "en"
