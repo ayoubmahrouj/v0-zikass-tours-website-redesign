@@ -8,7 +8,6 @@ import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { LeadTracker } from "@/components/lead-tracker"
-import { PriceCalculator } from "@/components/price-calculator"
 import { TrustBar, HowItWorks, PriceNote, BookingForm, FAQ } from "@/components/conversion"
 import { SITE_URL } from "@/lib/tours"
 import { ReviewsSection } from "@/components/reviews-section"
@@ -47,7 +46,6 @@ export default function HomePage() {
           <HowItWorks />
           <ReviewsSection locale="en" />
           <Tarifs />
-          <PriceCalculator />
           <PriceNote />
           <BookingForm />
           <FAQ />
