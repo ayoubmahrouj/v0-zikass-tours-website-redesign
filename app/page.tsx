@@ -16,9 +16,9 @@ import { ReviewsSection } from "@/components/reviews-section"
 export const revalidate = 600
 
 export const metadata: Metadata = {
-  title: { absolute: "Private Driver Marrakech: Airport Transfers & Day Trips | ZikassTours" },
+  title: { absolute: "Private Driver Marrakech & Airport Transfer | ZikassTours" },
   description:
-    "Private driver, airport transfers and day trips from Marrakech: Agafay Desert, Ourika Valley, Ouzoud, Essaouira, Imlil, Ouarzazate. Private car for 1-7 people. Book on WhatsApp.",
+    "Private driver in Marrakech for airport transfers and day trips to Agafay, Ourika, Ouzoud, Essaouira, Imlil and Ouarzazate. Private car for 1-7 people.",
   alternates: {
     canonical: SITE_URL + "/",
     languages: { en: SITE_URL + "/", fr: SITE_URL + "/fr", "x-default": SITE_URL + "/" },
