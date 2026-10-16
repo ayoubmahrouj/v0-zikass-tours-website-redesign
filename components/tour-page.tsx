@@ -8,7 +8,7 @@ import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { LeadTracker } from "@/components/lead-tracker"
 import { LanguageProvider } from "@/lib/language-context"
 import { ReviewsSection } from "@/components/reviews-section"
-import { BookingForm, PriceNote, tripOptionFor } from "@/components/conversion"
+import { BookingForm, PriceNote } from "@/components/conversion"
 import { SITE_URL, PHONE_DISPLAY, tours, excursions, waLink, type Tour, type Locale } from "@/lib/tours"
 
 const ui = {
@@ -348,7 +348,7 @@ export function TourPage({ tour, locale }: { tour: Tour; locale: Locale }) {
 
           </div>
           <PriceNote />
-          <BookingForm defaultTrip={tripOptionFor(tour.id, locale)} />
+          <BookingForm tripId={tour.id} />
           <ReviewsSection locale={locale} limit={3} tripId={tour.id} />
           <div className="container mx-auto px-4 pb-12 md:pb-16">
             {/* Final CTA */}
