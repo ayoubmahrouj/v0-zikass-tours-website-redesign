@@ -81,7 +81,7 @@ export async function ReviewsSection({ locale = "en", limit = 6, tripId }: { loc
               <article key={r.id} className="rounded-2xl border bg-card overflow-hidden shadow-sm flex flex-col">
                 {r.photo_url && (
                   // eslint-disable-next-line @next/next/no-img-element
-                  <img src={r.photo_url} alt={`${r.name} - ${r.trip ?? "ZikassTours"}`} loading="lazy" className="w-full h-56 object-cover" />
+                  <img src={r.photo_url} alt={`${r.name} - ${r.trip ?? "ZikassTours"}`} loading="lazy" decoding="async" className="w-full aspect-[4/3] object-cover bg-muted" />
                 )}
                 <div className="p-6 flex flex-col flex-1">
                   <Stars n={r.rating} />
