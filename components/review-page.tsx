@@ -26,6 +26,7 @@ export function reviewMetadata(locale: Locale): Metadata {
   return {
     title: T[locale].title,
     description: T[locale].meta,
+    robots: { index: false, follow: true },
     alternates: {
       canonical: SITE_URL + (locale === "fr" ? "/fr/avis" : "/review"),
       languages: { en: SITE_URL + "/review", fr: SITE_URL + "/fr/avis", "x-default": SITE_URL + "/review" },
