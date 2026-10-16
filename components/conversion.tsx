@@ -206,8 +206,9 @@ export function PriceNote() {
   )
 }
 
-export function BookingForm({ defaultTrip }: { defaultTrip?: string }) {
+export function BookingForm({ defaultTrip, tripId }: { defaultTrip?: string; tripId?: string }) {
   const l = useLang()
+  if (!defaultTrip && tripId) defaultTrip = tripOptionFor(tripId, l)
   const d = TXT.form[l]
   const [f, setF] = useState({ trip: defaultTrip ?? "", date: "", people: "2", hotel: "", name: "", phone: "", msg: "" })
   const [hp, setHp] = useState("")
