@@ -15,9 +15,9 @@ import { ReviewsSection } from "@/components/reviews-section"
 export const revalidate = 600
 
 export const metadata: Metadata = {
-  title: { absolute: "Chauffeur Privé Marrakech : Transferts Aéroport & Excursions | ZikassTours" },
+  title: { absolute: "Chauffeur Privé Marrakech & Transfert Aéroport | ZikassTours" },
   description:
-    "Chauffeur privé, transferts aéroport et excursions depuis Marrakech : désert d'Agafay, vallée de l'Ourika, Ouzoud, Essaouira, Imlil, Ouarzazate. Voiture privée 1-7 personnes. Réservez sur WhatsApp.",
+    "Chauffeur privé à Marrakech : transferts aéroport et excursions à Agafay, Ourika, Ouzoud, Essaouira, Imlil, Ouarzazate. Voiture privée 1-7 personnes.",
   alternates: {
     canonical: SITE_URL + "/fr",
     languages: { en: SITE_URL + "/", fr: SITE_URL + "/fr", "x-default": SITE_URL + "/" },
