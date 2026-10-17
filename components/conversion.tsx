@@ -136,6 +136,14 @@ const TRIPS: Record<L, string[]> = {
   ],
 }
 
+const TRIP_INDEX: Record<string, number> = { agafay: 0, ourika: 1, ouzoud: 2, essaouira: 3, imlil: 4, ouarzazate: 5, airport: 6 }
+
+/** Exact option label of the booking form select for a tour id (so the trip is pre-selected). */
+export function tripOptionFor(id: string, l: L): string {
+  const i = TRIP_INDEX[id]
+  return i === undefined ? "" : TRIPS[l][i]
+}
+
 function useLang(): L {
   const { language } = useLanguage()
   return language === "fr" ? "fr" : "en"
@@ -198,8 +206,9 @@ export function PriceNote() {
   )
 }
 
-export function BookingForm({ defaultTrip }: { defaultTrip?: string }) {
+export function BookingForm({ defaultTrip, tripId }: { defaultTrip?: string; tripId?: string }) {
   const l = useLang()
+  if (!defaultTrip && tripId) defaultTrip = tripOptionFor(tripId, l)
   const d = TXT.form[l]
   const [f, setF] = useState({ trip: defaultTrip ?? "", date: "", people: "2", hotel: "", name: "", phone: "", msg: "" })
   const [hp, setHp] = useState("")

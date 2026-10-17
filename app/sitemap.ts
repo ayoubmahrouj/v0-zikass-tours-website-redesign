@@ -25,7 +25,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...pair("/", "/fr", 1),
     ...tours.flatMap((t) => pair(t.path.en, t.path.fr, 0.9)),
     ...DESTINATIONS.flatMap((c) => pair(routePath(c, "en"), routePath(c, "fr"), 0.8)),
-    ...pair("/review", "/fr/avis", 0.5),
     { url: `${SITE_URL}/privacy`, lastModified, changeFrequency: "yearly", priority: 0.2 },
     { url: `${SITE_URL}/terms`, lastModified, changeFrequency: "yearly", priority: 0.2 },
     { url: `${SITE_URL}/blog`, lastModified, changeFrequency: "weekly", priority: 0.6 },

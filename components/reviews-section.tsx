@@ -22,6 +22,16 @@ const T = {
   },
 }
 
+const TRIP_WORDS: Record<string, string[]> = {
+  agafay: ["agafay"],
+  ourika: ["ourika"],
+  ouzoud: ["ouzoud"],
+  essaouira: ["essaouira"],
+  imlil: ["imlil", "atlas"],
+  ouarzazate: ["ouarzazate", "ben haddou", "ait ben", "aït ben"],
+  airport: ["airport", "aéroport", "aeroport"],
+}
+
 function Stars({ n, className = "w-4 h-4" }: { n: number; className?: string }) {
   return (
     <div className="flex gap-0.5" aria-label={`${n}/5`}>
@@ -32,9 +42,15 @@ function Stars({ n, className = "w-4 h-4" }: { n: number; className?: string }) 
   )
 }
 
-export async function ReviewsSection({ locale = "en", limit = 6 }: { locale?: Locale; limit?: number }) {
+export async function ReviewsSection({ locale = "en", limit = 6, tripId }: { locale?: Locale; limit?: number; tripId?: string }) {
   const t = T[locale]
-  const [reviews, stats] = await Promise.all([getApprovedReviews(limit), getReviewStats()])
+  const words = tripId ? TRIP_WORDS[tripId] : undefined
+  const [all, overall] = await Promise.all([getApprovedReviews(words ? 100 : limit), getReviewStats()])
+  // On a trip page only show reviews of that trip
+  const reviews = words ? all.filter((r) => words.some((w) => (r.trip ?? "").toLowerCase().includes(w))).slice(0, limit) : all
+  const stats = words
+    ? { count: reviews.length, average: reviews.length ? Math.round((reviews.reduce((s, r) => s + r.rating, 0) / reviews.length) * 10) / 10 : 0 }
+    : overall
   const date = (d: string) =>
     new Date(d).toLocaleDateString(locale === "fr" ? "fr-FR" : "en-GB", { month: "long", year: "numeric" })
 
@@ -65,7 +81,7 @@ export async function ReviewsSection({ locale = "en", limit = 6 }: { locale?: Lo
               <article key={r.id} className="rounded-2xl border bg-card overflow-hidden shadow-sm flex flex-col">
                 {r.photo_url && (
                   // eslint-disable-next-line @next/next/no-img-element
-                  <img src={r.photo_url} alt={`${r.name} - ${r.trip ?? "ZikassTours"}`} loading="lazy" className="w-full h-56 object-cover" />
+                  <img src={r.photo_url} alt={`${r.name} - ${r.trip ?? "ZikassTours"}`} loading="lazy" decoding="async" className="w-full aspect-[4/3] object-cover bg-muted" />
                 )}
                 <div className="p-6 flex flex-col flex-1">
                   <Stars n={r.rating} />

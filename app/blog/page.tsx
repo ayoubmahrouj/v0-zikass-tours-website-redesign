@@ -9,8 +9,8 @@ import { LanguageProvider } from "@/lib/language-context"
 
 export const metadata: Metadata = {
   alternates: { canonical: "https://www.zikasstours.com/blog" },
-  title: "Travel Blog - Best Day Trips & Excursions from Marrakech",
-  description: "Discover the best day trips from Marrakech: Agafay Desert, Essaouira, Ourika Valley, Ouzoud Waterfalls, Atlas Mountains & Ouarzazate. Practical travel guides written by local drivers in Marrakech.",
+  title: "Marrakech Day Trips Blog: Local Travel Guides",
+  description: "Local driver guides to the best day trips from Marrakech: Agafay Desert, Essaouira, Ourika, Ouzoud, Imlil and Ouarzazate. Tips, prices and timings.",
   keywords: [
     "Marrakech day trips", "Morocco excursions", "Agafay desert tour", "Essaouira day trip",
     "Ourika Valley excursion", "Ouzoud waterfalls Morocco", "Atlas Mountains hiking",

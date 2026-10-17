@@ -1,0 +1,27 @@
+# ZikassTours
+
+> ZikassTours is a private driver and tour company based in Marrakech, Morocco. We offer airport transfers, private day trips and long-distance transfers in a private air-conditioned car for 1 to 7 people. Prices are per car (not per person), fixed and agreed before the trip. Booking is done on WhatsApp or with the form on the website. The site is available in English and French.
+
+## Airport transfers
+- [Marrakech airport transfer (RAK)](https://www.zikasstours.com/airport-transfer-marrakech): Marrakech Menara airport to the Medina or Gueliz from 10€ per car, to Agafay from 50€.
+- [Transfert aéroport Marrakech (FR)](https://www.zikasstours.com/fr/transfert-aeroport-marrakech)
+
+## Day trips from Marrakech (price per private car)
+- [Agafay Desert](https://www.zikasstours.com/excursions/agafay-desert-tour-from-marrakech): 70€
+- [Ourika Valley](https://www.zikasstours.com/excursions/ourika-valley-day-trip-from-marrakech): 70€
+- [Imlil & Atlas Mountains](https://www.zikasstours.com/excursions/imlil-atlas-mountains-day-trip-from-marrakech): 90€
+- [Ouzoud Waterfalls](https://www.zikasstours.com/excursions/ouzoud-waterfalls-day-trip-from-marrakech): 120€
+- [Essaouira](https://www.zikasstours.com/excursions/essaouira-day-trip-from-marrakech): 130€
+- [Ouarzazate & Ait Ben Haddou](https://www.zikasstours.com/excursions/ouarzazate-ait-ben-haddou-day-trip-from-marrakech): 130€
+- Oukaimeden: 100€. Three Valleys: 110€.
+
+## Private transfers from Marrakech (price per car)
+- Essaouira 130€, Ouarzazate 130€, Casablanca Airport (CMN) 150€, Casablanca 170€, Agadir 170€, Rabat 190€.
+- Other cities (Fès, Merzouga, Chefchaouen, Tanger, Zagora, Meknès, Taghazout): see the transfer pages, price confirmed on WhatsApp.
+- Example: [Marrakech to Fès](https://www.zikasstours.com/transfer/marrakech-to-fes)
+
+## More
+- [Home (English)](https://www.zikasstours.com/)
+- [Accueil (Français)](https://www.zikasstours.com/fr)
+- [Travel blog](https://www.zikasstours.com/blog)
+- [Sitemap](https://www.zikasstours.com/sitemap.xml)

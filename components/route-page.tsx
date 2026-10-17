@@ -5,7 +5,6 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { LeadTracker } from "@/components/lead-tracker"
-import { PriceCalculator } from "@/components/price-calculator"
 import { BookingForm, FAQ } from "@/components/conversion"
 import { ReviewsSection } from "@/components/reviews-section"
 import { LanguageProvider } from "@/lib/language-context"
@@ -118,7 +117,6 @@ export function RoutePage({ city, locale }: { city: City; locale: Locale }) {
               </div>
             </div>
           </section>
-          <PriceCalculator defaultFrom="marrakech" defaultTo={city.key} />
           <BookingForm defaultTrip={`Marrakech → ${city[locale]}`} />
           <ReviewsSection locale={locale} limit={3} />
           <section className="py-12 bg-muted/40">

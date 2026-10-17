@@ -4,6 +4,7 @@ import { Analytics } from '@vercel/analytics/next'
 import { SITE_URL, WA_NUMBER, CONTACT_EMAIL } from '@/lib/tours'
 import { ClickTracker } from '@/components/click-tracker'
 import { ConsentAnalytics } from '@/components/consent-analytics'
+import { RatingSchema } from '@/components/rating-schema'
 import './globals.css'
 
 const playfair = Playfair_Display({
@@ -27,10 +28,10 @@ const GSC_CODE = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'ZikassTours - Private Driver, Airport Transfers & Day Trips from Marrakech',
+    default: 'Private Driver & Day Trips from Marrakech | ZikassTours',
     template: '%s | ZikassTours'
   },
-  description: 'Private driver, airport transfers and day trips from Marrakech: Agafay Desert, Ourika Valley, Ouzoud, Essaouira, Imlil, Ouarzazate. Private car for 1-7 people. Book on WhatsApp.',
+  description: 'Private driver, airport transfers and day trips from Marrakech. Private car for 1-7 people, fixed prices, book on WhatsApp.',
   authors: [{ name: 'ZikassTours' }],
   creator: 'ZikassTours',
   publisher: 'ZikassTours',
@@ -143,8 +144,10 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" dir="ltr">
+    <html lang="en" dir="ltr" suppressHydrationWarning>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: "if(location.pathname==='/fr'||location.pathname.startsWith('/fr/'))document.documentElement.lang='fr'" }} />
+        <RatingSchema />
         <link rel="preconnect" href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com" />
         <script
           type="application/ld+json"
