@@ -2,6 +2,7 @@
 // Instant WhatsApp alert via CallMeBot. Env vars:
 //   CALLMEBOT_PHONE   your number with country code, e.g. 2126XXXXXXXX
 //   CALLMEBOT_APIKEY  key received from CallMeBot
+//   CALLMEBOT_PHONE_2 / CALLMEBOT_APIKEY_2  optional second recipient (the driver), activated from his own number
 import { reviewsEnabled } from "./reviews"
 
 export type BookingStatus = "new" | "confirmed" | "done" | "cancelled"
@@ -67,17 +68,23 @@ export async function deleteBooking(id: string) {
   await rest(`zt_bookings?id=eq.${encodeURIComponent(id)}`, { method: "DELETE" })
 }
 
-/** Instant WhatsApp message to the owner (CallMeBot). Never throws. */
+/** Instant WhatsApp message to the owner and, optionally, a second person (the driver). Never throws.
+ *  Env vars: CALLMEBOT_PHONE + CALLMEBOT_APIKEY, and optionally CALLMEBOT_PHONE_2 + CALLMEBOT_APIKEY_2. */
 export async function notifyOwner(text: string) {
-  const phone = process.env.CALLMEBOT_PHONE
-  const apikey = process.env.CALLMEBOT_APIKEY
-  if (!phone || !apikey) return
-  try {
-    await fetch(
-      `https://api.callmebot.com/whatsapp.php?phone=${encodeURIComponent(phone)}&text=${encodeURIComponent(text)}&apikey=${encodeURIComponent(apikey)}`,
-      { signal: AbortSignal.timeout(6000) },
-    )
-  } catch (e) {
-    console.error("notifyOwner", e)
-  }
+  const targets = [
+    { phone: process.env.CALLMEBOT_PHONE, apikey: process.env.CALLMEBOT_APIKEY },
+    { phone: process.env.CALLMEBOT_PHONE_2, apikey: process.env.CALLMEBOT_APIKEY_2 },
+  ].filter((t): t is { phone: string; apikey: string } => Boolean(t.phone && t.apikey))
+  await Promise.all(
+    targets.map(async ({ phone, apikey }) => {
+      try {
+        await fetch(
+          `https://api.callmebot.com/whatsapp.php?phone=${encodeURIComponent(phone)}&text=${encodeURIComponent(text)}&apikey=${encodeURIComponent(apikey)}`,
+          { signal: AbortSignal.timeout(6000) },
+        )
+      } catch (e) {
+        console.error("notifyOwner", e)
+      }
+    }),
+  )
 }
