@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <LanguageProvider>
+    <LanguageProvider initialLanguage="en">
       <div className="min-h-screen bg-background">
         <Header />
         <main role="main">
