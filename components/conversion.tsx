@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState, type FormEvent } from "react"
+import { CheckCircle2 } from "lucide-react"
 import { getRef } from "@/lib/ref"
 import { useLanguage, getWhatsAppUrl, EMAIL } from "@/lib/language-context"
 
@@ -69,6 +70,12 @@ const TXT = {
       email: "No WhatsApp? Send the same request by email",
       subject: "Booking request",
       hello: "Hello, I would like to book from your website:",
+      sentTitle: "Request sent — thank you!",
+      sentSub: "We reply on WhatsApp within a few minutes. Keep this reference:",
+      sentRef: "Reference",
+      reopen: "Reopen WhatsApp",
+      newReq: "Send another request",
+      currency: "Prices are in EUR. We also accept USD, CAD and GBP in cash, at the exchange rate of the day.",
     },
     fr: {
       badge: "Demande de réservation",
@@ -85,6 +92,12 @@ const TXT = {
       email: "Pas de WhatsApp ? Envoyez la demande par email",
       subject: "Demande de réservation",
       hello: "Bonjour, je souhaite réserver depuis votre site :",
+      sentTitle: "Demande envoyée — merci !",
+      sentSub: "Nous répondons sur WhatsApp dans quelques minutes. Conservez cette référence :",
+      sentRef: "Référence",
+      reopen: "Rouvrir WhatsApp",
+      newReq: "Envoyer une autre demande",
+      currency: "Les prix sont en EUR. Nous acceptons aussi USD, CAD et GBP en espèces, au taux du jour.",
     },
   },
   faq: {
@@ -213,6 +226,7 @@ export function BookingForm({ defaultTrip, tripId }: { defaultTrip?: string; tri
   const [f, setF] = useState({ trip: defaultTrip ?? "", date: "", people: "2", hotel: "", name: "", phone: "", msg: "" })
   const [hp, setHp] = useState("")
   const [quote, setQuote] = useState("")
+  const [sent, setSent] = useState<{ ref: string; wa: string } | null>(null)
   useEffect(() => {
     const on = (e: Event) => {
       const d = (e as CustomEvent<{ trip: string; people: string; quote: string }>).detail
@@ -245,17 +259,41 @@ export function BookingForm({ defaultTrip, tripId }: { defaultTrip?: string; tri
   const submit = (e: FormEvent) => {
     e.preventDefault()
     const lines = buildLines()
+    const ref = getRef()
+    const wa = getWhatsAppUrl(lines.join("\n"))
     try {
-      const w = window as unknown as { gtag?: (...a: unknown[]) => void }
-      w.gtag?.("event", "generate_lead", { method: "booking_form", trip: f.trip })
+      const w = window as unknown as { gtag?: (...a: unknown[]) => void; fbq?: (...a: unknown[]) => void }
+      w.gtag?.("event", "generate_lead", { method: "booking_form", trip: f.trip, currency: "EUR", value: 0 })
+      w.fbq?.("track", "Lead", { content_name: f.trip })
     } catch {}
+    const payload = JSON.stringify({
+      ...f,
+      msg: [quote ? "Quote " + quote : "", f.msg].filter(Boolean).join(" | "),
+      ref,
+      source: "form",
+      website: hp,
+      page: location.pathname,
+      locale: l,
+    })
+    // fetch(keepalive) survives most blockers; sendBeacon is the fallback.
     try {
-      navigator.sendBeacon(
-        "/api/bookings",
-        new Blob([JSON.stringify({ ...f, msg: [quote ? "Quote " + quote : "", f.msg].filter(Boolean).join(" | "), ref: getRef(), source: "form", website: hp, page: location.pathname, locale: l })], { type: "text/plain" }),
-      )
-    } catch {}
-    window.open(getWhatsAppUrl(lines.join("\n")), "_blank", "noopener,noreferrer")
+      fetch("/api/bookings", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: payload,
+        keepalive: true,
+      }).catch(() => {
+        try {
+          navigator.sendBeacon("/api/bookings", new Blob([payload], { type: "application/json" }))
+        } catch {}
+      })
+    } catch {
+      try {
+        navigator.sendBeacon("/api/bookings", new Blob([payload], { type: "application/json" }))
+      } catch {}
+    }
+    setSent({ ref, wa })
+    window.open(wa, "_blank", "noopener,noreferrer")
   }
 
   return (
@@ -269,6 +307,33 @@ export function BookingForm({ defaultTrip, tripId }: { defaultTrip?: string; tri
             <h2 className="font-serif text-3xl font-bold text-primary mt-3">{d.title}</h2>
             <p className="text-muted-foreground mt-2 text-sm">{d.sub}</p>
           </div>
+          {sent ? (
+            <div className="text-center py-4">
+              <div className="mx-auto h-14 w-14 rounded-full bg-green-100 flex items-center justify-center">
+                <CheckCircle2 className="h-8 w-8 text-green-600" />
+              </div>
+              <h3 className="font-serif text-2xl font-bold text-primary mt-4">{d.sentTitle}</h3>
+              <p className="text-muted-foreground mt-2 text-sm">{d.sentSub}</p>
+              <p className="mt-3 font-mono text-xl font-bold tracking-wider text-secondary">{sent.ref}</p>
+              <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+                <a
+                  href={sent.wa}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-lg bg-green-600 hover:bg-green-700 text-white font-semibold px-5 py-3 text-sm"
+                >
+                  {d.reopen}
+                </a>
+                <button
+                  type="button"
+                  onClick={() => setSent(null)}
+                  className="rounded-lg border px-5 py-3 text-sm font-semibold hover:bg-muted"
+                >
+                  {d.newReq}
+                </button>
+              </div>
+            </div>
+          ) : (
           <form onSubmit={submit} className="grid sm:grid-cols-2 gap-4">
             <label className="sm:col-span-2 text-sm font-medium">
               {d.trip}
@@ -281,7 +346,7 @@ export function BookingForm({ defaultTrip, tripId }: { defaultTrip?: string; tri
             </label>
             <label className="text-sm font-medium">
               {d.date}
-              <input required type="date" value={f.date} onChange={set("date")} className={field + " mt-1"} />
+              <input required type="date" min={new Date().toISOString().slice(0, 10)} value={f.date} onChange={set("date")} className={field + " mt-1"} />
             </label>
             <label className="text-sm font-medium">
               {d.people}
@@ -321,6 +386,8 @@ export function BookingForm({ defaultTrip, tripId }: { defaultTrip?: string; tri
               {d.email}
             </a>
           </form>
+          )}
+          <p className="text-xs text-muted-foreground text-center mt-5">{d.currency}</p>
         </div>
       </div>
     </section>

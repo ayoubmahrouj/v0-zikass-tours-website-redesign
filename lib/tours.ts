@@ -5,6 +5,7 @@ export const PHONE_DISPLAY = "+212 669 994 837"
 export const CONTACT_EMAIL = "info@zikasstours.com"
 // Tourist transport licence number (agrément). Leave empty until you have it: it is shown in the footer when set.
 export const LICENSE_NUMBER = ""
+export const GOOGLE_REVIEW_URL = "https://search.google.com/local/writereview?placeid=ChIJYQd5WgDvrw0Ry4RShYEutow"
 
 export type Locale = "en" | "fr"
 type L = Record<Locale, string>
@@ -99,6 +100,8 @@ export const tours: Tour[] = [
       B + "Agafay%201-xgUT88Q06ArclrCtCPYodpnOPQkZiA.jpeg",
       B + "Agafay%202-WYCvFoltROTV48UKLq1577BL5KuYtR.jpeg",
       B + "Agafay%203-g0MdGQTLdiIVneifekEUHMqyLGrQ4h.jpeg",
+      "/images/real/agafay-desert-van-hot-air-balloons.webp",
+      "/images/real/agafay-desert-hot-air-balloons-sunrise.webp",
     ],
     highlights: {
       en: ["Sunset over the desert and the Atlas Mountains", "Camel ride or quad biking (optional)", "Dinner under the stars in a desert camp (optional)", "Only 45 minutes from Marrakech"],
@@ -160,6 +163,8 @@ export const tours: Tour[] = [
       B + "Ourika%202-iwdeUj9NfNjsDVe1ZV6jkpLWrtZEQy.jpeg",
       B + "Ourika%203-6EUF4VQgLJ2wTV2naeV3Xob64SrEGZ.jpeg",
       B + "Ourika%204-8NgjOt8qhcirKDjW3rRLN2flzQj2Ix.jpeg",
+      "/images/real/zikasstours-driver-ourika-valley.webp",
+      "/images/real/zikasstours-van-ourika-valley-red-cliffs.webp",
     ],
     highlights: {
       en: ["Setti Fatma waterfalls", "Berber villages and mint tea", "Argan oil cooperative", "Lunch by the river"],
@@ -459,7 +464,11 @@ export const tours: Tour[] = [
     duration: { en: "20-30 min to the Medina", fr: "20-30 min jusqu'à la Médina" },
     distance: { en: "24/7 service", fr: "Service 24h/24" },
     price: 10,
-    images: [],
+    images: [
+      "/images/real/private-van-luggage-airport-transfer.webp",
+      "/images/real/private-van-interior-leather-seats.webp",
+      "/images/real/private-van-riad-marrakech-sunset.webp",
+    ],
     highlights: {
       en: ["Driver waiting at arrivals", "Send your flight number, we plan your pickup", "Medina, Gueliz, Palmeraie, Agafay", "Long-distance transfers to all Moroccan cities"],
       fr: ["Chauffeur qui vous attend aux arrivées", "Envoyez votre numéro de vol, on planifie la prise en charge", "Médina, Guéliz, Palmeraie, Agafay", "Transferts longue distance vers toutes les villes"],

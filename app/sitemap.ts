@@ -23,6 +23,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     ...pair("/", "/fr", 1),
+    ...pair("/about", "/fr/a-propos", 0.7),
+    ...pair("/review", "/fr/avis", 0.5),
     ...tours.flatMap((t) => pair(t.path.en, t.path.fr, 0.9)),
     ...DESTINATIONS.flatMap((c) => pair(routePath(c, "en"), routePath(c, "fr"), 0.8)),
     { url: `${SITE_URL}/privacy`, lastModified, changeFrequency: "yearly", priority: 0.2 },

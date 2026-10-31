@@ -36,6 +36,7 @@ export function Header() {
     { href: `${base}#tarifs`, label: t("nav.tarifs") },
     { href: `${base}#reviews`, label: t("nav.reviews") },
     { href: "/blog", label: t("nav.blog") },
+    { href: isFrPath ? "/fr/a-propos" : "/about", label: t("nav.about") },
     { href: `${base}#contact`, label: t("nav.contact") },
   ]
 
