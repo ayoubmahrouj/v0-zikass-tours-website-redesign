@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Star } from "lucide-react"
 import { getApprovedReviews, getReviewStats } from "@/lib/reviews"
 import type { Locale } from "@/lib/tours"
@@ -13,6 +14,7 @@ const T = {
     cta: "Leave a review",
     link: "/review",
     googleCta: "Review us on Google",
+    guests: "Real travellers with Zakaria — Agafay desert and Essaouira",
   },
   fr: {
     badge: "Avis clients",
@@ -22,6 +24,7 @@ const T = {
     cta: "Laisser un avis",
     link: "/fr/avis",
     googleCta: "Laisser un avis sur Google",
+    guests: "De vrais voyageurs avec Zakaria — désert d'Agafay et Essaouira",
   },
 }
 
@@ -126,6 +129,30 @@ export async function ReviewsSection({ locale = "en", limit = 6, tripId }: { loc
             {t.googleCta}
           </a>
         </div>
+
+        <figure className="mt-12 max-w-3xl mx-auto">
+          <div className="grid grid-cols-2 gap-3">
+            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden">
+              <Image
+                src="/images/real/agafay-desert-clients-with-driver.webp"
+                alt="Travellers with their private driver in the Agafay desert near Marrakech"
+                fill
+                sizes="(max-width: 768px) 50vw, 384px"
+                className="object-cover"
+              />
+            </div>
+            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden">
+              <Image
+                src="/images/real/essaouira-day-trip-clients-with-driver.webp"
+                alt="Travellers with their private driver on a day trip to Essaouira from Marrakech"
+                fill
+                sizes="(max-width: 768px) 50vw, 384px"
+                className="object-cover"
+              />
+            </div>
+          </div>
+          <figcaption className="text-center text-xs text-muted-foreground mt-3">{t.guests}</figcaption>
+        </figure>
       </div>
     </section>
   )

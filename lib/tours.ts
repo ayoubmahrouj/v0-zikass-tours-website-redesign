@@ -102,6 +102,7 @@ export const tours: Tour[] = [
       B + "Agafay%203-g0MdGQTLdiIVneifekEUHMqyLGrQ4h.jpeg",
       "/images/real/agafay-desert-van-hot-air-balloons.webp",
       "/images/real/agafay-desert-hot-air-balloons-sunrise.webp",
+      "/images/real/agafay-desert-clients-with-driver.webp",
     ],
     highlights: {
       en: ["Sunset over the desert and the Atlas Mountains", "Camel ride or quad biking (optional)", "Dinner under the stars in a desert camp (optional)", "Only 45 minutes from Marrakech"],
@@ -287,6 +288,7 @@ export const tours: Tour[] = [
       B + "Essaouira%202-f846BdGpGEiRJ2RpV1SafNl71Wvt0D.jpeg",
       B + "Essaouira%203-q6GnDEH91L2FNismn6mpAD1vFjbF6h.jpeg",
       B + "Essaouira%204-5OFUeGBUrv4Q5XlBHMjO17MU8X14Ff.jpeg",
+      "/images/real/essaouira-day-trip-clients-with-driver.webp",
     ],
     highlights: {
       en: ["UNESCO-listed medina and ramparts", "Fishing port and fresh seafood", "Goats in the argan trees", "Free time on the beach"],
