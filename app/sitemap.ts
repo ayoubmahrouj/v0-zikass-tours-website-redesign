@@ -23,6 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     ...pair("/", "/fr", 1),
+    ...pair("/private-driver-marrakech", "/fr/chauffeur-prive-marrakech", 0.95),
     ...pair("/about", "/fr/a-propos", 0.7),
     ...pair("/review", "/fr/avis", 0.5),
     ...tours.flatMap((t) => pair(t.path.en, t.path.fr, 0.9)),

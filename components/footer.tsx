@@ -49,6 +49,9 @@ export function Footer() {
                   {tour.name[locale]}
                 </Link>
               ))}
+              <Link href={locale === "fr" ? "/fr/chauffeur-prive-marrakech" : "/private-driver-marrakech"} className="text-primary-foreground/70 hover:text-secondary transition-colors">
+                {locale === "fr" ? "Chauffeur privé" : "Private driver"}
+              </Link>
               <Link href={locale === "fr" ? "/fr/a-propos" : "/about"} className="text-primary-foreground/70 hover:text-secondary transition-colors">
                 {locale === "fr" ? "À propos" : "About us"}
               </Link>
