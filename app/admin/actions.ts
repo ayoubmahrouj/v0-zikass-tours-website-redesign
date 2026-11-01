@@ -3,7 +3,7 @@
 import { redirect } from "next/navigation"
 import { revalidatePath, updateTag } from "next/cache"
 import { checkPassword, endSession, isAdmin, startSession } from "@/lib/admin-auth"
-import { deleteBooking, updateBooking, type BookingStatus } from "@/lib/bookings"
+import { deleteBooking, updateBooking, appendLog, type BookingStatus } from "@/lib/bookings"
 import { deleteReview, REVIEWS_TAG, setReviewStatus, type ReviewStatus } from "@/lib/reviews"
 
 export async function login(_: unknown, form: FormData) {
@@ -49,7 +49,26 @@ export async function saveBooking(form: FormData) {
     price: price === "" || isNaN(Number(price)) ? null : Number(price),
     commission_pct: pct >= 0 && pct <= 100 ? pct : 20,
     note: String(form.get("note") || "").slice(0, 500) || null,
+    commission_paid: form.get("commission_paid") === "on",
   })
+  revalidatePath("/admin")
+}
+
+/** Ajoute un message / une action au journal de suivi de la réservation. */
+export async function addBookingLog(form: FormData) {
+  if (!(await isAdmin())) redirect("/admin")
+  const id = String(form.get("id"))
+  const entry = String(form.get("entry") || "")
+  if (id && entry.trim()) await appendLog(id, entry)
+  revalidatePath("/admin")
+}
+
+/** Marque la commission partenaire comme payée (ou non payée). */
+export async function toggleCommissionPaid(form: FormData) {
+  if (!(await isAdmin())) redirect("/admin")
+  const id = String(form.get("id"))
+  const paid = String(form.get("paid")) === "1"
+  if (id) await updateBooking(id, { commission_paid: paid })
   revalidatePath("/admin")
 }
 

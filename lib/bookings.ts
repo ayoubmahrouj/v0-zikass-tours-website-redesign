@@ -23,6 +23,8 @@ export interface Booking {
   price: number | null
   commission_pct: number
   note: string | null
+  commission_paid?: boolean
+  log?: string | null
   ref?: string | null
 }
 
@@ -59,8 +61,41 @@ export async function listBookings(): Promise<Booking[]> {
   return (await res.json()) as Booking[]
 }
 
-export async function updateBooking(id: string, patch: Partial<Pick<Booking, "status" | "price" | "commission_pct" | "note">>) {
-  await rest(`zt_bookings?id=eq.${encodeURIComponent(id)}`, { method: "PATCH", headers: { Prefer: "return=minimal" }, body: JSON.stringify(patch) })
+export async function updateBooking(
+  id: string,
+  patch: Partial<Pick<Booking, "status" | "price" | "commission_pct" | "note" | "commission_paid" | "log">>,
+) {
+  const url = `zt_bookings?id=eq.${encodeURIComponent(id)}`
+  const send = (body: object) => rest(url, { method: "PATCH", headers: { Prefer: "return=minimal" }, body: JSON.stringify(body) })
+  try {
+    await send(patch)
+  } catch (e) {
+    // Migration supabase/partners.sql pas encore exécutée : on sauvegarde le reste
+    if (patch.commission_paid === undefined && patch.log === undefined) throw e
+    const { commission_paid: _p, log: _l, ...legacy } = patch
+    void _p
+    void _l
+    if (Object.keys(legacy).length === 0) return
+    await send(legacy)
+  }
+}
+
+/** Ajoute une ligne horodatée au journal de suivi d'une réservation. */
+export async function appendLog(id: string, entry: string): Promise<boolean> {
+  const clean = entry.replace(/\s+/g, " ").trim().slice(0, 400)
+  if (!clean) return false
+  try {
+    const res = await rest(`zt_bookings?id=eq.${encodeURIComponent(id)}&select=log`)
+    const rows = (await res.json()) as { log: string | null }[]
+    const prev = rows[0]?.log ?? ""
+    const now = new Date()
+    const stamp = `${now.toISOString().slice(0, 10)} ${now.toTimeString().slice(0, 5)}`
+    const line = `${stamp} — ${clean}`
+    await updateBooking(id, { log: [prev, line].filter(Boolean).join("\n").slice(-4000) })
+    return true
+  } catch {
+    return false
+  }
 }
 
 export async function deleteBooking(id: string) {
