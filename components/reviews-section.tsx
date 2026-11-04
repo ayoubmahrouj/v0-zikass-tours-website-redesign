@@ -90,7 +90,7 @@ export async function ReviewsSection({ locale = "en", limit = 6, tripId }: { loc
                 )}
                 <div className="p-6 flex flex-col flex-1">
                   <Stars n={r.rating} />
-                  <p className="mt-3 text-foreground/85 leading-relaxed whitespace-pre-line break-words flex-1">{r.text}</p>
+                  <p className="mt-3 text-foreground/85 leading-relaxed whitespace-pre-line break-words flex-1 max-h-40 overflow-y-auto pr-2 [scrollbar-width:thin]" tabIndex={0}>{r.text}</p>
                   <footer className="mt-5 pt-4 border-t flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-primary/10 text-primary font-semibold flex items-center justify-center">
                       {r.name.charAt(0).toUpperCase()}
