@@ -8,10 +8,9 @@ import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { LeadTracker } from "@/components/lead-tracker"
-import { TrustBar, HowItWorks, PriceNote, BookingForm, FAQ } from "@/components/conversion"
+import { TrustBar, HowItWorks, PriceNote, FAQ } from "@/components/conversion"
 import { SITE_URL } from "@/lib/tours"
 import { ReviewsSection } from "@/components/reviews-section"
-import { PriceCalculator } from "@/components/price-calculator"
 import { Fleet } from "@/components/fleet"
 
 // SSR - This page is rendered on the server for better SEO
@@ -49,9 +48,7 @@ export default function HomePage() {
           <HowItWorks />
           <ReviewsSection locale="en" />
           <Tarifs />
-          <PriceCalculator />
           <PriceNote />
-          <BookingForm />
           <FAQ />
           <Contact />
         </main>
