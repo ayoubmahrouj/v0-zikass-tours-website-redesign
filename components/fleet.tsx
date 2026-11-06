@@ -4,13 +4,15 @@ import Image from "next/image"
 import { BadgeCheck, Luggage, Snowflake, Users } from "lucide-react"
 import { useLanguage } from "@/lib/language-context"
 
+const INTERIOR = "/images/real/private-van-interior-black-leather-seats.webp"
+
 const TXT = {
   en: {
     badge: "Real photos",
     title: "The car you will actually travel in",
     sub: "A recent Fiat private van — not a stock photo, not a shared bus. Same vehicle for every trip, cleaned before each pickup.",
     photos: [
-      { src: "/images/real/private-van-interior-leather-seats.webp", alt: "Interior of the private van with leather seats and air conditioning, Marrakech" },
+      { src: INTERIOR, alt: "Interior of the private van with black leather seats and curtains, Marrakech" },
       { src: "/images/real/private-van-luggage-airport-transfer.webp", alt: "Luggage space in the private van for an airport transfer in Marrakech" },
       { src: "/images/real/private-van-riad-marrakech-sunset.webp", alt: "ZikassTours private van parked in front of a riad in Marrakech at sunset" },
       { src: "/images/real/black-fiat-van-marrakech-street.webp", alt: "Black Fiat private van used for day trips from Marrakech" },
@@ -28,7 +30,7 @@ const TXT = {
     title: "La voiture dans laquelle vous voyagerez vraiment",
     sub: "Un van Fiat récent — pas une photo de banque d'images, pas un bus partagé. Le même véhicule à chaque trajet, nettoyé avant chaque prise en charge.",
     photos: [
-      { src: "/images/real/private-van-interior-leather-seats.webp", alt: "Intérieur du van privé avec sièges en cuir et climatisation, Marrakech" },
+      { src: INTERIOR, alt: "Intérieur du van privé avec sièges en cuir noir et rideaux, Marrakech" },
       { src: "/images/real/private-van-luggage-airport-transfer.webp", alt: "Coffre du van privé pour un transfert aéroport à Marrakech" },
       { src: "/images/real/private-van-riad-marrakech-sunset.webp", alt: "Van privé ZikassTours devant un riad à Marrakech au coucher du soleil" },
       { src: "/images/real/black-fiat-van-marrakech-street.webp", alt: "Van Fiat noir privé utilisé pour les excursions depuis Marrakech" },
