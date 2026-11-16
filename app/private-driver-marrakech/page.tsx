@@ -3,7 +3,7 @@ import { DriverPage } from "@/components/driver-page"
 import { SITE_URL } from "@/lib/tours"
 
 export const metadata: Metadata = {
-  title: "Private Driver in Marrakech — English-Speaking Chauffeur | ZikassTours",
+  title: "Private Driver in Marrakech — English-Speaking Chauffeur",
   description:
     "Private driver in Marrakech for airport transfers, day trips to Agafay, Ourika, Ouzoud, Essaouira and the Atlas, hourly hire and multi-day tours. Fixed price per car for 1-7 people, cash on arrival.",
   alternates: {

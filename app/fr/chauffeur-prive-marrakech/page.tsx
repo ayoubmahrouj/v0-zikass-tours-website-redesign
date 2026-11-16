@@ -3,7 +3,7 @@ import { DriverPage } from "@/components/driver-page"
 import { SITE_URL } from "@/lib/tours"
 
 export const metadata: Metadata = {
-  title: "Chauffeur privé à Marrakech — francophone et anglophone | ZikassTours",
+  title: "Chauffeur privé à Marrakech — francophone et anglophone",
   description:
     "Chauffeur privé à Marrakech : transferts aéroport, excursions Agafay, Ourika, Ouzoud, Essaouira et Atlas, mise à disposition à l'heure et circuits de plusieurs jours. Prix fixe par voiture pour 1 à 7 personnes, paiement à l'arrivée.",
   alternates: {
