@@ -10,6 +10,7 @@ import { LanguageProvider } from "@/lib/language-context"
 import { ReviewsSection } from "@/components/reviews-section"
 import { BookingForm, PriceNote } from "@/components/conversion"
 import { SITE_URL, PHONE_DISPLAY, tours, excursions, waLink, type Tour, type Locale } from "@/lib/tours"
+import { ramassageTrips, RAMASSAGE_PATH } from "@/lib/ramassage"
 
 const ui = {
   en: {
@@ -160,6 +161,8 @@ export function TourPage({ tour, locale }: { tour: Tour; locale: Locale }) {
   const others = [...excursions.filter((t) => t.id !== tour.id), ...(tour.kind === "excursion" ? tours.filter((t) => t.kind === "transfer") : [])]
   const other = locale === "fr" ? "en" : "fr"
   const hero = tour.images[0]
+  const sharedTrip = ramassageTrips.find((t) => t.id === tour.id)
+  const sharedFrom = sharedTrip ? Math.min(...sharedTrip.options.map((o) => o.price)) : null
 
   return (
     <LanguageProvider initialLanguage={locale}>
@@ -323,6 +326,28 @@ export function TourPage({ tour, locale }: { tour: Tour; locale: Locale }) {
                 </div>
               </aside>
             </div>
+
+            {/* Shared tour cross-sell (ramassage) */}
+            {sharedFrom !== null && (
+              <section className="mt-14 flex flex-col md:flex-row md:items-center justify-between gap-5 rounded-2xl border-2 border-secondary/50 bg-secondary/5 p-6 md:p-8">
+                <div>
+                  <h2 className="font-serif text-xl md:text-2xl font-bold mb-1">
+                    {locale === "fr" ? "Aussi disponible en ramassage" : "Also available as a shared tour"}
+                  </h2>
+                  <p className="text-muted-foreground">
+                    {locale === "fr"
+                      ? `Cette excursion existe aussi en transport partagé, dès ${sharedFrom}€ par personne.`
+                      : `This trip is also available with shared transport, from €${sharedFrom} per person.`}
+                  </p>
+                </div>
+                <Link
+                  href={RAMASSAGE_PATH[locale]}
+                  className="inline-flex flex-shrink-0 items-center justify-center rounded-full bg-secondary px-6 py-3 font-semibold text-secondary-foreground hover:bg-secondary/90 transition-colors"
+                >
+                  {locale === "fr" ? "Voir les tarifs ramassage" : "See shared tour prices"}
+                </Link>
+              </section>
+            )}
 
             {/* Other trips - internal links */}
             <section className="mt-16">

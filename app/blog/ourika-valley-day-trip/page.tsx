@@ -5,6 +5,7 @@ import { Clock, MapPin, Users, ArrowLeft, Check } from "lucide-react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FloatingWhatsApp } from "@/components/floating-whatsapp"
+import { SharedTourLink } from "@/components/shared-tour-link"
 import { LanguageProvider } from "@/lib/language-context"
 
 export const metadata: Metadata = {
@@ -151,6 +152,8 @@ export default function OurikaBlogPage() {
                 </span>
                 <span className="text-secondary font-semibold whitespace-nowrap">See the tour &rarr;</span>
               </Link>
+
+              <SharedTourLink title="Ourika Valley" price={25} />
 
               {/* CTA Box */}
                 <div className="mt-12 p-8 bg-primary rounded-2xl text-center">

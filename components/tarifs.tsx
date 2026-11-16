@@ -1,6 +1,7 @@
 "use client"
 
 import { Plane, Car, Mountain } from "lucide-react"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { useLanguage, getWhatsAppUrl } from "@/lib/language-context"
@@ -23,7 +24,7 @@ interface TarifCategory {
 }
 
 export function Tarifs() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
 
   // Each service appears in one category only. Day trips = driver waits and brings you back.
   const tarifCategories: TarifCategory[] = [
@@ -157,6 +158,17 @@ export function Tarifs() {
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        {/* Shared tours cross-link */}
+        <div className="mt-10 text-center">
+          <Link
+            href={language === "fr" ? "/fr/ramassage-marrakech" : "/shared-tours-marrakech"}
+            className="inline-flex items-center gap-2 rounded-full border border-secondary/40 px-6 py-3 text-sm md:text-base font-medium text-primary-foreground hover:bg-secondary/10 transition-colors"
+          >
+            {t("tarifs.ramassage")}
+            <span aria-hidden="true">&rarr;</span>
+          </Link>
         </div>
       </div>
     </section>

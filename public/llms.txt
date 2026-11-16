@@ -1,6 +1,6 @@
 # ZikassTours
 
-> ZikassTours is a private driver and tour company based in Marrakech, Morocco. We offer airport transfers, private day trips and long-distance transfers in a private air-conditioned car for 1 to 7 people. Prices are per car (not per person), fixed and agreed before the trip. Booking is done on WhatsApp or with the form on the website. The site is available in English and French.
+> ZikassTours is a private driver and tour company based in Marrakech, Morocco. We offer airport transfers, private day trips, shared day trips ("ramassage") and long-distance transfers in a private air-conditioned car for 1 to 7 people. Private prices are per car (not per person); shared tours ("ramassage") are per person. Prices are fixed and agreed before the trip. Booking is done on WhatsApp or with the form on the website. The site is available in English and French.
 
 ## Airport transfers
 - [Marrakech airport transfer (RAK)](https://www.zikasstours.com/airport-transfer-marrakech): Marrakech Menara airport to the Medina or Gueliz from 10€ per car, to Agafay from 50€.
@@ -14,6 +14,13 @@
 - [Essaouira](https://www.zikasstours.com/excursions/essaouira-day-trip-from-marrakech): 130€
 - [Ouarzazate & Ait Ben Haddou](https://www.zikasstours.com/excursions/ouarzazate-ait-ben-haddou-day-trip-from-marrakech): 130€
 - Oukaimeden: 100€. Three Valleys: 110€.
+
+## Shared day trips ("ramassage", price per person)
+- [Shared tours from Marrakech](https://www.zikasstours.com/shared-tours-marrakech): Ourika from 15€, Ouzoud from 20€, Essaouira 25€.
+- [Ramassage Marrakech (FR)](https://www.zikasstours.com/fr/ramassage-marrakech)
+- Ourika Valley: 15€ transport only, 25€ with lunch + guide.
+- Ouzoud Waterfalls: 20€ transport only, 30€ with boat + guide.
+- Essaouira: 25€ transport.
 
 ## Private transfers from Marrakech (price per car)
 - Essaouira 130€, Ouarzazate 130€, Casablanca Airport (CMN) 150€, Casablanca 170€, Agadir 170€, Rabat 190€.

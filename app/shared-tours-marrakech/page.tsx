@@ -8,7 +8,7 @@ export const revalidate = 600
 const url = SITE_URL + RAMASSAGE_PATH.en
 const title = "Shared Tours from Marrakech: Ourika, Ouzoud, Essaouira from €15"
 const description =
-  "Shared day trips (ramassage) from Marrakech: Ourika €25 with lunch and guide, Ouzoud €30 with boat and guide, Essaouira €25. Prices per person."
+  "Cheap shared day trips (ramassage) from Marrakech: Ourika €25 with lunch and guide, Ouzoud €30 with boat and guide, Essaouira €25. Prices per person."
 
 export const metadata: Metadata = {
   title: { absolute: title + " | ZikassTours" },

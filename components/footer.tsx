@@ -28,7 +28,7 @@ export function Footer() {
               {t("footer.tagline")}
             </p>
             {LICENSE_NUMBER && (
-              <p className="text-primary-foreground/60 text-sm mt-3">
+              <p className="text-primary-foreground/70 text-sm mt-3">
                 {locale === "fr" ? "Agrément transport touristique" : "Tourist transport licence"} : {LICENSE_NUMBER}
               </p>
             )}
@@ -103,14 +103,14 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-secondary/20 pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-primary-foreground/50 text-sm">
+            <p className="text-primary-foreground/65 text-sm">
               © {currentYear} ZikassTours. {t("footer.rights")}.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4 text-sm">
-              <Link href="/terms" className="text-primary-foreground/60 hover:text-secondary">{locale === "fr" ? "Conditions" : "Terms"}</Link>
-              <Link href="/privacy" className="text-primary-foreground/60 hover:text-secondary">{locale === "fr" ? "Confidentialité" : "Privacy"}</Link>
-              <Link href="/" hrefLang="en" className="text-primary-foreground/60 hover:text-secondary">English</Link>
-              <Link href="/fr" hrefLang="fr" className="text-primary-foreground/60 hover:text-secondary">Français</Link>
+              <Link href="/terms" className="text-primary-foreground/75 hover:text-secondary">{locale === "fr" ? "Conditions" : "Terms"}</Link>
+              <Link href="/privacy" className="text-primary-foreground/75 hover:text-secondary">{locale === "fr" ? "Confidentialité" : "Privacy"}</Link>
+              <Link href="/" hrefLang="en" className="text-primary-foreground/75 hover:text-secondary">English</Link>
+              <Link href="/fr" hrefLang="fr" className="text-primary-foreground/75 hover:text-secondary">Français</Link>
               <a
                 href={INSTAGRAM}
                 target="_blank"

@@ -5,6 +5,7 @@ import { Clock, MapPin, Users, ArrowLeft, Check } from "lucide-react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FloatingWhatsApp } from "@/components/floating-whatsapp"
+import { SharedTourLink } from "@/components/shared-tour-link"
 import { LanguageProvider } from "@/lib/language-context"
 
 export const metadata: Metadata = {
@@ -113,6 +114,8 @@ export default function OuzoudBlogPage() {
                     <strong>Spring (March-May)</strong> is the best time when the waterfalls are at full power from winter rains. The area is green and the weather is perfect for hiking and swimming. <strong>Autumn</strong> is also excellent with comfortable temperatures.
                   </p>
                 </div>
+
+                <SharedTourLink title="Ouzoud Waterfalls" price={30} />
 
                 <div className="mt-12 p-8 bg-primary rounded-2xl text-center">
                   <h3 className="font-serif text-2xl md:text-3xl font-bold text-primary-foreground mb-4">

@@ -31,6 +31,28 @@ const ui = {
       ["Small group", "Comfortable air-conditioned van with a local driver."],
       ["Easy booking", "No deposit. You pay on the day of the trip."],
     ],
+    howTitle: "How the day works",
+    steps: [
+      ["Book on WhatsApp", "Tell us the trip, the formula, the date and the number of people. We confirm availability and the pickup time."],
+      ["Pickup in Marrakech", "The van picks you up at your hotel or riad, then you leave with a small group."],
+      ["Time at the destination", "Free time, lunch by the river or a boat ride depending on the formula, with a local guide on the full options."],
+      ["Return in the evening", "You are dropped off at your hotel or riad in Marrakech."],
+    ],
+    compareTitle: "Shared tour or private car?",
+    compareHead: ["Ramassage", "Private"],
+    compare: [
+      ["Price", "From €15 per person", "From €70 per car (1-7 people)"],
+      ["Transport", "Shared van, small group", "Private car with driver"],
+      ["Timing", "Fixed departure and return", "Flexible timing"],
+      ["Best for", "Solo travellers, couples, small budgets", "Families and groups who want privacy"],
+    ],
+    compareNote: "Indicative prices, confirmed on WhatsApp before departure.",
+    chooseTitle: "Which shared tour should you choose?",
+    choose: [
+      ["Ourika - from €15", "The closest to Marrakech and the cheapest: ideal for a nature half-day and for families."],
+      ["Ouzoud - from €20", "To see the highest waterfalls in Morocco, the Barbary monkeys and take a boat ride."],
+      ["Essaouira - €25", "For the ocean, the UNESCO medina and the fishing port, with free time to explore."],
+    ],
     privateTitle: "Prefer a private car?",
     privateText: "Our private tours with your own driver, pickup at your hotel and flexible timing.",
     privateCta: "See private tours",
@@ -62,6 +84,28 @@ const ui = {
       ["Départ de Marrakech", "Prise en charge à votre hôtel ou riad, heure confirmée sur WhatsApp."],
       ["Petit groupe", "Van climatisé et confortable avec chauffeur local."],
       ["Réservation simple", "Sans acompte. Vous payez le jour de l'excursion."],
+    ],
+    howTitle: "Comment se passe la journée ?",
+    steps: [
+      ["Réservez sur WhatsApp", "Indiquez l'excursion, la formule, la date et le nombre de personnes. Nous confirmons la disponibilité et l'heure de prise en charge."],
+      ["Prise en charge à Marrakech", "Le van vient vous chercher à votre hôtel ou riad, puis le départ se fait en petit groupe."],
+      ["Journée sur place", "Temps libre, déjeuner au bord de la rivière ou balade en barque selon la formule, avec un guide local pour les formules complètes."],
+      ["Retour en fin de journée", "Vous êtes déposé à votre hôtel ou riad, à Marrakech."],
+    ],
+    compareTitle: "Ramassage ou voiture privée ?",
+    compareHead: ["Ramassage", "Privé"],
+    compare: [
+      ["Prix", "Dès 15€ par personne", "Dès 70€ par voiture (1-7 pers.)"],
+      ["Transport", "Van partagé, petit groupe", "Voiture privée avec chauffeur"],
+      ["Horaires", "Départ et retour fixes", "Horaires flexibles"],
+      ["Idéal pour", "Voyageurs seuls, couples, petits budgets", "Familles et groupes qui veulent leur intimité"],
+    ],
+    compareNote: "Tarifs indicatifs, confirmés sur WhatsApp avant le départ.",
+    chooseTitle: "Quelle excursion partagée choisir ?",
+    choose: [
+      ["Ourika - dès 15€", "La plus proche de Marrakech et la moins chère : idéale pour une demi-journée nature et pour les familles."],
+      ["Ouzoud - dès 20€", "Pour voir les plus hautes cascades du Maroc, les singes magots et faire une balade en barque."],
+      ["Essaouira - 25€", "Pour l'océan, la médina UNESCO et le port de pêche, avec du temps libre pour flâner."],
     ],
     privateTitle: "Vous préférez une voiture privée ?",
     privateText: "Nos excursions privées avec votre propre chauffeur, prise en charge à l'hôtel et horaires flexibles.",
@@ -147,14 +191,14 @@ export function RamassagePage({ locale }: { locale: Locale }) {
               className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-secondary/20 blur-3xl"
             />
             <div className="container relative mx-auto px-4">
-              <nav aria-label="Breadcrumb" className="text-sm text-primary-foreground/60 mb-4">
+              <nav aria-label="Breadcrumb" className="text-sm text-primary-foreground/75 mb-4">
                 <Link href={locale === "fr" ? "/fr" : "/"} className="hover:text-primary-foreground">
                   {u.home}
                 </Link>
                 <span className="mx-2">/</span>
                 <span className="text-primary-foreground/90">Ramassage</span>
               </nav>
-              <span className="inline-block px-4 py-1.5 bg-secondary/20 text-secondary rounded-full text-sm font-medium mb-5 tracking-wide uppercase">
+              <span className="inline-block px-4 py-1.5 bg-secondary text-secondary-foreground rounded-full text-sm font-medium mb-5 tracking-wide uppercase">
                 {u.badge}
               </span>
               <h1 className="font-serif text-3xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-4 max-w-4xl text-balance">
@@ -177,7 +221,7 @@ export function RamassagePage({ locale }: { locale: Locale }) {
                   href={waLink(u.generalWa)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-7 py-3.5 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-full transition-colors"
+                  className="inline-flex items-center justify-center px-7 py-3.5 bg-green-700 hover:bg-green-800 text-white font-semibold rounded-full transition-colors"
                 >
                   <WaIcon className="w-5 h-5 mr-2" /> {u.book}
                 </a>
@@ -266,7 +310,7 @@ export function RamassagePage({ locale }: { locale: Locale }) {
                               href={waLink(ramassageWaMessage(locale, trip.name[locale], option.label[locale], option.price))}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="mt-3 inline-flex w-full items-center justify-center rounded-full bg-green-600 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-green-700"
+                              className="mt-3 inline-flex w-full items-center justify-center rounded-full bg-green-700 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-green-800"
                             >
                               <WaIcon className="w-4 h-4 mr-2" /> {u.book}
                             </a>
@@ -292,6 +336,74 @@ export function RamassagePage({ locale }: { locale: Locale }) {
                     <p className="text-sm text-muted-foreground">{text}</p>
                   </div>
                 ))}
+              </div>
+            </div>
+          </section>
+
+          {/* How it works + shared vs private */}
+          <section className="py-14 md:py-20">
+            <div className="container mx-auto px-4">
+              <div className="grid lg:grid-cols-2 gap-10 lg:gap-14">
+                <div>
+                  <h2 className="font-serif text-2xl md:text-3xl font-bold mb-6">{u.howTitle}</h2>
+                  <ol className="space-y-5">
+                    {u.steps.map(([title, text], i) => (
+                      <li key={title} className="flex items-start gap-4">
+                        <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-secondary text-secondary-foreground font-bold">
+                          {i + 1}
+                        </span>
+                        <div>
+                          <p className="font-semibold">{title}</p>
+                          <p className="text-sm text-muted-foreground">{text}</p>
+                        </div>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+
+                <div>
+                  <h2 className="font-serif text-2xl md:text-3xl font-bold mb-6">{u.compareTitle}</h2>
+                  <div className="overflow-x-auto rounded-2xl border border-border">
+                    <table className="w-full text-sm">
+                      <thead className="bg-muted/60 text-left">
+                        <tr>
+                          <th scope="col" className="p-3 font-medium text-muted-foreground">
+                            <span className="sr-only">{locale === "fr" ? "Critère" : "Criteria"}</span>
+                          </th>
+                          {u.compareHead.map((head) => (
+                            <th key={head} scope="col" className="p-3 font-semibold">
+                              {head}
+                            </th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {u.compare.map(([label, shared, priv]) => (
+                          <tr key={label} className="border-t border-border align-top">
+                            <th scope="row" className="p-3 text-left font-medium text-muted-foreground">
+                              {label}
+                            </th>
+                            <td className="p-3">{shared}</td>
+                            <td className="p-3">{priv}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                  <p className="mt-3 text-xs text-muted-foreground">{u.compareNote}</p>
+                </div>
+              </div>
+
+              <div className="mt-12 md:mt-16">
+                <h2 className="font-serif text-2xl md:text-3xl font-bold mb-5">{u.chooseTitle}</h2>
+                <div className="grid sm:grid-cols-3 gap-4">
+                  {u.choose.map(([title, text]) => (
+                    <div key={title} className="rounded-xl bg-muted/40 p-5">
+                      <p className="font-semibold mb-1">{title}</p>
+                      <p className="text-sm text-muted-foreground">{text}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </section>
@@ -332,11 +444,11 @@ export function RamassagePage({ locale }: { locale: Locale }) {
                     href={waLink(u.generalWa)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center w-full px-6 py-3.5 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-full transition-colors mb-3"
+                    className="flex items-center justify-center w-full px-6 py-3.5 bg-green-700 hover:bg-green-800 text-white font-semibold rounded-full transition-colors mb-3"
                   >
                     <WaIcon className="w-5 h-5 mr-2" /> {u.book}
                   </a>
-                  <p className="text-center text-sm text-primary-foreground/60 mt-4">
+                  <p className="text-center text-sm text-primary-foreground/75 mt-4">
                     {u.call}{" "}
                     <a href={`tel:+${PHONE_DISPLAY.replace(/\D/g, "")}`} className="underline">
                       {PHONE_DISPLAY}
@@ -377,7 +489,7 @@ export function RamassagePage({ locale }: { locale: Locale }) {
                 href={waLink(u.generalWa)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-full transition-colors"
+                className="inline-flex items-center px-8 py-4 bg-green-700 hover:bg-green-800 text-white font-semibold rounded-full transition-colors"
               >
                 <WaIcon className="w-5 h-5 mr-2" /> {u.book}
               </a>

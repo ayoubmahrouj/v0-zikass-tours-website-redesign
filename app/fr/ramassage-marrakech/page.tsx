@@ -8,7 +8,7 @@ export const revalidate = 600
 const url = SITE_URL + RAMASSAGE_PATH.fr
 const title = "Ramassage Marrakech : Ourika, Ouzoud, Essaouira dès 15€/pers"
 const description =
-  "Excursions en ramassage (transport partagé) depuis Marrakech : Ourika 25€ avec déjeuner et guide, Ouzoud 30€ avec barque et guide, Essaouira 25€. Prix par personne."
+  "Excursions pas chères en ramassage (transport partagé) depuis Marrakech : Ourika 25€ avec déjeuner et guide, Ouzoud 30€ avec barque et guide, Essaouira 25€. Prix par personne."
 
 export const metadata: Metadata = {
   title: { absolute: title + " | ZikassTours" },

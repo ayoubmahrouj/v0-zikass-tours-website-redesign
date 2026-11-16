@@ -105,6 +105,7 @@ const translations: Record<Language, Record<string, string>> = {
     "tarifs.regional.title": "Transferts Régionaux",
     "tarifs.regional.3vallees": "3 Vallées",
     "tarifs.excursions.title": "Excursions & Tours",
+    "tarifs.ramassage": "Petit budget ? Excursions partagées (ramassage) dès 15€ par personne",
     
     
     // Contact
@@ -222,6 +223,7 @@ const translations: Record<Language, Record<string, string>> = {
     "tarifs.regional.title": "Regional Transfers",
     "tarifs.regional.3vallees": "3 Valleys",
     "tarifs.excursions.title": "Excursions & Tours",
+    "tarifs.ramassage": "On a budget? Shared tours (ramassage) from €15 per person",
     
     
     // Contact

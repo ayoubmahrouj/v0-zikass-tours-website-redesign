@@ -125,6 +125,14 @@ export const ramassageFaq: Record<Locale, { q: string; a: string }[]> = {
       a: "We pick you up at your hotel or riad in Marrakech. The exact time is confirmed on WhatsApp the day before departure.",
     },
     {
+      q: "What is the cheapest day trip from Marrakech?",
+      a: "The Ourika shared tour at €15 per person (transport only) is our cheapest day trip. The €25 option adds lunch by the river and a local guide.",
+    },
+    {
+      q: "Can I book for one person only?",
+      a: "Yes. Ramassage prices are per person, so solo travellers pay for one seat only. Tell us how many people are coming and we confirm the seats on WhatsApp.",
+    },
+    {
       q: "How do I book?",
       a: "Send us a WhatsApp message with the trip, the formula you want (transport only, or transport + lunch/boat + guide), the date and the number of people. We confirm availability right away.",
     },
@@ -141,6 +149,14 @@ export const ramassageFaq: Record<Locale, { q: string; a: string }[]> = {
     {
       q: "Où se fait la prise en charge à Marrakech ?",
       a: "Nous venons vous chercher à votre hôtel ou riad à Marrakech. L'heure exacte est confirmée sur WhatsApp la veille du départ.",
+    },
+    {
+      q: "Quelle est l'excursion la moins chère depuis Marrakech ?",
+      a: "Le ramassage Ourika à 15€ par personne (transport seul) est notre excursion la moins chère. La formule à 25€ ajoute le déjeuner au bord de la rivière et un guide local.",
+    },
+    {
+      q: "Peut-on réserver pour une seule personne ?",
+      a: "Oui. Les tarifs ramassage sont par personne : un voyageur seul ne paie qu'une place. Dites-nous combien de personnes viennent et nous confirmons les places sur WhatsApp.",
     },
     {
       q: "Comment réserver ?",
