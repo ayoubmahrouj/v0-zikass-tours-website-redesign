@@ -55,6 +55,9 @@ export function Footer() {
               <Link href={locale === "fr" ? "/fr/a-propos" : "/about"} className="text-primary-foreground/70 hover:text-secondary transition-colors">
                 {locale === "fr" ? "À propos" : "About us"}
               </Link>
+              <Link href={locale === "fr" ? "/fr/ramassage-marrakech" : "/shared-tours-marrakech"} className="text-primary-foreground/70 hover:text-secondary transition-colors">
+                {locale === "fr" ? "Ramassage" : "Shared tours"}
+              </Link>
               <Link href="/blog" className="text-primary-foreground/70 hover:text-secondary transition-colors">
                 Blog
               </Link>
